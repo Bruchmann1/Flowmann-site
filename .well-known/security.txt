@@ -1,0 +1,12 @@
+# Flowmann Security Policy (RFC 9116)
+# If you discover a security vulnerability in Flowmann, please let us know.
+# We appreciate responsible disclosure.
+
+Contact: mailto:mikebruchmann@hotmail.com
+Expires: 2027-04-24T23:59:59.000Z
+Preferred-Languages: en, nl
+Canonical: https://flowmann.com/.well-known/security.txt
+Policy: https://flowmann.com/security-policy
+
+# Please report security issues privately via email first.
+# We aim to respond within 72 hours on business days.
