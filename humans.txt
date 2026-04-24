@@ -1,0 +1,17 @@
+/* TEAM */
+Founder & Lead Developer: Mike Bruchmann
+Contact: mikebruchmann [at] hotmail.com
+Location: The Netherlands
+
+/* SITE */
+Last update: 2026
+Standards: HTML5, CSS3, ES2020
+Components: Three.js, GSAP
+Software: Lovable, Supabase, Cloudflare
+Languages: Dutch, English, German, French, Arabic
+
+/* FLOWMANN */
+Platform: Industrial maintenance SaaS
+Sectors: Petrochemical, manufacturing, healthcare, construction
+Website: https://flowmann.com
+App: https://app.flowmann.com
