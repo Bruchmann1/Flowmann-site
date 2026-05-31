@@ -2109,13 +2109,52 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 
 // ===== CONTACT FORM =====
-function submitForm(e) {
+async function submitForm(e) {
   e.preventDefault();
-  document.getElementById('formStatus').classList.add('success');
-  document.getElementById('contactForm').reset();
-  setTimeout(() => {
-    document.getElementById('formStatus').classList.remove('success');
-  }, 6000);
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const btn = form.querySelector('button[type="submit"]');
+  const btnText = btn.innerHTML;
+
+  const payload = {
+    name: form.name.value.trim(),
+    company: form.company.value.trim(),
+    email: form.email.value.trim(),
+    sector: form.sector.value,
+    msg: form.msg.value.trim()
+  };
+
+  btn.disabled = true;
+  btn.innerHTML = 'Versturen…';
+  status.classList.remove('success');
+  status.style.cssText = '';
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && result.ok) {
+      form.reset();
+      status.classList.add('success');
+      btn.innerHTML = '✓ Verzonden';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = btnText;
+        status.classList.remove('success');
+      }, 8000);
+    } else {
+      throw new Error(result.error || 'send_failed');
+    }
+  } catch (err) {
+    status.style.cssText = 'display:block;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:#f87171';
+    status.textContent = 'Er ging iets mis. Mail ons direct op mike@flowmann.com.';
+    btn.disabled = false;
+    btn.innerHTML = btnText;
+  }
   return false;
 }
 </script>
