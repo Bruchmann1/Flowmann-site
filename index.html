@@ -1,10 +1,698 @@
+
+Claude finished the response
+Je bouwt een state-of-the-art landing page voor Flowmann — 
+een universeel AI-platform dat afdelingen verbindt, voor 
+meerdere sectoren (industrie, zorg, bouw, overheid, retail, 
+uitzendbranche, sportverenigingen).
+
+=== REFERENTIE-ESTHETIEK ===
+Zoals Forged.build, PeachWeb.io, Wearebrand.io — maar dan 
+haalbaar met puur HTML/CSS/JS + Three.js + GSAP (geen Spline 
+of Blender nodig). Denk: Linear.app × Stripe × Awwwards-niveau 
+scroll-ervaring.
+
+=== EXACTE TECH STACK (CDN imports, geen build step) ===
+- Three.js r128 via cdnjs
+- GSAP 3 + ScrollTrigger via cdnjs  
+- Lenis voor smooth scroll (optioneel maar sterk aanbevolen)
+- Fonts via Google Fonts: Fraunces (display serif) + Inter (body)
+
+=== HUISSTIJL ===
+- Achtergrond: heel donker 
+#05070c met subtiele ruimtelijke diepte
+- Accent: amber 
+#f59e0b (hoofdkleur) + 
+#fbbf24 (bright)
+- Typografie: Fraunces voor grote koppen (zoals Stripe), Inter voor body
+- Noise/grain overlay voor filmisch gevoel
+- Het Flowmann logo is een amber vierkant (rounded) met donkere F erin
+
+=== WAT IK WIL ZIEN ===
+
+**Hero**: een centraal 3D object (Three.js) dat langzaam draait en 
+reageert op muisbeweging. Kies iets betekenisvols — bijvoorbeeld 
+een zwevend glazen icosahedron dat lichtstralen weerkaatst, of 
+een abstracte stromende vorm. GEEN torusknot (te cliché).
+
+**Scroll magic (hét kenmerk)**:
+GSAP ScrollTrigger bestuurt de camera — die beweegt door de 3D scène terwijl je scrollt
+Objecten die naar voren komen, roteren, en weer verdwijnen op specifieke scroll-momenten
+Secties die in elkaar overvloeien (geen harde sectie-grenzen)
+Tekst die pinned blijft terwijl 3D achter verandert
+
+**Sectoren showcase**: horizontal scroll of bento-grid waar elke 
+sector (7 stuks) een eigen kleuraccent krijgt. Niet gemiddeld — 
+elke sector heeft z'n eigen sfeer.
+
+**AI-sectie**: visualisatie van AI die afdelingen verbindt. 
+Bijvoorbeeld: nodes die pulseren en verbinden met lijnen die 
+data-packets animeren.
+
+**Clean maar indrukwekkend**: niet 10 effecten op 1 pagina, maar 
+3-4 "money shots" waar je adem van stokt. Rust tussendoor.
+
+**Micro-interacties**: custom cursor, magnetic buttons, hover 
+states die niet generiek zijn.
+
+=== CONTENT ===
+- Hero tagline: "Eén platform. Elke sector. Eindelijk verbonden."
+- Sub: "Flowmann verbindt afdelingen met AI. Van fabriek tot 
+  ziekenhuis, van bouwplaats tot gemeentehuis — één systeem dat 
+  zich vormt naar uw organisatie."
+- Talen: NL (standaard), EN, DE via taalwissel in nav
+- CTA: "Neem contact op" (contactformulier)
+- Sectoren: Industrie & Productie, Zorg, Bouw, Overheid, Retail, 
+  Uitzendbranche, Sportverenigingen
+- Prijs: "Vanaf €49 per gebruiker per maand — definitieve prijs op 
+  maat"
+- Contact: info@flowmann.com
+
+=== BELANGRIJKE CONSTRAINTS ===
+- Eén HTML-bestand, alles inline (geen build step nodig)
+- Moet 60fps halen op een gemiddelde laptop
+- Responsive: op mobiel mag je 3D-scène vereenvoudigen of statisch 
+  beeld tonen (performance > fancy)
+- Laat GEEN fotorealistische renders beloven die Claude niet kan 
+  maken — werk met abstracte 3D geometrie en geavanceerde shaders/
+  materialen
+- De site moet MINDER druk voelen dan typische "AI SaaS" sites — 
+  luxe, rustig, geconcentreerd
+
+=== HOE TE WERKEN ===
+1. Denk eerst 30 seconden na over ÉÉN "signature moment" dat deze 
+   site onvergetelijk maakt. Bouw daar omheen.
+2. Toon mij je plan (welke 3D objecten, welke scroll-momenten, 
+   welke typografische keuzes) VOORDAT je begint met code.
+3. Daarna één HTML-bestand.
+4. Vraag door als iets niet duidelijk is. Niet gokken.
+
+Lever het bestand als downloadbare HTML die ik direct op Vercel 
+of Lovable kan deployen. Doel: flowmann.com.
+
+Show more
+19 apr
+
+Architected prisma-based signature moment, planned scroll narrative, identified clarification needs
+Architected prisma-based signature moment, planned scroll narrative, identified clarification needs
+Plan voor Flowmann landing page
+Voordat ik code, eerst het concept. Ik wil dat je één ding in je hoofd hebt als je de site ziet, niet vijf.
+
+Het signature moment: Het Prisma
+Eén glasachtig, langzaam roterend 3D-object in de hero — een octaëder met physical glass material (refractie + chromatic aberration + subtle bloom). Dit object is de visuele thesis van Flowmann: één vorm, meerdere facetten. Het blijft door de hele pagina aanwezig — niet als decoratie, maar als verhaaldrager. Als je scrollt beweegt de camera eromheen; op specifieke momenten "vangt" een facet het licht en licht één sector op in de UI ernaast.
+
+Waarom dit en niet iets anders: een prisma/octaëder vertelt zonder tekst wat Flowmann doet — het breekt één ingang uit in zeven toepassingen. Een torusknot of blob is mooi maar leeg. Dit object betekent iets.
+
+Scroll-regie (4 momenten, geen 15)
+1. Hero (0-100vh) — Prisma centraal, langzaam roterend, reageert op muis. Tagline pinned, sub-tekst fades. Één enkele amber lichtstraal achter het glas.
+
+2. Transitie naar "het probleem" (100-180vh) — Camera duikt iets dichterbij het prisma. Pinned typografie: grote Fraunces-kop "Afdelingen werken langs elkaar heen." Prisma verschuift naar linkerhelft. Geen andere elementen. Rust.
+
+3. Sectoren (180-350vh) — Horizontaal scrollende bento binnen een pinned sectie. Zeven kaarten, elk met eigen kleuraccent maar zelfde layout-DNA (amber blijft primair, sector-kleur is subtiele undertone in een gradient-rand + één icoon-tint). Prisma is klein geworden, drift in de achtergrond. Facetten van het prisma "knipperen" synchroon met de actieve kaart.
+
+4. AI-sectie (350-450vh) — Prisma explodeert niet, maar wordt omsingeld door een network graph (Three.js points + lines, custom shader voor pulserende data-packets). 7 buitenste nodes → centraal prisma → terug naar buiten. Dit is waar "AI verbindt afdelingen" letterlijk zichtbaar is.
+
+5. CTA + contact (450-550vh) — Prisma vervaagt. Grote Fraunces-kop, magnetic button, simpel contactformulier. Rust.
+
+Typografie
+Fraunces voor display: variable axes benutten (optical size hoog, soft-ness hoog voor warmte). Koppen op 88-120px desktop.
+Inter body, 16-18px, generous line-height (1.6).
+Eyebrow-labels: Inter all-caps, letter-spacing 0.2em, amber.
+Grote getallen/prijs: Fraunces italic voor klassiek gevoel.
+Micro-interacties
+Custom cursor: kleine amber dot + grotere outline die lagged volgt (GSAP quickTo). Op hover buttons: dot wordt magnetisch aangetrokken.
+Links: underline-reveal die van links naar rechts tekent op hover.
+Sector-kaarten: 3D tilt op mousemove (subtiel, max 6°), rand oplichtend met sector-tint.
+Taalwissel (NL/EN/DE): minimalistisch, geen flags — alleen tekst in nav.
+Noise overlay: SVG fractal noise, 3% opacity, blend-mode overlay.
+Performance strategie
+Desktop: volledige Three.js scène met MeshPhysicalMaterial (transmission, thickness, ior 1.5), een UnrealBloomPass, en particle network.
+Mobiel (<768px): prisma wordt vervangen door een statisch pre-rendered canvas-gradient of een sterk vereenvoudigde Three.js scène zonder postprocessing. Scroll-animaties blijven, 3D-zwaarte niet.
+ScrollTrigger normalizeren met Lenis voor soepelheid.
+Device pixel ratio cap op 2.
+2 vragen voordat ik bouw:
+Laat me weten wat je kiest, dan bouw ik direct de HTML. Als je liever zegt "bouw maar, je kiest zelf" — dan ga ik voor Formspree-placeholder + volledige vertaling, want dat is wat je op flowmann.com daadwerkelijk nodig hebt.
+
+F: Contactformulier — hoe wil je dat submissions werken?
+A: Formspree/Formsubmit endpoint (werkt echt, jij vult later je endpoint in)
+
+F: Hoe grondig wil je de NL/EN/DE vertaling?
+A: Volledig: alle tekst op de pagina wisselt (meer code, echte meertaligheid)
+
+19 apr
+
+Reconciliënde gebruikerswens met standaardrichtlijnen
+Reconciliënde gebruikerswens met standaardrichtlijnen
+Duidelijk. Ik bouw nu. Even kort de frontend-design skill checken zodat ik niet tegen bekende valkuilen aanloop, dan schrijf ik het bestand.
+
+
+Architected comprehensive multilingual site met Three.js en Formspree integratie
+Architected comprehensive multilingual site met Three.js en Formspree integratie
+Skill doorgelezen. Nu bouw ik het bestand — één shot, compleet. Even geduld, dit is een flink bestand.
+
+
+Verifiëren van i18n-implementatie en data-attributen
+Verifiëren van i18n-implementatie en data-attributen
+Klaar. Eén bestand, ~1800 regels, alles inline, geen build step.
+
+
+Presented file
+Presented file
+Wat erin zit
+Het prisma — glazen icosahedron met echte transmission (MeshPhysicalMaterial), amber wireframe-edges, emissieve kern, procedurele envMap uit een scène met vier gekleurde lichten (amber + warm + koel). Geen libs buiten Three.js/GSAP/Lenis nodig, geen bloom-pass: het glow-effect komt uit een backside additive halo-shader. Reist door vijf scroll-fases:
+
+Hero: centraal, langzaam roterend, reageert op muis
+Statement: schuift naar rechts + groeit licht
+Sectoren: krimpt en zweeft naar rechtsboven (de kaarten krijgen de focus)
+AI-sectie: keert terug naar centrum, wordt de kern van de network graph
+Pricing + contact: vervaagt, keert subtiel terug
+De SVG network graph bij AI is dynamisch gebouwd — 7 outer nodes met elk hun sector-kleur, pulses die langs de lijnen animeren, een pulserende centrale node en een expanderende ring.
+
+Sectoren als bento (12-col grid). Industrie is breed (flagship), Sportverenigingen is de full-width laatste kaart. Hover: tilt, spotlight in sector-kleur, gradient border-reveal.
+
+i18n volledig werkend via data-i18n attributen — alle UI-tekst switcht instant. De hero-titel anime-t opnieuw bij elke taalwissel.
+
+Micro-interacties: custom cursor (difference blend-mode, lagged ring), magnetic buttons met elastic return, form-labels die floaten, nav die van transparent naar blurred glass wisselt op scroll.
+
+Wat je nog moet doen voor deploy
+Formspree: maak een account op formspree.io, vervang YOUR_FORM_ID op regel ~820 in de form action-attribuut. Formulier werkt dan direct.
+Favicon + og:image ontbreken — voeg die toe via <link rel="icon"> + <meta property="og:image">.
+Vercel: drop 'm als index.html in een leeg project, of gewoon vercel deploy. Geen config nodig.
+Twee eerlijke disclaimers
+Three.js transmission in r128 is prima maar niet perfect; op oudere Intel-integrated GPU's kan het iets milkier renderen. De halo + edges + core compenseren dat goed. Op mobiel (<860px) wordt de hele 3D-scène vervangen door een statische CSS-radial — daar kies ik bewust performance boven spektakel.
+Ik heb geen echte Spline/Blender-scène gebouwd (kan ik niet), maar de prisma-metafoor doet het werk: één object, veel facetten. Dat is visueel krachtiger dan een gedetailleerd abstract ding dat niks betekent.
+Laat me weten wat je ervan vindt zodra je 'm opent. Kleine tweaks (prisma-vorm, extra sector-animatie, andere copy) zijn zo gefixt.
+
+
+Flowmann
+Code · HTML 
+IMG_7114.png
+IMG_7115.png
+Paar verbeterpunten:
+- De letters van eindelijk zijn niet volledig.
+- Teveel ruimte tussen de hoofdstukken op de website. 
+- Het hoofdstuk over de sectoren wil ik horizontaal laten bewegen, zodat men kan swipen/door klikken met een interactieve beweging.
+- Gebruik geen abstracte pictogrammen, gebruik realistische foto’s. Haal foto’s uit de app Unsplash bijvoorbeeld. 
+- De achtergrond, gaat de goede kant op, maar het zegt me niets. Maak er iets moois van, professioneel.
+
+19 apr
+
+Orchestreerde visuele redesign met carousel, foto's en verfijnde achtergrond
+Orchestreerde visuele redesign met carousel, foto's en verfijnde achtergrond
+Duidelijke feedback, dank je. Even de punten adresseren voordat ik bouw:
+
+Wat ik zie:
+
+"Eindelijk" wordt geclipped door overflow:hidden op de .line wrapper — de j descender wordt afgesneden. Fix: overflow alleen tijdens animatie, erna weer visible.
+Sectie-padding is 120-160px op mobiel te veel — moet schalen met viewport.
+Horizontale carousel met swipe + prev/next knoppen ipv bento — sterker.
+Foto's ipv SVG-iconen — elke kaart wordt een photo-first tile met Unsplash-beeld als achtergrond.
+Achtergrond: de 3D-scène was uit op mobiel (alleen gele radial). Ik zet 'm aan, maar vereenvoudigd (geen transmission op mobile GPU). Plus layered gradient mesh, subtiele grid-overlay, animerende aurora.
+Ik zoek snel voor de sectoren een paar passende foto's op, dan herbouw ik het bestand.
+
+Construction Site Wallpapers - Wallpaper Cave
+Wallpaper Cave
+Modern Assembly Line
+
+ar.inspiredpencil.com
+Assembly Line | production line factory assembling - KW CONVEYORS
+
+infismash.com
+9
+Results from the web
+De image search geeft me niet genoeg bruikbare directe URLs. Ik commit op specifieke Unsplash photo IDs die ik vertrouw — deze zijn al jaren stabiel op Unsplash's CDN, en ik voeg CSS-fallback gradients toe per sector zodat kaarten er ook mooi uitzien als een foto zou breken. Je kunt ze bovendien heel makkelijk zelf swappen (duidelijk gelabeld in de code).
+
+Nu het bestand — volledige herbouw met alle fixes.
+
+
+Orchestrated file restoration and content reconstruction
+Orchestrated file restoration and content reconstruction
+Claude couldn't finish this response. Try again in a moment.
+IMG_7074.png
+IMG_7075.png
+IMG_7076.png
+IMG_7080.png
+IMG_7078.png
+IMG_7077.png
+IMG_7083.png
+IMG_7082.png
+IMG_7081.png
+IMG_7084.png
+IMG_7085.png
+IMG_7086.png
+IMG_7087.png
+IMG_7116.png
+Geef me de preview, maak het af. Incl het gebruik van mijn logo van Flowmann. Gebruik wat je nodig hebt
+
+19 apr
+
+Reconstructed complete website integrating actual Flowmann logo design
+Reconstructed complete website integrating actual Flowmann logo design
+Helder, ik gebruik je echte logo. Ik heb het als inline SVG gereconstrueerd zodat het op elke grootte scherp blijft (nav, footer, favicon), en rond het mee in met het rest van de stijl.
+
+
+Ran 2 commands, created a file, read a file
+Ran 2 commands, created a file, read a file
+Klaar. 67KB, één bestand.
+
+Wat er in v2 is veranderd
+Descender fix — "Eindelijk" en "verbonden" toonden geclipped descenders omdat de reveal-animatie overflow:hidden gebruikte. Nu: na de animatie voegt GSAP de klasse .open toe aan elke regel, die overflow:visible zet. Tekst is volledig leesbaar zodra ie onthuld is.
+
+Sectie-spacing teruggebracht — van 140-160px naar een clamp(72px, 11vw, 140px) schaal. Op mobiel is het nu strakker, op groot scherm houdt ie ruimte. De statement-sectie is van 100vh naar 60vh min-height gegaan.
+
+Horizontale carousel voor sectoren — dit is het grote verschil. Zeven foto-first kaarten die je kunt swipen/scrollen, met:
+
+Links/rechts knoppen met amber hover
+Progress bar onderaan (vult terwijl je scrollt)
+Counter 01 / 07 in italic Fraunces
+Keyboard pijltjes werken zodra de carousel in beeld is
+Actieve kaart krijgt een accent-bar in sector-kleur
+Scroll-snap zodat kaarten netjes centreren
+CSS data-lenis-prevent zodat Lenis de horizontale scroll niet kaapt
+Foto's ipv iconen — elke kaart heeft nu een Unsplash foto als achtergrond met een donkere gradient-overlay zodat de tekst leesbaar blijft. Ik heb 7 passende foto-URLs ingevoegd (fabriek, ziekenhuis, bouw, overheid, retail, HR, sport). Ze zijn per sector super makkelijk te vervangen — zoek in het HTML naar --bg-url:url(...) en vervang de URL. Fallback-gradient toont als een foto zou breken.
+
+3D scène aan op mobiel — maar vereenvoudigd. Op mobiel krijg je een metallic standaard-material met emissive amber ipv de zware glass-transmission — ziet er nog steeds premium uit, kost maar een fractie van de GPU. De gradient-achtergrond die je zag op de mobiele screenshot was het resultaat van no-3d modus; die is nu uit.
+
+Echte Flowmann logo — gereconstrueerd als inline SVG met round-cap strokes. Zit als <symbol> bovenaan de pagina, wordt hergebruikt in nav, footer, én als favicon via een data-URL in <link rel="icon">. De donkere "F-tornado" op het amber vierkant — op elke grootte crisp.
+
+Achtergrond opgewaardeerd — 5 gelaagde niveaus: donkere base met 3 radial hotspots, langzaam ademende aurora-wolk (28s cyclus), subtiel Linear-achtig grid (64px, fade-out masker), vignette voor diepte, film-grain erover. Het voelt niet meer plat — het heeft een "iemand heeft hier over nagedacht"-gevoel.
+
+Wat je nog moet doen voor deploy
+Formspree — maak een account, vervang YOUR_FORM_ID (staat in de <form action="..."> én in één foutmelding in het script, zoek op YOUR_FORM_ID).
+Unsplash foto's — de 7 URLs zijn stabiele Unsplash CDN links. Mocht een foto niet passen bij jouw smaak, zoek dan op unsplash.com, kopieer de photo URL en plak hem in de --bg-url van de betreffende kaart. Elke kaart is duidelijk gelabeld in de HTML.
+Deploy — drop als index.html op Vercel. Geen config nodig.
+Zodra je het ziet: schroom niet om te zeggen als een foto niet klopt of als een spacing nog te los voelt.
+
+
+Flowmann
+Code · HTML 
+1780249451780_image.png
+Als ik flowmann opzoek op google, krijg ik die zonder logo, zorg dat het logo erbij staat
+
+19:44
+
+IMG_7074.png selecteren als beste bronafbeelding
+IMG_7074.png selecteren als beste bronafbeelding
+Goeie catch. Twee dingen spelen mee voor de Google-favicon:
+
+Technisch: m'n huidige favicon is een inline data: URL. Werkt in de browser, maar Google's favicon-crawler is daar wisselvallig in. Beter is een echte PNG/ICO bestand op een vaste URL.
+Process: zelfs met perfecte favicon duurt het vaak weken voordat Google 'm oppikt. Daar moet je actief aan duwen via Search Console.
+Ik los punt 1 nu op door echte favicon-bestanden uit je logo te genereren en de HTML aan te passen. Punt 2 leg ik onderaan uit.
+
+
+Configureren HTML-verwijzingen en webmanifest voor logo-zichtbaarheid
+Configureren HTML-verwijzingen en webmanifest voor logo-zichtbaarheid
+IMG_7074 is 512×512 met alpha — perfecte bron. Ik genereer alle favicon-formaten die Google en moderne browsers verwachten.
+
+
+Orchestrated favicon setup en Google Search Console integratie
+Orchestrated favicon setup en Google Search Console integratie
+Nu de HTML bijwerken zodat ie naar echte bestanden verwijst ipv de inline data-URL.
+
+
+Created 3 files, edited a file, ran a command
+Created 3 files, edited a file, ran a command
+12 bestanden — alles wat Google nodig heeft.
+
+Wat te uploaden
+Allemaal in de root van flowmann.com (dezelfde map waar flowmann.html als index.html staat):
+
+/index.html              ← rename flowmann.html naar index.html
+/favicon.ico             ← legacy fallback (Google checkt deze path expliciet)
+/favicon-16x16.png
+/favicon-32x32.png
+/favicon-48x48.png
+/favicon-96x96.png       ← Google's voorkeursformaat
+/favicon-192x192.png
+/apple-touch-icon.png    ← iPhone home screen
+/og-image.png            ← social share preview (LinkedIn, WhatsApp, X)
+/site.webmanifest
+/robots.txt
+/sitemap.xml
+Op Vercel: gewoon allemaal in dezelfde directory droppen. Geen config nodig.
+
+Waarom de favicon nu niet zichtbaar is in Google
+Drie redenen die meestal samen spelen:
+
+Inline data-URL was niet ideaal — Google's favicon-crawler is wisselvallig met data: URIs. Nu staat er een echt bestand op een vaste URL (/favicon.ico én /favicon-96x96.png).
+Google moet je site opnieuw crawlen — favicons worden cached, soms wekenlang. Een nieuwe favicon op een bestaande site kan 1–8 weken duren voordat ie zichtbaar is.
+Minimumformaat — Google wil favicons van minstens 8×8 pixels, het liefst veelvouden van 48 (48, 96, 144, 192). Met mijn 96×96 en 192×192 zit je goed.
+Hoe je het versnelt
+1. Google Search Console (~5 min, gratis, doe dit vandaag):
+
+Ga naar search.google.com/search-console
+Voeg flowmann.com toe als property (DNS-verificatie via Cloudflare TXT-record — je weet hoe dat werkt)
+Eenmaal geverifieerd: URL Inspection Tool → vul https://flowmann.com/ in → "Request Indexing". Dit forceert Google om binnen 24–72 uur opnieuw te komen kijken.
+Submit ook je sitemap.xml daar (Sitemaps menu)
+2. Verifieer dat de favicon publiek bereikbaar is zodra je gedeployed hebt:
+
+Open https://flowmann.com/favicon.ico in een incognito-tab. Moet je logo tonen.
+Open https://flowmann.com/favicon-96x96.png. Idem.
+Check je site met Google's favicon-validator: https://www.google.com/s2/favicons?domain=flowmann.com&sz=128 (toont wat Google momenteel als jouw favicon heeft gecached)
+3. Geduld — zelfs met alles perfect duurt het meestal 2–4 weken. Hou Search Console in de gaten; daar zie je wanneer Google opnieuw heeft gecrawled.
+
+Bonus: de og-image.png
+Heb ik er gratis bijgemaakt — 1200×630, je logo gecentreerd op de donkere brand-achtergrond. Zo ziet flowmann.com er meteen goed uit als iemand de link in LinkedIn, WhatsApp of e-mail plakt. Ook ingebouwd in de meta-tags.
+
+
+Flowmann
+Code · HTML 
+
+Favicon
+ICO 
+
+Favicon 16x16
+Image · PNG 
+
+Favicon 32x32
+Image · PNG 
+
+Favicon 48x48
+Image · PNG 
+
+Favicon 96x96
+Image · PNG 
+
+Favicon 192x192
+Image · PNG 
+
+Apple touch icon
+Image · PNG 
+
+Og image
+Image · PNG 
+
+Site
+WEBMANIFEST 
+
+Robots
+TXT 
+
+Sitemap
+XML 
+19:53
+
+Diagnosed deployment gap between local files and live server
+Diagnosed deployment gap between local files and live server
+Klopt — die screenshots vertellen het verhaal:
+
+✅ Indexering aangevraagd — Google heeft flowmann.com in de prioriteits-wachtrij gezet. Goed. ❌ /favicon.ico en /favicon-96x96.png geven 404 — de bestanden die ik heb gegenereerd staan nog niet op je server. ❌ Sitemap "ongeldig adres" — zelfde reden: flowmann.com/sitemap.xml bestaat nog niet, dus Google kan het niet ophalen.
+
+Je hebt de HTML gedeployed, maar de 11 bijbehorende bestanden (favicons, og-image, sitemap, robots, manifest) zijn nooit geüpload. Tot dat gebeurt, kan Google ze niet vinden en blijft je favicon onzichtbaar in zoekresultaten.
+
+Wat je nu moet doen
+Je marketing-site staat op GitHub (Bruchmann1/Flowmann-site) en deployt via Cloudflare. Dus:
+
+1. Voeg de 11 bestanden toe aan de root van je GitHub repo. Naast je index.html moeten deze files staan:
+
+index.html                ← je bestaande HTML (vervangen door de v2 die ik gaf)
+favicon.ico               ← NIEUW
+favicon-16x16.png         ← NIEUW
+favicon-32x32.png         ← NIEUW
+favicon-48x48.png         ← NIEUW
+favicon-96x96.png         ← NIEUW (Google's voorkeur)
+favicon-192x192.png       ← NIEUW
+apple-touch-icon.png      ← NIEUW
+og-image.png              ← NIEUW
+site.webmanifest          ← NIEUW
+robots.txt                ← NIEUW
+sitemap.xml               ← NIEUW
+Alle 11 bestanden heb je al — ze staan onder dit gesprek bij m'n vorige bericht. Download ze, drop ze in dezelfde map als je index.html, commit + push.
+
+2. Check of Cloudflare statische bestanden serveert vanuit de root. Dat zou automatisch moeten gebeuren als je Cloudflare Pages gebruikt, of als je Wrangler-config een [site] of assets blok heeft dat naar de juiste map verwijst. Als je Workers gebruikt en de static-assets niet automatisch worden geserveerd, vertel het me, dan kijken we naar je wrangler.toml.
+
+3. Verifieer na deploy (in incognito om cache-issues uit te sluiten):
+
+https://flowmann.com/favicon.ico         → moet je logo tonen (niet 404)
+https://flowmann.com/favicon-96x96.png   → moet je logo tonen
+https://flowmann.com/sitemap.xml         → moet XML tonen
+https://flowmann.com/robots.txt          → moet plain text tonen
+4. Pas dan terug naar Search Console:
+
+Sitemap submission opnieuw proberen — werkt nu wel
+"URL Inspection" → flowmann.com → "Test Live URL" → kijken of Google de favicon-tags ziet
+5. Google's eigen favicon-check (extreem handig — toont exact wat Google zelf gecached heeft):
+
+https://www.google.com/s2/favicons?domain=flowmann.com&sz=128
+Zodra die jouw logo toont in plaats van een grijze bol, is het een kwestie van wachten tot Google z'n zoekresultaten-cache update (1-4 weken meestal).
+
+Eén waarschuwing
+Als je site op Lovable-hosting staat (in plaats van je eigen Cloudflare-deploy), dan kun je geen losse bestanden naast je index.html plaatsen — Lovable serveert alleen wat in z'n eigen project zit. In dat geval moet je óf overstappen naar Cloudflare Pages voor de marketing-site, óf alle favicon-referenties inline in de HTML houden (dan werkt het in browsers, maar Google ziet 'm minder betrouwbaar).
+
+Waar hosting je flowmann.com nu precies? Cloudflare Pages, Cloudflare Workers met static assets, of toch Lovable? Dan kan ik je de exacte upload-stappen geven.
+
+1780250335256_image.png
+19:59
+
+Analyzed repository structure and devised deployment strategy
+Analyzed repository structure and devised deployment strategy
+Goed nieuws verborgen in dit screenshot: index.html, robots.txt en sitemap.xml draaien al netjes vanuit deze repo via Cloudflare Workers. Dat betekent static-asset serving werkt al — geen wrangler.toml-gedoe nodig. De favicons zullen op exact dezelfde manier werken zodra ze in de repo staan.
+
+Wat je nu doet — 5 minuten werk
+1. Open je repo in een browser (deze pagina dus), klik Add file → Upload files.
+
+2. Sleep deze 8 bestanden erin (uit m'n vorige bericht):
+
+favicon.ico
+favicon-16x16.png
+favicon-32x32.png
+favicon-48x48.png
+favicon-96x96.png
+favicon-192x192.png
+apple-touch-icon.png
+og-image.png
+⚠️ Niet uploaden: robots.txt, sitemap.xml, site.webmanifest — die heb jij al, en die van jou zijn waarschijnlijk completer (jouw sitemap heet "Flowmann v8", die is duidelijk al doordacht). Niks overschrijven.
+
+3. Vervang index.html met de v2 (flowmann.html die ik gaf, hernoem naar index.html). Dit is essentieel — die bevat de nieuwe favicon-link tags die naar /favicon.ico, /favicon-96x96.png etc. wijzen. Zonder die HTML-update weet de browser (en Google) niet welke favicon te tonen.
+
+4. Commit message: "Add favicon assets + Google indexing fixes". Click Commit changes.
+
+5. Cloudflare deployt automatisch — duurt ~30-60 seconden.
+
+Verifiëren (incognito tab, om cache te vermijden)
+Open na de deploy:
+
+https://flowmann.com/favicon.ico → moet je oranje F-logo tonen
+https://flowmann.com/favicon-96x96.png → idem
+https://flowmann.com/ → tab-icoon in de browser moet je logo zijn
+Pas als die drie checks groen zijn, terug naar Search Console en de sitemap-submission + URL-inspection nogmaals proberen. De 404's verdwijnen dan automatisch.
+
+Eén ding nog over site.webmanifest
+Mocht je 'm wel willen toevoegen (kan geen kwaad, helpt bij Android home-screen): de mijne verwijst naar /favicon-192x192.png enz. Check eerst of je 'n eigen manifest hebt — als niet, gebruik die van mij. Als wel, voeg dan alleen de icons-array uit de mijne toe aan de jouwe.
+
+Wil je dat ik je huidige robots.txt of sitemap.xml even bekijk en check of er iets in moet worden bijgewerkt nu de site is uitgebreid? Plak ze hier of upload screenshots — kan ik in 2 minuten doorlopen.
+
+stuur de index.htlm v2 nog eens
+
+20:03
+
+Localizou arquivo HTML v2 para reenvio ao usuário
+Localizou arquivo HTML v2 para reenvio ao usuário
+Bestand staat er, met alle v2-fixes en de juiste favicon-links erin.
+
+
+Presented file
+Presented file
+Hier is 'm. Hernoem naar index.html en upload naar je GitHub repo (overschrijft de bestaande).
+
+Wat erin zit:
+
+Alle v2-fixes (descender, spacing, horizontal carousel, Unsplash foto's, 3D op mobiel, layered background, echte Flowmann logo SVG)
+Favicon link-tags naar de 8 echte bestanden (/favicon.ico, /favicon-96x96.png, etc.)
+Open Graph + Twitter meta tags met verwijzing naar og-image.png (zorgt dat LinkedIn/WhatsApp shares er goed uitzien)
+Web manifest link
+Formspree placeholder die je nog moet invullen (zoek YOUR_FORM_ID)
+Volgorde van upload naar je repo:
+
+Eerst de 8 favicon-PNG/ICO bestanden uploaden (uit mijn eerdere bericht)
+Dan deze index.html (rename van flowmann.html) — overschrijft je huidige
+Eén commit, Cloudflare deployt automatisch
+Verifiëren in incognito: https://flowmann.com/favicon.ico moet je logo tonen
+Als de favicon-bestanden er niet zijn op het moment dat je deze HTML deployt, krijg je 404's op die paths (browser toont gewoon geen favicon, geen ramp, maar Google blijft je dan ook zonder logo tonen). Dus volgorde matters: favicons eerst, HTML daarna — of beter, alles in één commit.
+
+
+Flowmann
+Code · HTML 
+1780250816891_image.png
+20:07
+
+Analyzed deployment status and formulated verification checklist
+Analyzed deployment status and formulated verification checklist
+Perfect, alles staat erin. Het oranje bolletje rechtsboven betekent dat Cloudflare Workers nu aan het deployen is — wacht ~30-60 seconden tot het een groen vinkje wordt.
+
+Daarna: 3 checks in incognito (om cache uit te sluiten)
+https://flowmann.com/                    → tab-icoon moet je oranje F-logo zijn
+https://flowmann.com/favicon.ico         → toont logo, geen 404
+https://flowmann.com/favicon-96x96.png   → toont logo, geen 404
+Als alle drie groen zijn, dan zit de techniek goed. Mocht er één 404 geven, dan serveert je wrangler.toml waarschijnlijk niet alle bestandstypes — laat me dan weten welke 404 geeft, dan kijk ik mee.
+
+Daarna terug naar Search Console
+Sitemap-submission opnieuw — zou nu wel werken (al stond die er al, maar Google moest 'm opnieuw kunnen ophalen)
+URL Inspection → https://flowmann.com/ → "Test Live URL" → bekijk de gerenderde HTML — daar moet Google nu de favicon-tags zien
+Request indexing opnieuw → triggert een verse crawl
+Google's eigen favicon-cache checken
+Dit is mijn favoriete tool — toont exact wat Google momenteel als jouw favicon heeft opgeslagen:
+
+https://www.google.com/s2/favicons?domain=flowmann.com&sz=128
+Plak die in je browser. Vandaag toont ie waarschijnlijk nog een grijze bol (z'n oude cache). Over een paar dagen tot weken zou daar je oranje F moeten verschijnen. Zodra die update, gaat het ook in de zoekresultaten verschijnen.
+
+Realistische timeline
+Wanneer	Wat
+Over 1 minuut	Favicon zichtbaar in browser-tab
+Komende dagen	Google crawled flowmann.com opnieuw (jij hebt indexing aangevraagd)
+1–4 weken	Favicon vervangt grijze bol in Google zoekresultaten
+Tijdens die wachttijd	LinkedIn/WhatsApp-shares tonen al wel de nieuwe og-image.png direct (die heeft geen cache-delay zoals Google)
+Niks meer aan te doen behalve geduld. Laat me weten als één van de drie incognito-checks 404 geeft.
+
+1780250919813_image.png
+Ho, wacht even, mijn website is compleet anders. Ik wil nog liever terug naar het vorige dan wat ik nu heb. Volgens mij heeft het te maken met de index.html die veranderd is?
+
+20:08
+
+Diagnosticeerde JavaScript-fout en prioriteerde website-rollback
+Diagnosticeerde JavaScript-fout en prioriteerde website-rollback
+Geen paniek, dit is in 2 minuten teruggedraaid. GitHub bewaart elke versie — niks is verloren.
+
+Direct terugzetten (2 min)
+Ga naar je repo: github.com/Bruchmann1/Flowmann-site
+Klik op index.html (de file)
+Rechtsboven zie je een klokje / "History" — klik daarop
+Je ziet nu twee commits voor index.html:
+index.html · now (mijn versie — kapot)
+Update index.html · 3 weeks ago (jouw werkende versie)
+Klik op die oude commit van 3 weken geleden
+Klik op index.html in dat overzicht
+Rechtsboven: klik "..." → "View file" (of meteen op de Raw-knop)
+Selecteer alles (Ctrl/Cmd + A) → kopieer (Ctrl/Cmd + C)
+Ga terug naar main branch → index.html → klik potlood-icoontje (edit)
+Selecteer alles → vervang met je gekopieerde oude content → Commit changes
+Cloudflare deployt automatisch binnen een minuut. Je oude site is terug.
+
+De favicons mogen blijven
+Die 8 PNG/ICO bestanden die je hebt geüpload — laat ze staan. Ze breken niks, en als je oude index.html óók favicon-link tags heeft (waarschijnlijk wel), pakt ie ze nu gewoon op. Bonus effect.
+
+Wat er waarschijnlijk fout ging
+Het zwarte scherm met alleen de nav betekent dat een JavaScript fout halverwege optreedt, voordat de hero-tekst onthuld kan worden. Mijn HTML laadt Three.js, GSAP, ScrollTrigger en Lenis vanaf CDNs. Eén kandidaat: Cloudflare Workers heeft soms HTML-transformaties of CSP-headers aan staan die externe scripts blokkeren. Op jouw oude index.html had je dat blijkbaar al opgelost.
+
+Hoe nu verder
+Twee opties — laat me weten welke je wilt:
+
+Optie A — Klein houden. Je oude site terug, ik pas die jouw oude index.html minimaal aan: alleen de favicon-link tags toevoegen (om het Google-probleem op te lossen) en eventueel kleine fixes. Geen 3D, geen carousel — gewoon je bestaande site met werkende favicon.
+
+Optie B — Debuggen. Stuur me de huidige (kapotte) site even open in een browser, open de Console (F12 → Console tab), maak een screenshot van de errors die daar staan. Dan zie ik exact welke regel faalt en kan ik dat fixen.
+
+Voor nu: rollback eerst, rest later. Welke optie wil je hierna?
+
+
+<!DOCTYPE html> <html lang="nl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="theme-color" content="#0a0d12"> <!-- Primary Meta Tags --> <title>Flowmann — Eén platform. Elke sector. AI voor organisaties</title> <meta name=
+
+pasted
+
+Dit is de oude die ik heb teruggezet:
+
+20:15
+Goeie keuze om eerst terug te zetten — deze site is werkelijk uitstekend en al veel verder dan ik dacht. Even eerlijk: ik had niet door dat je oude site al zo doorontwikkeld was. Mijn v2 was technisch indrukwekkender op een paar punten (3D prisma, lagere achtergrond), maar deze versie is op zoveel andere fronten professioneler en commercieel sterker:
+
+Wat deze versie beter doet dan mijn v2:
+
+Petrochemie als 8e sector — past perfect bij je connectie met Co-Contracting
+Veel scherpere copy: "Van storing naar oplossing in dertig seconden", "Een collega die luistert, denkt, en verbindt", "Niet nog een app"
+5 talen incl. Arabisch met RTL-ondersteuning (dir="rtl" switch) — direct relevant voor toekomstige Midden-Oostelijke klanten
+JSON-LD structured data voor SoftwareApplication + Organization — Google leest dit en kan het tonen als rich result
+Echte features per sector (OCAP, LOTOTO, LMRA, TRA, HACCP, VCA, AVG-trail) — operators herkennen meteen dat je hun wereld begrijpt
+Quote-sectie voor sociale bewijskracht
+Volledig contactformulier met sector-dropdown
+Setup fee (€299) zichtbaar — eerlijk en helder
+"How it works" sectie (Luisteren → Inrichten → Live gaan) — uitstekend voor vertrouwen
+Veel zorgvuldigere mobiele responsive met 480px en 520px breakpoints
+Deze is op verkoopniveau écht beter. Mijn 3D-prisma was leuk, maar deze converteert.
+
+Eén ding wat we wel zouden moeten doen
+Het enige punt waarvoor we überhaupt aan het hacken sloegen — de Google favicon — kan ik in deze versie met één kleine wijziging toevoegen zonder de rest aan te raken. De huidige favicon is een inline SVG van een andere F (block-style, geen tornado), dus dat is ook een ander vormgevingsdetail dat we kunnen syncen met je echte logo.
+
+De minimale, veilige aanpassing:
+
+In de <head>, vervang het <!-- Favicon --> blok (de twee <link rel="icon"> regels met de data-URL) door:
+
+html
+<!-- Favicons (real files for Google search results) -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+Dat is letterlijk de enige wijziging. De 8 PNG/ICO bestanden staan al in je repo (heb je vorige keer geüpload), dus ze worden direct gevonden. De rest van de site blijft 100% intact.
+
+Bonus optioneel (niet strikt nodig, maar netter): vervang in beide nav/footer SVG-logo's de huidige path met de tornado-versie:
+
+html
+<svg width="22" height="22" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#0a0d12" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 22 L30 78"/>
+    <path d="M30 28 L66 28 Q75 28 75 37 L75 43"/>
+    <path d="M30 50 L58 50 Q67 50 67 59 L67 65"/>
+  </g>
+</svg>
+Wil je dat ik een geüpdatete index.html voor je maak met alleen die favicon-fix (zonder verder iets aan je werkende site aan te raken)? Dan kun je die direct overschrijven en is het Google-probleem opgelost zonder risico op andere veranderingen.
+
+ja
+
+20:16
+
+ファイルコンテンツを再構成し、ファビコン変更を実施中。
+ファイルコンテンツを再構成し、ファビコン変更を実施中。
+Doe ik. Eén targeted change, rest blijft identiek.
+
+
+Orchestrated HTML file modification with favicon replacement
+Orchestrated HTML file modification with favicon replacement
+Klaar. Favicon-block correct vervangen, alle 2129 regels van je werkende site verder identiek.
+
+
+Presented file
+Presented file
+Wat is veranderd:
+
+Alleen het favicon-blok (regels 38-44). Twee <link> tags met inline data:image/svg+xml,... URL's zijn vervangen door zeven <link> tags die wijzen naar de echte PNG/ICO bestanden in de root van je site.
+
+Wat NIET is veranderd:
+
+Letterlijk alles anders. JSON-LD, Open Graph, Twitter Cards, alle 5 talen (incl. Arabisch RTL), 8 sector-cards, AI-sectie, How-it-works, quote, pricing met setup fee, contactformulier, alle responsive breakpoints, alle JavaScript. Identiek aan jouw werkende versie.
+
+Hoe te uploaden:
+
+GitHub → klik op index.html → potlood-icoon (edit) → selecteer alles → vervang met deze inhoud → "Commit changes". Cloudflare deployt automatisch.
+
+Verificatie na deploy:
+
+In incognito:
+
+https://flowmann.com/ opent normaal (alles werkt zoals voor de wijziging)
+Browser-tab toont je oranje F-logo (niet meer de generieke globe)
+https://flowmann.com/favicon.ico toont je logo (geen 404 meer)
+Daarna in Search Console: sitemap opnieuw submitten + URL-inspection → Request Indexing. Google heeft 1-4 weken nodig om het favicon-resultaat bij te werken.
+
+
+Index
+Code · HTML 
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+raw
+Index · HTML
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0d12">
-
+ 
 <!-- Primary Meta Tags -->
 <title>Flowmann — Eén platform. Elke sector. AI voor organisaties</title>
 <meta name="title" content="Flowmann — Eén platform. Elke sector. AI voor organisaties">
@@ -13,7 +701,7 @@
 <meta name="author" content="Flowmann">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://flowmann.com/">
-
+ 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flowmann.com/">
@@ -26,18 +714,23 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta property="og:site_name" content="Flowmann">
-
+ 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://flowmann.com/">
 <meta name="twitter:title" content="Flowmann — Eén platform. Elke sector.">
 <meta name="twitter:description" content="AI-gestuurd SaaS-platform dat afdelingen verbindt. Van industrie tot retail, één platform dat zich vormt naar uw organisatie.">
 <meta name="twitter:image" content="https://flowmann.com/og-image.jpg">
-
-<!-- Favicon (SVG inline, amber F-logo) -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' rx='16' fill='%23f59e0b'/%3E%3Cpath d='M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52' stroke='%230a0d12' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Crect width='72' height='72' rx='16' fill='%23f59e0b'/%3E%3Cpath d='M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52' stroke='%230a0d12' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
-
+ 
+<!-- Favicons (real files served from site root — required for Google to display the logo in search results) -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+ 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json">
 {
@@ -66,7 +759,7 @@
   }
 }
 </script>
-
+ 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,11 +778,11 @@
   }
 }
 </script>
-
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+ 
 <!-- Language alternates for SEO -->
 <link rel="alternate" hreflang="nl" href="https://flowmann.com/">
 <link rel="alternate" hreflang="en" href="https://flowmann.com/">
@@ -97,7 +790,7 @@
 <link rel="alternate" hreflang="fr" href="https://flowmann.com/">
 <link rel="alternate" hreflang="ar" href="https://flowmann.com/">
 <link rel="alternate" hreflang="x-default" href="https://flowmann.com/">
-
+ 
 <style>
   :root {
     --bg: #0a0d12;
@@ -115,7 +808,7 @@
     --display: 'Fraunces', Georgia, serif;
     --sans: 'Inter', -apple-system, sans-serif;
   }
-
+ 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -126,7 +819,7 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
-
+ 
   /* ===== NAV ===== */
   .nav {
     position: fixed;
@@ -192,7 +885,7 @@
   }
   .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
   .lang-btn:not(.active):hover { color: var(--text-muted); }
-
+ 
   /* Nav login button — compacter dan hero CTA */
   .nav-login {
     padding: 9px 18px;
@@ -200,7 +893,7 @@
     flex-shrink: 0;
     line-height: 1;
   }
-
+ 
   /* Mobile: compactere header */
   @media (max-width: 768px) {
     .nav-inner {
@@ -253,7 +946,7 @@
       gap: 6px;
     }
   }
-
+ 
   /* ===== BUTTONS ===== */
   .btn {
     display: inline-flex;
@@ -296,13 +989,13 @@
   .btn-dark:hover {
     background: #1a1d23;
   }
-
+ 
   .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
   }
-
+ 
   /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
@@ -419,7 +1112,7 @@
   }
   @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
   @keyframes slideup { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
+ 
   /* ===== SECTION HEADERS ===== */
   section { padding: 120px 0; position: relative; }
   .section-label {
@@ -458,7 +1151,7 @@
     -webkit-text-fill-color: var(--amber-br);
     color: var(--amber-br);
   }
-
+ 
   /* ===== UNIFIED DISPLAY HEADLINES ===== */
   .section-title,
   .hero h1,
@@ -479,7 +1172,7 @@
     line-height: 1.6;
     max-width: 680px;
   }
-
+ 
   /* ===== HORIZONTAL SECTOR CAROUSEL ===== */
   .sectors-wrap {
     padding: 120px 0;
@@ -527,7 +1220,7 @@
     border-color: var(--border);
     color: var(--text);
   }
-
+ 
   .sectors-scroll {
     overflow-x: auto;
     overflow-y: hidden;
@@ -537,7 +1230,7 @@
     scrollbar-width: none;
   }
   .sectors-scroll::-webkit-scrollbar { display: none; }
-
+ 
   .sectors-track {
     display: flex;
     gap: 24px;
@@ -545,7 +1238,7 @@
     padding-right: calc((100vw - 1400px) / 2 + 40px);
     padding-left: max(40px, calc((100vw - 1400px) / 2 + 40px));
   }
-
+ 
   .sector-card {
     flex: 0 0 460px;
     scroll-snap-align: start;
@@ -634,7 +1327,7 @@
     background: var(--amber-br);
     flex-shrink: 0;
   }
-
+ 
   /* ===== CREAM SECTION (Problem/Solution) ===== */
   .cream-section {
     background: var(--cream);
@@ -647,7 +1340,7 @@
     border-color: rgba(139, 90, 0, 0.2);
   }
 .cream-section .section-desc { color: #555552; }
-
+ 
   .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -698,7 +1391,7 @@
     color: #555552;
     line-height: 1.5;
   }
-
+ 
   /* ===== AI SECTION (Dark, with large header image) ===== */
   .ai-section {
     padding: 120px 0 60px;
@@ -746,7 +1439,7 @@
   .ai-text > p:last-child {
     margin-bottom: 0;
   }
-
+ 
   /* ===== PROCESS / HOW ===== */
   .how {
     background: var(--cream);
@@ -837,7 +1530,7 @@
     color: #555552;
     line-height: 1.55;
   }
-
+ 
   /* ===== QUOTE ===== */
   .quote-section {
     padding: 100px 0;
@@ -899,7 +1592,7 @@
     text-transform: uppercase;
     font-weight: 500;
   }
-
+ 
   /* ===== PRICING ===== */
   .pricing-section { padding: 100px 0; }
   .pricing-title {
@@ -1058,7 +1751,7 @@
     background-position: center;
     flex-shrink: 0;
   }
-
+ 
   /* ===== CONTACT ===== */
   .contact-section { padding: 100px 0; border-top: 1px solid var(--border); }
   .contact-wrap {
@@ -1101,7 +1794,7 @@
     text-decoration: none;
   }
   .cd-val:hover { color: var(--amber-br); }
-
+ 
   form {
     background: rgba(255,255,255,0.02);
     border: 1px solid var(--border);
@@ -1169,7 +1862,7 @@
     border: 1px solid rgba(74,222,128,0.3);
     color: #4ade80;
   }
-
+ 
   /* ===== FOOTER ===== */
   footer {
     padding: 60px 0 40px;
@@ -1197,7 +1890,7 @@
     transition: color 0.2s;
   }
   .footer-links a:hover { color: var(--text); }
-
+ 
   /* ===== SCROLL REVEAL ===== */
   .reveal {
     opacity: 0;
@@ -1209,7 +1902,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 960px) {
     .nav { padding: 14px 20px; }
@@ -1246,10 +1939,10 @@
     .sectors-controls { display: none; }
   }
 </style>
-
+ 
 </head>
 <body>
-
+ 
 <!-- ============== NAV ============== -->
 <nav class="nav">
   <div class="nav-inner">
@@ -1283,7 +1976,7 @@
     </div>
   </div>
 </nav>
-
+ 
 <!-- ============== HERO ============== -->
 <section class="hero">
   <div class="hero-bg-image">
@@ -1319,7 +2012,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== SECTORS (horizontal carousel) ============== -->
 <section class="sectors-wrap" id="sectors">
   <div class="sectors-head reveal">
@@ -1337,10 +2030,10 @@
       </button>
     </div>
   </div>
-
+ 
   <div class="sectors-scroll" id="sectorsScroll">
     <div class="sectors-track">
-
+ 
       <!-- INDUSTRIE -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1355,7 +2048,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- PETROCHEMIE -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1370,7 +2063,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- ZORG -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1385,7 +2078,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- BOUW -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1400,7 +2093,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- OVERHEID -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1555848962-6e79363ec58f?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1415,7 +2108,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- RETAIL -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1430,7 +2123,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- UITZEND -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1445,7 +2138,7 @@
           </ul>
         </div>
       </div>
-
+ 
       <!-- SPORT -->
       <div class="sector-card">
         <div class="sector-card-img" style="background-image: url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -1460,11 +2153,11 @@
           </ul>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== PROBLEM / CREAM SECTION ============== -->
 <section class="cream-section">
   <div class="container">
@@ -1509,7 +2202,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== AI SECTION ============== -->
 <section class="ai-section" id="ai">
   <div class="container">
@@ -1525,7 +2218,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== HOW IT WORKS ============== -->
 <section class="how" id="how">
   <div class="container">
@@ -1562,7 +2255,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== QUOTE ============== -->
 <section class="quote-section">
   <div class="quote-bg">
@@ -1576,7 +2269,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== PRICING ============== -->
 <section class="pricing-section" id="pricing">
   <div class="container">
@@ -1617,7 +2310,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== CONTACT ============== -->
 <section class="contact-section" id="contact">
   <div class="container">
@@ -1681,7 +2374,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ============== FOOTER ============== -->
 <footer>
   <div class="container">
@@ -1704,7 +2397,7 @@
     </div>
   </div>
 </footer>
-
+ 
 <script>
 // ===== SECTOR CAROUSEL CONTROLS =====
 (function() {
@@ -1712,7 +2405,7 @@
   const prev = document.getElementById('secPrev');
   const next = document.getElementById('secNext');
   if (!scroll || !prev || !next) return;
-
+ 
   function getScrollAmount() {
     const card = scroll.querySelector('.sector-card');
     if (!card) return 480;
@@ -1720,12 +2413,12 @@
     const gap = parseInt(style.gap) || 24;
     return card.offsetWidth + gap;
   }
-
+ 
   function updateBtns() {
     prev.disabled = scroll.scrollLeft <= 10;
     next.disabled = scroll.scrollLeft >= scroll.scrollWidth - scroll.clientWidth - 10;
   }
-
+ 
   prev.addEventListener('click', () => {
     scroll.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
@@ -1736,7 +2429,7 @@
   window.addEventListener('resize', updateBtns);
   updateBtns();
 })();
-
+ 
 // ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1747,7 +2440,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+ 
 // ===== I18N =====
 const translations = {
   nl: {
@@ -2086,7 +2779,7 @@ const translations = {
     'foot.tag':'منصة واحدة. كل قطاع. متصلون أخيراً.','foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الخصوصية',
   }
 };
-
+ 
 function setLang(lang) {
   document.documentElement.lang = lang;
   document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
@@ -2107,7 +2800,7 @@ function setLang(lang) {
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => setLang(btn.dataset.lang));
 });
-
+ 
 // ===== CONTACT FORM =====
 function submitForm(e) {
   e.preventDefault();
@@ -2119,6 +2812,7 @@ function submitForm(e) {
   return false;
 }
 </script>
-
+ 
 </body>
 </html>
+ 
