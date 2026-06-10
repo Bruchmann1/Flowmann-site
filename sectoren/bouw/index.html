@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0d12">
+
+<title>Bouw — Flowmann</title>
+<meta name="description" id="meta-description" content="Voor de aannemer, installateur en infrabedrijf dat veiligheid, meldingen en onderaannemers over meerdere bouwplaatsen wil beheersen. Flowmann brengt LMRA, toolbox, VCA-dossiers, keuringen en communicatie samen in één app — in vijf talen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://flowmann.com/sectoren/bouw">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://flowmann.com/sectoren/bouw">
+<meta property="og:title" content="Bouw — Flowmann">
+<meta property="og:description" content="Tien bouwplaatsen, tien manieren van werken, geen totaalbeeld. Flowmann brengt veiligheid, meldingen en onderaannemers terug naar één plek — voor uitvoerder, ZZP'er en kantoor.">
+<meta property="og:image" content="https://flowmann.com/og-image.png">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0d12;
+    --bg-soft: #11151c;
+    --cream: #f5f1e8;
+    --cream-dark: #1a1d23;
+    --text: #f5f7fa;
+    --text-muted: #a4afbd;
+    --text-dim: #6b7684;
+    --amber: #f59e0b;
+    --amber-br: #fbbf24;
+    --amber-glow: rgba(245, 158, 11, 0.2);
+    --border: rgba(255, 255, 255, 0.1);
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    background: rgba(10, 13, 18, 0.75);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--text);
+    flex-shrink: 0;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%, #c47a04 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+  .nav-logo-text {
+    font-family: var(--display);
+    font-weight: 500; font-size: 21px;
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none; align-items: center;
+  }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions {
+    display: flex; gap: 10px; align-items: center;
+    flex-shrink: 0;
+  }
+  .lang-switcher {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: none; border: none; color: var(--text-dim);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 9px; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0.06em; transition: all 0.2s;
+  }
+  .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--text-muted); }
+  .nav-back { padding: 9px 16px; font-size: 13px; }
+  .nav-login { padding: 9px 18px; font-size: 13px; line-height: 1; }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, var(--amber-br) 0%, var(--amber) 100%);
+    color: #0a0d12;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--amber-glow);
+    filter: brightness(1.08);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: inherit;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    vertical-align: baseline;
+  }
+  .cream-section em {
+    background: linear-gradient(135deg, #c47a04 0%, #8b5a00 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  blockquote em {
+    background: none;
+    -webkit-text-fill-color: var(--amber-br);
+    color: var(--amber-br);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 90vh;
+    padding: 160px 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  .hero-bg-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.32;
+    transform: scale(1.05);
+    animation: slow-zoom 22s ease-in-out infinite alternate;
+  }
+  @keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+  .hero-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,13,18,0.55) 0%, rgba(10,13,18,0.85) 60%, rgba(10,13,18,1) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 920px; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--amber-br);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 7px 14px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(38px, 6.2vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    max-width: 680px;
+    font-weight: 400;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 120px 0; position: relative; }
+  .section-label {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--amber-br);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+    padding: 8px 18px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245,158,11,0.35);
+    border-radius: 100px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+
+  /* ===== PROBLEM (CREAM) ===== */
+  .cream-section {
+    background: var(--cream);
+    color: var(--cream-dark);
+    padding: 140px 0;
+  }
+  .cream-section .section-label {
+    color: #8b5a00;
+    background: rgba(139, 90, 0, 0.08);
+    border-color: rgba(139, 90, 0, 0.2);
+  }
+  .cream-section .section-desc { color: #555552; }
+  .problem-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid rgba(26,29,35,0.12);
+  }
+  .problem-list li {
+    padding: 36px 32px 36px 0;
+    border-bottom: 1px solid rgba(26,29,35,0.12);
+    display: flex;
+    gap: 22px;
+    align-items: start;
+  }
+  .problem-list li:nth-child(2n) { padding-right: 0; padding-left: 32px; border-left: 1px solid rgba(26,29,35,0.12); }
+  .problem-num {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--amber);
+    min-width: 44px;
+    font-style: italic;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .problem-list h4 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+  .problem-list p {
+    font-size: 15px;
+    color: #555552;
+    line-height: 1.55;
+  }
+
+  /* ===== MODULES ===== */
+  .modules-section { padding: 120px 0; }
+  .modules-head { max-width: 760px; margin-bottom: 56px; }
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .module-card {
+    padding: 32px;
+    background: linear-gradient(145deg, rgba(36,42,54,0.45) 0%, rgba(15,20,28,0.45) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(42,48,60,0.5) 0%, rgba(20,25,33,0.5) 100%);
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--amber-br), var(--amber));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .module-card:hover::before { opacity: 1; }
+  .module-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .module-icon svg {
+    width: 22px; height: 22px;
+    stroke: var(--amber-br);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .module-card h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .module-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== QUOTE / BEWIJS ===== */
+  .quote-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg) 0%, #14181f 50%, var(--bg) 100%);
+  }
+  .quote-bg { position: absolute; inset: 0; z-index: 0; }
+  .quote-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.08;
+    filter: blur(2px);
+  }
+  .quote-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20,24,31,0.5) 0%, rgba(10,13,18,0.95) 80%);
+  }
+  .quote-wrap {
+    position: relative; z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 64px 40px;
+    background: rgba(20, 24, 31, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 100px;
+    line-height: 0.5;
+    color: var(--amber);
+    opacity: 0.5;
+    margin-bottom: 20px;
+    display: block;
+    font-style: italic;
+  }
+  .quote-wrap blockquote {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+  .quote-tail {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--amber-br);
+    line-height: 1.5;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ===== INTEGRATION ===== */
+  .integration-section { padding: 100px 0; }
+  .integration-wrap { max-width: 820px; margin: 0 auto; text-align: center; }
+  .integration-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(28px, 3.8vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .integration-wrap p {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .cta-wrap { max-width: 720px; margin: 0 auto; }
+  .cta-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .cta-wrap p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 60px 0 40px; border-top: 1px solid var(--border); }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-legal { font-size: 12px; color: var(--text-dim); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-actions { gap: 6px; }
+    .container { padding: 0 20px; }
+    .hero { padding: 130px 0 60px; min-height: auto; }
+    section { padding: 80px 0; }
+    .cream-section { padding: 80px 0; }
+    .problem-list { grid-template-columns: 1fr; border-top: none; }
+    .problem-list li { padding: 24px 0 !important; border-left: none !important; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .module-card { padding: 26px; }
+    .quote-wrap { padding: 40px 24px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .lang-btn { font-size: 10px; padding: 4px 6px; letter-spacing: 0.04em; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+    .nav-back { padding: 8px 11px; font-size: 11px; }
+    .nav-back svg { display: none; }
+    .nav-login { padding: 8px 12px; font-size: 12px; }
+  }
+  @media (max-width: 520px) {
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn { justify-content: center; }
+    .lang-btn { font-size: 9px; padding: 3px 5px; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-mark">
+        <svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="nav-logo-text">Flowmann</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#sectors" data-i18n="nav.sectors">Sectoren</a></li>
+      <li><a href="/#ai" data-i18n="nav.ai">AI</a></li>
+      <li><a href="/#how" data-i18n="nav.how">Aanpak</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prijzen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+      <a href="/" class="btn btn-ghost nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1m0 0l5-5m-5 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="nav.home">Home</span>
+      </a>
+      <a href="https://app.flowmann.com" class="btn btn-primary nav-login">
+        <span data-i18n="nav.login">Login</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-bg-image">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80" alt="Bouwplaats" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span data-i18n="hero.eyebrow">Sector · Bouw</span>
+      </span>
+      <h1 data-i18n="hero.title">Tien bouwplaatsen. Tien manieren van werken. <em>Eén overzicht.</em></h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Voor de aannemer, installateur en infrabedrijf waar veiligheid op papier leunt, onderaannemers in- en uitstromen en het kantoor pas te laat hoort wat er op de bouwplaats speelt. Flowmann brengt LMRA, toolbox, certificaten, keuringen en meldingen samen in één app — voor uitvoerder, ZZP'er én kantoor.
+      </p>
+      <div class="hero-ctas">
+        <a href="/#contact" class="btn btn-primary">
+          <span data-i18n="hero.cta1">Vraag een rondleiding aan</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/#sectors" class="btn btn-ghost" data-i18n="hero.cta2">Andere sectoren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEM ============== -->
+<section class="cream-section">
+  <div class="container">
+    <span class="section-label" data-i18n="prob.label">U herkent het waarschijnlijk</span>
+    <h2 class="section-title" data-i18n="prob.title">De bouw draait op vakmanschap. <em>En op losse briefjes.</em></h2>
+    <p class="section-desc" data-i18n="prob.desc">Het probleem zit niet in het vakmanschap. Het zit in vier patronen die elk bouwbedrijf — van klein installatiebedrijf tot grote aannemer — herkent. En die blijven liggen, omdat de volgende klus alweer wacht.</p>
+    <ul class="problem-list">
+      <li>
+        <span class="problem-num">01</span>
+        <div>
+          <h4 data-i18n="prob.1h">Veiligheid leunt op papier dat zoekraakt</h4>
+          <p data-i18n="prob.1p">VCA-pasjes, LMRA's, toolbox-registraties. Ingevuld op papier, soms achteraf, soms helemaal niet. Tot er een ongeval gebeurt of de inspectie langskomt — dan blijkt het dossier niet compleet. Niet omdat het werk onveilig was, maar omdat het bewijs ontbreekt.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">02</span>
+        <div>
+          <h4 data-i18n="prob.2h">Wie is vandaag op welke bouwplaats?</h4>
+          <p data-i18n="prob.2p">Onderaannemers en ZZP'ers stromen in en uit. De ene week tien man van bureau A, de volgende week vijf van bureau B. Wie heeft welk certificaat? Wie is geïnstrueerd? Bij een controle of incident moet u het bij elkaar bellen — terwijl het antwoord nergens centraal staat.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">03</span>
+        <div>
+          <h4 data-i18n="prob.3h">De bouwplaats meldt, kantoor hoort het te laat</h4>
+          <p data-i18n="prob.3p">Meerwerk, schade, een gebrek, materiaal dat niet klopt. De uitvoerder belt of appt — naar de verkeerde persoon, of naar niemand. Tegen de tijd dat kantoor het weet, is de fout al duur geworden. Of vergeten, tot de oplevering.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">04</span>
+        <div>
+          <h4 data-i18n="prob.4h">Pools, Roemeens, Nederlands op één steiger</h4>
+          <p data-i18n="prob.4p">Veiligheidsinstructies in NL. Werkbonnen in NL. Toolbox in NL. De helft van de ploeg spreekt het niet. Wat ze niet begrijpen, kan ze in gevaar brengen — en u in een dossier bij de Arbeidsinspectie.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== MODULES ============== -->
+<section class="modules-section">
+  <div class="container">
+    <div class="modules-head">
+      <span class="section-label" data-i18n="mod.label">Wat Flowmann concreet doet</span>
+      <h2 class="section-title" data-i18n="mod.title">Geen <em>bouwsoftware die alles belooft</em>. Functies die uw uitvoerder morgenochtend al gebruikt.</h2>
+    </div>
+    <div class="modules-grid">
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 data-i18n="mod.1h">Snelle Melding vanaf de bouwplaats</h3>
+        <p data-i18n="mod.1p">Meerwerk, schade, een gebrek, materiaal dat niet klopt? Uitvoerder maakt een foto, vult drie velden in, één tap. De melding komt direct bij de juiste persoon op kantoor — met locatie, project en foto erbij. De melder ziet de status. Geen telefoontjes, geen verloren appjes.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="mod.2h">Digitale LMRA & toolbox met handtekening</h3>
+        <p data-i18n="mod.2p">LMRA op de telefoon, vóór het werk begint. Toolbox-meeting met digitale handtekening per deelnemer, vertaald in de eigen taal. Audit trail per actie. Bij een controle: alles aantoonbaar, geen zoekgeraakte papieren.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M9 13l2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="mod.3h">VCA & certificaten-dossier</h3>
+        <p data-i18n="mod.3p">VCA, BHV, rijbewijzen, machinecertificaten — per medewerker centraal. Automatische signalen wanneer iets verloopt. Bij een audit of incident: één klik naar het volledige dossier. Voorbereid zijn voordat de inspecteur belt, niet pas erna.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 data-i18n="mod.4h">Onderaannemer- & ZZP-onboarding</h3>
+        <p data-i18n="mod.4p">Nieuwe ploeg op de bouwplaats? Tijdelijke accounts, automatisch verlopend bij einde project. Veiligheidsinstructies en projectregels in de eigen taal, gecheckt vóór ze het terrein opkomen. U weet exact wie is geïnstrueerd — en wie nog niet.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <h3 data-i18n="mod.5h">Keuringen & opleveringen digitaal</h3>
+        <p data-i18n="mod.5p">Opleverpunten, keuringen, restpuntenlijsten — digitaal, met foto-bewijs, gekoppeld aan het juiste project. De opdrachtgever ziet wat klaar is en wat nog open staat. Geen losse Excel-lijsten meer die niemand bijhoudt.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+        </div>
+        <h3 data-i18n="mod.6h">Materiaal- & leveranciersklachten</h3>
+        <p data-i18n="mod.6p">Verkeerde levering, beschadigd materiaal, te laat op de bouwplaats? Uitvoerder legt het vast met foto. Inkoop krijgt het direct. Leveranciersgeschiedenis bouwt zich automatisch op — volgend project weet u welke leverancier u vertraging kost, niet alleen wat hij rekent.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3 data-i18n="mod.7h">Vertaling ingebouwd</h3>
+        <p data-i18n="mod.7p">Internationale ploegen op de bouwplaats? Instructies, werkbonnen en meldingen automatisch in vijf talen. De Poolse en Roemeense vakman lezen dezelfde inhoud — ieder in de eigen taal. Begrip wordt aantoonbaar, geen kwestie van hopen.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>
+        </div>
+        <h3 data-i18n="mod.8h">Patronen over projecten heen</h3>
+        <p data-i18n="mod.8p">AI kijkt over al uw projecten. Welk type werk loopt structureel uit? Welke onderaannemer levert herhaaldelijk gebreken? Waar ontstaat steeds dezelfde schade? U lost de oorzaak op het volgende project op — niet elke keer hetzelfde probleem opnieuw.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== QUOTE / BEWIJS ============== -->
+<section class="quote-section">
+  <div class="quote-bg">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80" alt="Bouwplaats" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <blockquote data-i18n="bewijs.text">
+        Een aannemer met acht gelijktijdige projecten krijgt elke melding direct bij de juiste uitvoerder — met foto, locatie en project. VCA-dossiers zijn inspectie-klaar. De toolbox is getekend en vertaald. Wat op de bouwplaats gebeurt, weet kantoor nu binnen minuten in plaats van dagen.
+      </blockquote>
+      <div class="quote-tail" data-i18n="bewijs.tail">
+        De bouw draait op vakmanschap. <em>Flowmann zorgt</em> dat het papierwerk dat niet in de weg zit.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTEGRATION ============== -->
+<section class="integration-section">
+  <div class="container">
+    <div class="integration-wrap">
+      <span class="section-label" data-i18n="int.label">Naast — of in plaats van</span>
+      <h2 data-i18n="int.title">Past Flowmann naast uw <em>bestaande software</em>, of in plaats ervan?</h2>
+      <p data-i18n="int.p1">Allebei kan. Werkt u met een calculatie-, ERP- of projectpakket zoals Bouw7, Syntess of een ander bouwsysteem? Dat blijft staan. Flowmann staat ernaast en pakt wat daar mist: veiligheid, meldingen, certificaten en communicatie op en tussen de bouwplaatsen zelf.</p>
+      <p data-i18n="int.p2">Werkt het bestaande systeem niet meer zoals u wilt? Dan vervangt Flowmann het, en u behoudt wat wel werkte. U kiest. We vechten niet met uw infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor uw bedrijf.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-wrap">
+      <h2 data-i18n="cta.title">Wilt u zien hoe Flowmann op <em>uw</em> bouwplaats werkt?</h2>
+      <p data-i18n="cta.desc">Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die VCA, LMRA en de realiteit van een bouwplaats kent.</p>
+      <a href="/#contact" class="btn btn-primary">
+        <span data-i18n="cta.btn">Neem contact op</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo-mark" style="width:30px;height:30px;border-radius:7px;">
+          <svg width="18" height="18" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                  stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </span>
+        <span class="footer-legal" data-i18n="foot.tag">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/#sectors" data-i18n="foot.l1">Sectoren</a></li>
+        <li><a href="/#pricing" data-i18n="foot.l2">Prijzen</a></li>
+        <li><a href="/#contact" data-i18n="foot.l3">Contact</a></li>
+        <li><a href="/" data-i18n="foot.l4">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  nl: {
+    'nav.sectors':'Sectoren','nav.ai':'AI','nav.how':'Aanpak','nav.pricing':'Prijzen','nav.home':'Home','nav.login':'Login',
+    'page.title':'Bouw — Flowmann',
+    'page.desc':'Voor de aannemer, installateur en infrabedrijf dat veiligheid, meldingen en onderaannemers over meerdere bouwplaatsen wil beheersen. Flowmann brengt LMRA, toolbox, VCA-dossiers, keuringen en communicatie samen in één app — in vijf talen.',
+    'hero.eyebrow':'Sector · Bouw',
+    'hero.title':'Tien bouwplaatsen. Tien manieren van werken. <em>Eén overzicht.</em>',
+    'hero.sub':"Voor de aannemer, installateur en infrabedrijf waar veiligheid op papier leunt, onderaannemers in- en uitstromen en het kantoor pas te laat hoort wat er op de bouwplaats speelt. Flowmann brengt LMRA, toolbox, certificaten, keuringen en meldingen samen in één app — voor uitvoerder, ZZP'er én kantoor.",
+    'hero.cta1':'Vraag een rondleiding aan','hero.cta2':'Andere sectoren',
+    'prob.label':'U herkent het waarschijnlijk',
+    'prob.title':'De bouw draait op vakmanschap. <em>En op losse briefjes.</em>',
+    'prob.desc':'Het probleem zit niet in het vakmanschap. Het zit in vier patronen die elk bouwbedrijf — van klein installatiebedrijf tot grote aannemer — herkent. En die blijven liggen, omdat de volgende klus alweer wacht.',
+    'prob.1h':'Veiligheid leunt op papier dat zoekraakt',
+    'prob.1p':"VCA-pasjes, LMRA's, toolbox-registraties. Ingevuld op papier, soms achteraf, soms helemaal niet. Tot er een ongeval gebeurt of de inspectie langskomt — dan blijkt het dossier niet compleet. Niet omdat het werk onveilig was, maar omdat het bewijs ontbreekt.",
+    'prob.2h':'Wie is vandaag op welke bouwplaats?',
+    'prob.2p':'Onderaannemers en ZZP\'ers stromen in en uit. De ene week tien man van bureau A, de volgende week vijf van bureau B. Wie heeft welk certificaat? Wie is geïnstrueerd? Bij een controle of incident moet u het bij elkaar bellen — terwijl het antwoord nergens centraal staat.',
+    'prob.3h':'De bouwplaats meldt, kantoor hoort het te laat',
+    'prob.3p':'Meerwerk, schade, een gebrek, materiaal dat niet klopt. De uitvoerder belt of appt — naar de verkeerde persoon, of naar niemand. Tegen de tijd dat kantoor het weet, is de fout al duur geworden. Of vergeten, tot de oplevering.',
+    'prob.4h':'Pools, Roemeens, Nederlands op één steiger',
+    'prob.4p':'Veiligheidsinstructies in NL. Werkbonnen in NL. Toolbox in NL. De helft van de ploeg spreekt het niet. Wat ze niet begrijpen, kan ze in gevaar brengen — en u in een dossier bij de Arbeidsinspectie.',
+    'mod.label':'Wat Flowmann concreet doet',
+    'mod.title':'Geen <em>bouwsoftware die alles belooft</em>. Functies die uw uitvoerder morgenochtend al gebruikt.',
+    'mod.1h':'Snelle Melding vanaf de bouwplaats',
+    'mod.1p':'Meerwerk, schade, een gebrek, materiaal dat niet klopt? Uitvoerder maakt een foto, vult drie velden in, één tap. De melding komt direct bij de juiste persoon op kantoor — met locatie, project en foto erbij. De melder ziet de status. Geen telefoontjes, geen verloren appjes.',
+    'mod.2h':'Digitale LMRA & toolbox met handtekening',
+    'mod.2p':'LMRA op de telefoon, vóór het werk begint. Toolbox-meeting met digitale handtekening per deelnemer, vertaald in de eigen taal. Audit trail per actie. Bij een controle: alles aantoonbaar, geen zoekgeraakte papieren.',
+    'mod.3h':'VCA & certificaten-dossier',
+    'mod.3p':'VCA, BHV, rijbewijzen, machinecertificaten — per medewerker centraal. Automatische signalen wanneer iets verloopt. Bij een audit of incident: één klik naar het volledige dossier. Voorbereid zijn voordat de inspecteur belt, niet pas erna.',
+    'mod.4h':'Onderaannemer- & ZZP-onboarding',
+    'mod.4p':'Nieuwe ploeg op de bouwplaats? Tijdelijke accounts, automatisch verlopend bij einde project. Veiligheidsinstructies en projectregels in de eigen taal, gecheckt vóór ze het terrein opkomen. U weet exact wie is geïnstrueerd — en wie nog niet.',
+    'mod.5h':'Keuringen & opleveringen digitaal',
+    'mod.5p':'Opleverpunten, keuringen, restpuntenlijsten — digitaal, met foto-bewijs, gekoppeld aan het juiste project. De opdrachtgever ziet wat klaar is en wat nog open staat. Geen losse Excel-lijsten meer die niemand bijhoudt.',
+    'mod.6h':'Materiaal- & leveranciersklachten',
+    'mod.6p':'Verkeerde levering, beschadigd materiaal, te laat op de bouwplaats? Uitvoerder legt het vast met foto. Inkoop krijgt het direct. Leveranciersgeschiedenis bouwt zich automatisch op — volgend project weet u welke leverancier u vertraging kost, niet alleen wat hij rekent.',
+    'mod.7h':'Vertaling ingebouwd',
+    'mod.7p':'Internationale ploegen op de bouwplaats? Instructies, werkbonnen en meldingen automatisch in vijf talen. De Poolse en Roemeense vakman lezen dezelfde inhoud — ieder in de eigen taal. Begrip wordt aantoonbaar, geen kwestie van hopen.',
+    'mod.8h':'Patronen over projecten heen',
+    'mod.8p':'AI kijkt over al uw projecten. Welk type werk loopt structureel uit? Welke onderaannemer levert herhaaldelijk gebreken? Waar ontstaat steeds dezelfde schade? U lost de oorzaak op het volgende project op — niet elke keer hetzelfde probleem opnieuw.',
+    'bewijs.text':'Een aannemer met acht gelijktijdige projecten krijgt elke melding direct bij de juiste uitvoerder — met foto, locatie en project. VCA-dossiers zijn inspectie-klaar. De toolbox is getekend en vertaald. Wat op de bouwplaats gebeurt, weet kantoor nu binnen minuten in plaats van dagen.',
+    'bewijs.tail':'De bouw draait op vakmanschap. <em>Flowmann zorgt</em> dat het papierwerk dat niet in de weg zit.',
+    'int.label':'Naast — of in plaats van',
+    'int.title':'Past Flowmann naast uw <em>bestaande software</em>, of in plaats ervan?',
+    'int.p1':'Allebei kan. Werkt u met een calculatie-, ERP- of projectpakket zoals Bouw7, Syntess of een ander bouwsysteem? Dat blijft staan. Flowmann staat ernaast en pakt wat daar mist: veiligheid, meldingen, certificaten en communicatie op en tussen de bouwplaatsen zelf.',
+    'int.p2':'Werkt het bestaande systeem niet meer zoals u wilt? Dan vervangt Flowmann het, en u behoudt wat wel werkte. U kiest. We vechten niet met uw infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor uw bedrijf.',
+    'cta.title':'Wilt u zien hoe Flowmann op <em>uw</em> bouwplaats werkt?',
+    'cta.desc':'Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die VCA, LMRA en de realiteit van een bouwplaats kent.',
+    'cta.btn':'Neem contact op',
+    'foot.tag':'© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.',
+    'foot.l1':'Sectoren','foot.l2':'Prijzen','foot.l3':'Contact','foot.l4':'Home'
+  },
+  en: {
+    'nav.sectors':'Sectors','nav.ai':'AI','nav.how':'Approach','nav.pricing':'Pricing','nav.home':'Home','nav.login':'Login',
+    'page.title':'Construction — Flowmann',
+    'page.desc':'For the contractor, installer and infrastructure firm that wants to control safety, reports and subcontractors across multiple sites. Flowmann brings LMRA, toolbox, VCA files, inspections and communication together in one app — in five languages.',
+    'hero.eyebrow':'Sector · Construction',
+    'hero.title':'Ten sites. Ten ways of working. <em>One overview.</em>',
+    'hero.sub':"For the contractor, installer and infrastructure firm where safety leans on paper, subcontractors come and go, and the office hears too late what's happening on site. Flowmann brings LMRA, toolbox, certificates, inspections and reports together in one app — for site manager, freelancer and office alike.",
+    'hero.cta1':'Request a walkthrough','hero.cta2':'Other sectors',
+    'prob.label':'You probably recognise this',
+    'prob.title':'Construction runs on craftsmanship. <em>And on loose notes.</em>',
+    'prob.desc':"The problem isn't the craftsmanship. It's in four patterns every construction firm — from small installer to large contractor — recognises. And which stay unsolved, because the next job is already waiting.",
+    'prob.1h':'Safety leans on paper that gets lost',
+    'prob.1p':"VCA passes, LMRAs, toolbox registrations. Filled in on paper, sometimes afterwards, sometimes not at all. Until an accident happens or the inspectorate visits — then the file turns out incomplete. Not because the work was unsafe, but because the proof is missing.",
+    'prob.2h':'Who is on which site today?',
+    'prob.2p':"Subcontractors and freelancers come and go. One week ten people from firm A, the next five from firm B. Who has which certificate? Who has been instructed? At a check or incident you have to call it together — while the answer is nowhere central.",
+    'prob.3h':'The site reports, the office hears too late',
+    'prob.3p':"Extra work, damage, a defect, material that doesn't match. The site manager calls or texts — to the wrong person, or to no one. By the time the office knows, the mistake has become expensive. Or forgotten, until handover.",
+    'prob.4h':'Polish, Romanian, Dutch on one scaffold',
+    'prob.4p':"Safety instructions in Dutch. Work orders in Dutch. Toolbox in Dutch. Half the crew doesn't speak it. What they don't understand can put them in danger — and you in a file at the Labour Inspectorate.",
+    'mod.label':'What Flowmann concretely does',
+    'mod.title':'Not <em>construction software that promises everything</em>. Functions your site manager uses tomorrow morning.',
+    'mod.1h':'Quick Report from the site',
+    'mod.1p':"Extra work, damage, a defect, material that doesn't match? Site manager takes a photo, fills three fields, one tap. The report goes straight to the right person at the office — with location, project and photo. The reporter sees the status. No phone calls, no lost texts.",
+    'mod.2h':'Digital LMRA & toolbox with signature',
+    'mod.2p':"LMRA on the phone, before the work starts. Toolbox meeting with a digital signature per participant, translated into their own language. Audit trail per action. At a check: everything provable, no lost papers.",
+    'mod.3h':'VCA & certificate file',
+    'mod.3p':"VCA, BHV, driving licences, machine certificates — per employee in one place. Automatic alerts when something expires. At an audit or incident: one click to the complete file. Prepared before the inspector calls, not after.",
+    'mod.4h':'Subcontractor & freelancer onboarding',
+    'mod.4p':"New crew on the site? Temporary accounts, automatically expiring at project end. Safety instructions and project rules in their own language, checked before they enter the site. You know exactly who has been instructed — and who hasn't.",
+    'mod.5h':'Inspections & handovers digital',
+    'mod.5p':"Handover points, inspections, snagging lists — digital, with photo evidence, linked to the right project. The client sees what's done and what's still open. No more loose Excel lists no one maintains.",
+    'mod.6h':'Material & supplier complaints',
+    'mod.6p':"Wrong delivery, damaged material, late on site? Site manager records it with a photo. Procurement gets it immediately. Supplier history builds automatically — next project you know which supplier costs you delay, not just what they charge.",
+    'mod.7h':'Translation built in',
+    'mod.7p':"International crews on site? Instructions, work orders and reports automatically in five languages. The Polish and Romanian craftsmen read the same content — each in their own language. Understanding becomes provable, not a matter of hoping.",
+    'mod.8h':'Patterns across projects',
+    'mod.8p':"AI looks across all your projects. Which type of work structurally overruns? Which subcontractor repeatedly delivers defects? Where does the same damage keep arising? You solve the cause on the next project — not the same problem again every time.",
+    'bewijs.text':'A contractor with eight simultaneous projects gets every report straight to the right site manager — with photo, location and project. VCA files are inspection-ready. The toolbox is signed and translated. What happens on site, the office now knows within minutes instead of days.',
+    'bewijs.tail':"Construction runs on craftsmanship. <em>Flowmann makes sure</em> the paperwork doesn't get in the way.",
+    'int.label':'Alongside — or instead of',
+    'int.title':'Does Flowmann fit alongside your <em>existing software</em>, or replace it?',
+    'int.p1':"Both work. Do you use a calculation, ERP or project package like Bouw7, Syntess or another construction system? That stays. Flowmann sits alongside and takes what's missing there: safety, reports, certificates and communication on and between the sites themselves.",
+    'int.p2':"Is the existing system no longer working the way you want? Then Flowmann replaces it, and you keep what did work. You choose. We don't fight your infrastructure — we work with it, or we take it over. Whatever delivers the most for your business.",
+    'cta.title':'Want to see how Flowmann works on <em>your</em> site?',
+    'cta.desc':"Request a non-binding walkthrough. No salesperson with a script — someone who knows VCA, LMRA and the reality of a construction site.",
+    'cta.btn':'Get in touch',
+    'foot.tag':'© 2026 Flowmann · One platform. Every sector. Finally connected.',
+    'foot.l1':'Sectors','foot.l2':'Pricing','foot.l3':'Contact','foot.l4':'Home'
+  },
+  de: {
+    'nav.sectors':'Branchen','nav.ai':'KI','nav.how':'Vorgehen','nav.pricing':'Preise','nav.home':'Home','nav.login':'Anmelden',
+    'page.title':'Bau — Flowmann',
+    'page.desc':'Für den Bauunternehmer, Installateur und Infrastrukturbetrieb, der Sicherheit, Meldungen und Subunternehmer über mehrere Baustellen beherrschen will. Flowmann vereint LMRA, Toolbox, VCA-Akten, Prüfungen und Kommunikation in einer App — in fünf Sprachen.',
+    'hero.eyebrow':'Branche · Bau',
+    'hero.title':'Zehn Baustellen. Zehn Arbeitsweisen. <em>Ein Überblick.</em>',
+    'hero.sub':'Für den Bauunternehmer, Installateur und Infrastrukturbetrieb, wo Sicherheit auf Papier beruht, Subunternehmer kommen und gehen und das Büro zu spät erfährt, was auf der Baustelle passiert. Flowmann vereint LMRA, Toolbox, Zertifikate, Prüfungen und Meldungen in einer App — für Polier, Selbstständigen und Büro.',
+    'hero.cta1':'Vorführung anfragen','hero.cta2':'Andere Branchen',
+    'prob.label':'Sie kennen das wahrscheinlich',
+    'prob.title':'Der Bau läuft auf Handwerk. <em>Und auf losen Zetteln.</em>',
+    'prob.desc':'Das Problem liegt nicht im Handwerk. Es liegt in vier Mustern, die jedes Bauunternehmen — vom kleinen Installationsbetrieb bis zum großen Bauunternehmer — kennt. Und die liegen bleiben, weil der nächste Auftrag schon wartet.',
+    'prob.1h':'Sicherheit beruht auf Papier, das verloren geht',
+    'prob.1p':'VCA-Ausweise, LMRAs, Toolbox-Registrierungen. Auf Papier ausgefüllt, manchmal nachträglich, manchmal gar nicht. Bis ein Unfall passiert oder die Inspektion kommt — dann zeigt sich, dass die Akte unvollständig ist. Nicht weil die Arbeit unsicher war, sondern weil der Nachweis fehlt.',
+    'prob.2h':'Wer ist heute auf welcher Baustelle?',
+    'prob.2p':'Subunternehmer und Selbstständige kommen und gehen. Eine Woche zehn Mann von Firma A, die nächste fünf von Firma B. Wer hat welches Zertifikat? Wer wurde eingewiesen? Bei einer Kontrolle oder einem Vorfall müssen Sie es zusammentelefonieren — während die Antwort nirgends zentral steht.',
+    'prob.3h':'Die Baustelle meldet, das Büro erfährt es zu spät',
+    'prob.3p':'Mehrarbeit, Schaden, ein Mangel, Material das nicht stimmt. Der Polier ruft an oder schreibt — an die falsche Person, oder an niemanden. Wenn das Büro es erfährt, ist der Fehler schon teuer geworden. Oder vergessen, bis zur Abnahme.',
+    'prob.4h':'Polnisch, Rumänisch, Niederländisch auf einem Gerüst',
+    'prob.4p':'Sicherheitsanweisungen auf NL. Arbeitsscheine auf NL. Toolbox auf NL. Die Hälfte der Mannschaft spricht es nicht. Was sie nicht verstehen, kann sie in Gefahr bringen — und Sie in eine Akte bei der Arbeitsinspektion.',
+    'mod.label':'Was Flowmann konkret leistet',
+    'mod.title':'Keine <em>Bausoftware, die alles verspricht</em>. Funktionen, die Ihr Polier morgen früh schon nutzt.',
+    'mod.1h':'Schnellmeldung von der Baustelle',
+    'mod.1p':'Mehrarbeit, Schaden, ein Mangel, Material das nicht stimmt? Der Polier macht ein Foto, füllt drei Felder aus, ein Tipp. Die Meldung geht direkt an die richtige Person im Büro — mit Standort, Projekt und Foto. Die meldende Person sieht den Status. Keine Anrufe, keine verlorenen Nachrichten.',
+    'mod.2h':'Digitale LMRA & Toolbox mit Unterschrift',
+    'mod.2p':'LMRA auf dem Handy, bevor die Arbeit beginnt. Toolbox-Meeting mit digitaler Unterschrift pro Teilnehmer, in der eigenen Sprache übersetzt. Audit-Trail pro Aktion. Bei einer Kontrolle: alles nachweisbar, keine verlorenen Papiere.',
+    'mod.3h':'VCA & Zertifikate-Akte',
+    'mod.3p':'VCA, BHV, Führerscheine, Maschinenzertifikate — pro Mitarbeiter zentral. Automatische Signale, wenn etwas abläuft. Bei einem Audit oder Vorfall: ein Klick zur vollständigen Akte. Vorbereitet sein, bevor der Inspektor anruft, nicht erst danach.',
+    'mod.4h':'Subunternehmer- & Selbstständigen-Onboarding',
+    'mod.4p':'Neue Mannschaft auf der Baustelle? Temporäre Accounts, automatisch ablaufend bei Projektende. Sicherheitsanweisungen und Projektregeln in der eigenen Sprache, geprüft bevor sie das Gelände betreten. Sie wissen genau, wer eingewiesen ist — und wer noch nicht.',
+    'mod.5h':'Prüfungen & Abnahmen digital',
+    'mod.5p':'Abnahmepunkte, Prüfungen, Restpunktlisten — digital, mit Foto-Nachweis, dem richtigen Projekt zugeordnet. Der Auftraggeber sieht, was fertig ist und was noch offen steht. Keine losen Excel-Listen mehr, die niemand pflegt.',
+    'mod.6h':'Material- & Lieferantenbeschwerden',
+    'mod.6p':'Falsche Lieferung, beschädigtes Material, zu spät auf der Baustelle? Der Polier hält es mit Foto fest. Einkauf bekommt es direkt. Lieferantenhistorie baut sich automatisch auf — nächstes Projekt wissen Sie, welcher Lieferant Sie Verzögerung kostet, nicht nur, was er berechnet.',
+    'mod.7h':'Übersetzung eingebaut',
+    'mod.7p':'Internationale Mannschaften auf der Baustelle? Anweisungen, Arbeitsscheine und Meldungen automatisch in fünf Sprachen. Der polnische und rumänische Facharbeiter lesen denselben Inhalt — jeder in der eigenen Sprache. Verständnis wird nachweisbar, keine Frage des Hoffens.',
+    'mod.8h':'Muster über Projekte hinweg',
+    'mod.8p':'KI blickt über all Ihre Projekte. Welcher Arbeitstyp läuft strukturell über? Welcher Subunternehmer liefert wiederholt Mängel? Wo entsteht immer wieder derselbe Schaden? Sie lösen die Ursache beim nächsten Projekt — nicht jedes Mal dasselbe Problem aufs Neue.',
+    'bewijs.text':'Ein Bauunternehmer mit acht gleichzeitigen Projekten bekommt jede Meldung direkt zum richtigen Polier — mit Foto, Standort und Projekt. VCA-Akten sind inspektionsbereit. Die Toolbox ist unterschrieben und übersetzt. Was auf der Baustelle passiert, weiß das Büro nun innerhalb von Minuten statt Tagen.',
+    'bewijs.tail':'Der Bau läuft auf Handwerk. <em>Flowmann sorgt dafür</em>, dass der Papierkram nicht im Weg steht.',
+    'int.label':'Neben — oder anstelle von',
+    'int.title':'Passt Flowmann neben Ihre <em>bestehende Software</em>, oder ersetzt sie?',
+    'int.p1':'Beides ist möglich. Arbeiten Sie mit einem Kalkulations-, ERP- oder Projektpaket wie Bouw7, Syntess oder einem anderen Bausystem? Das bleibt. Flowmann steht daneben und übernimmt, was dort fehlt: Sicherheit, Meldungen, Zertifikate und Kommunikation auf und zwischen den Baustellen selbst.',
+    'int.p2':'Funktioniert das bestehende System nicht mehr, wie Sie wollen? Dann ersetzt Flowmann es, und Sie behalten, was funktioniert hat. Sie entscheiden. Wir kämpfen nicht mit Ihrer Infrastruktur — wir arbeiten damit, oder wir übernehmen sie. Was den größten Nutzen für Ihr Unternehmen bringt.',
+    'cta.title':'Möchten Sie sehen, wie Flowmann auf <em>Ihrer</em> Baustelle funktioniert?',
+    'cta.desc':'Vereinbaren Sie eine unverbindliche Vorführung. Kein Verkäufer mit Skript — jemand, der VCA, LMRA und die Realität einer Baustelle kennt.',
+    'cta.btn':'Kontakt aufnehmen',
+    'foot.tag':'© 2026 Flowmann · Eine Plattform. Jede Branche. Endlich verbunden.',
+    'foot.l1':'Branchen','foot.l2':'Preise','foot.l3':'Kontakt','foot.l4':'Home'
+  },
+  fr: {
+    'nav.sectors':'Secteurs','nav.ai':'IA','nav.how':'Approche','nav.pricing':'Tarifs','nav.home':'Accueil','nav.login':'Connexion',
+    'page.title':'Construction — Flowmann',
+    'page.desc':"Pour l'entrepreneur, l'installateur et l'entreprise d'infrastructure qui veut maîtriser la sécurité, les signalements et les sous-traitants sur plusieurs chantiers. Flowmann réunit LMRA, toolbox, dossiers VCA, contrôles et communication dans une seule application — en cinq langues.",
+    'hero.eyebrow':'Secteur · Construction',
+    'hero.title':'Dix chantiers. Dix façons de travailler. <em>Une vue d\'ensemble.</em>',
+    'hero.sub':"Pour l'entrepreneur, l'installateur et l'entreprise d'infrastructure où la sécurité repose sur le papier, où les sous-traitants vont et viennent, et où le bureau apprend trop tard ce qui se passe sur le chantier. Flowmann réunit LMRA, toolbox, certificats, contrôles et signalements dans une seule application — pour le chef de chantier, l'indépendant et le bureau.",
+    'hero.cta1':'Demander une visite','hero.cta2':'Autres secteurs',
+    'prob.label':'Vous reconnaissez probablement cela',
+    'prob.title':'La construction repose sur le savoir-faire. <em>Et sur des notes éparses.</em>',
+    'prob.desc':"Le problème ne vient pas du savoir-faire. Il vient de quatre schémas que chaque entreprise de construction — du petit installateur au grand entrepreneur — reconnaît. Et qui restent en suspens, car le prochain chantier attend déjà.",
+    'prob.1h':'La sécurité repose sur du papier qui se perd',
+    'prob.1p':"Cartes VCA, LMRA, registres toolbox. Remplis sur papier, parfois après coup, parfois pas du tout. Jusqu'à ce qu'un accident survienne ou que l'inspection passe — le dossier se révèle alors incomplet. Non pas parce que le travail était dangereux, mais parce que la preuve manque.",
+    'prob.2h':'Qui est sur quel chantier aujourd\'hui ?',
+    'prob.2p':"Les sous-traitants et indépendants vont et viennent. Une semaine dix personnes de l'entreprise A, la suivante cinq de l'entreprise B. Qui a quel certificat ? Qui a été instruit ? Lors d'un contrôle ou d'un incident, vous devez tout reconstituer par téléphone — alors que la réponse n'est centralisée nulle part.",
+    'prob.3h':'Le chantier signale, le bureau apprend trop tard',
+    'prob.3p':"Travaux supplémentaires, dégâts, un défaut, du matériel qui ne correspond pas. Le chef de chantier appelle ou écrit — à la mauvaise personne, ou à personne. Le temps que le bureau le sache, l'erreur est devenue coûteuse. Ou oubliée, jusqu'à la réception.",
+    'prob.4h':'Polonais, roumain, néerlandais sur un même échafaudage',
+    'prob.4p':"Consignes de sécurité en NL. Bons de travail en NL. Toolbox en NL. La moitié de l'équipe ne le parle pas. Ce qu'ils ne comprennent pas peut les mettre en danger — et vous dans un dossier de l'Inspection du travail.",
+    'mod.label':'Ce que Flowmann fait concrètement',
+    'mod.title':"Pas <em>un logiciel de construction qui promet tout</em>. Des fonctions que votre chef de chantier utilise dès demain matin.",
+    'mod.1h':'Signalement Rapide depuis le chantier',
+    'mod.1p':"Travaux supplémentaires, dégâts, un défaut, du matériel qui ne correspond pas ? Le chef de chantier prend une photo, remplit trois champs, un tap. Le signalement arrive directement à la bonne personne au bureau — avec lieu, projet et photo. Le déclarant voit le statut. Plus d'appels, plus de messages perdus.",
+    'mod.2h':'LMRA & toolbox numériques avec signature',
+    'mod.2p':"LMRA sur le téléphone, avant le début du travail. Réunion toolbox avec signature numérique par participant, traduite dans sa langue. Piste d'audit par action. Lors d'un contrôle : tout prouvable, plus de papiers égarés.",
+    'mod.3h':'Dossier VCA & certificats',
+    'mod.3p':"VCA, BHV, permis de conduire, certificats machines — centralisés par employé. Alertes automatiques quand quelque chose expire. Lors d'un audit ou incident : un clic vers le dossier complet. Être prêt avant que l'inspecteur appelle, pas après.",
+    'mod.4h':'Onboarding sous-traitants & indépendants',
+    'mod.4p':"Nouvelle équipe sur le chantier ? Comptes temporaires, expirant automatiquement à la fin du projet. Consignes de sécurité et règles du projet dans leur langue, vérifiées avant qu'ils n'entrent sur le site. Vous savez exactement qui a été instruit — et qui ne l'est pas.",
+    'mod.5h':'Contrôles & réceptions numériques',
+    'mod.5p':"Points de réception, contrôles, listes de réserves — numériques, avec preuve photo, liés au bon projet. Le client voit ce qui est fait et ce qui reste ouvert. Plus de listes Excel éparses que personne ne tient à jour.",
+    'mod.6h':'Réclamations matériel & fournisseurs',
+    'mod.6p':"Livraison incorrecte, matériel endommagé, en retard sur le chantier ? Le chef de chantier le consigne avec une photo. Les achats le reçoivent directement. L'historique fournisseur se construit automatiquement — au prochain projet, vous saurez quel fournisseur vous coûte du retard, pas seulement ce qu'il facture.",
+    'mod.7h':'Traduction intégrée',
+    'mod.7p':"Équipes internationales sur le chantier ? Consignes, bons de travail et signalements automatiquement en cinq langues. L'artisan polonais et roumain lisent le même contenu — chacun dans sa langue. La compréhension devient prouvable, pas une question d'espoir.",
+    'mod.8h':'Schémas à travers les projets',
+    'mod.8p':"L'IA regarde l'ensemble de vos projets. Quel type de travail dépasse structurellement ? Quel sous-traitant livre des défauts à répétition ? Où le même dégât survient-il sans cesse ? Vous résolvez la cause sur le prochain projet — pas le même problème à chaque fois.",
+    'bewijs.text':"Un entrepreneur avec huit projets simultanés reçoit chaque signalement directement au bon chef de chantier — avec photo, lieu et projet. Les dossiers VCA sont prêts pour l'inspection. La toolbox est signée et traduite. Ce qui se passe sur le chantier, le bureau le sait désormais en minutes au lieu de jours.",
+    'bewijs.tail':"La construction repose sur le savoir-faire. <em>Flowmann veille</em> à ce que la paperasse ne gêne pas.",
+    'int.label':'À côté — ou à la place',
+    'int.title':'Flowmann fonctionne-t-il à côté de votre <em>logiciel existant</em>, ou le remplace-t-il ?',
+    'int.p1':"Les deux sont possibles. Travaillez-vous avec un logiciel de calcul, ERP ou de gestion de projet comme Bouw7, Syntess ou un autre système de construction ? Il reste. Flowmann se place à côté et prend ce qui y manque : sécurité, signalements, certificats et communication sur et entre les chantiers eux-mêmes.",
+    'int.p2':"Le système existant ne fonctionne plus comme vous le souhaitez ? Alors Flowmann le remplace, et vous gardez ce qui marchait. Vous choisissez. Nous ne luttons pas contre votre infrastructure — nous travaillons avec elle, ou nous prenons le relais. Ce qui apporte le plus à votre entreprise.",
+    'cta.title':'Voulez-vous voir comment Flowmann fonctionne sur <em>votre</em> chantier ?',
+    'cta.desc':"Demandez une visite sans engagement. Pas un commercial avec un script — quelqu'un qui connaît VCA, LMRA et la réalité d'un chantier.",
+    'cta.btn':'Nous contacter',
+    'foot.tag':'© 2026 Flowmann · Une plateforme. Chaque secteur. Enfin connectés.',
+    'foot.l1':'Secteurs','foot.l2':'Tarifs','foot.l3':'Contact','foot.l4':'Accueil'
+  },
+  ar: {
+    'nav.sectors':'القطاعات','nav.ai':'الذكاء الاصطناعي','nav.how':'النهج','nav.pricing':'الأسعار','nav.home':'الرئيسية','nav.login':'تسجيل الدخول',
+    'page.title':'البناء — Flowmann',
+    'page.desc':'للمقاول والمركّب وشركة البنية التحتية التي تريد التحكم في السلامة والبلاغات والمقاولين من الباطن عبر مواقع متعددة. Flowmann يجمع LMRA وtoolbox وملفات VCA والفحوصات والتواصل في تطبيق واحد — بخمس لغات.',
+    'hero.eyebrow':'قطاع · البناء',
+    'hero.title':'عشرة مواقع بناء. عشر طرق عمل. <em>نظرة واحدة شاملة.</em>',
+    'hero.sub':'للمقاول والمركّب وشركة البنية التحتية حيث تعتمد السلامة على الورق، ويأتي المقاولون من الباطن ويذهبون، ويعرف المكتب متأخرًا ما يحدث في الموقع. Flowmann يجمع LMRA وtoolbox والشهادات والفحوصات والبلاغات في تطبيق واحد — لمدير الموقع والعامل المستقل والمكتب.',
+    'hero.cta1':'اطلب جولة','hero.cta2':'قطاعات أخرى',
+    'prob.label':'ربما تتعرف على هذا',
+    'prob.title':'البناء يقوم على الحرفية. <em>وعلى أوراق متناثرة.</em>',
+    'prob.desc':'المشكلة ليست في الحرفية. إنها في أربعة أنماط تعرفها كل شركة بناء — من مركّب صغير إلى مقاول كبير. وتبقى دون حل، لأن المهمة التالية تنتظر بالفعل.',
+    'prob.1h':'السلامة تعتمد على ورق يضيع',
+    'prob.1p':'بطاقات VCA، نماذج LMRA، سجلات toolbox. تُملأ على الورق، أحيانًا لاحقًا، أحيانًا لا تُملأ أبدًا. حتى يقع حادث أو يأتي التفتيش — فيتبين أن الملف غير مكتمل. ليس لأن العمل كان غير آمن، بل لأن الإثبات مفقود.',
+    'prob.2h':'من في أي موقع بناء اليوم؟',
+    'prob.2p':'المقاولون من الباطن والمستقلون يأتون ويذهبون. أسبوع عشرة أشخاص من شركة أ، والتالي خمسة من شركة ب. من لديه أي شهادة؟ من تم تعريفه؟ عند رقابة أو حادث عليك جمع المعلومات بالهاتف — بينما الإجابة ليست مركزية في أي مكان.',
+    'prob.3h':'الموقع يبلّغ، المكتب يعرف متأخرًا',
+    'prob.3p':'عمل إضافي، ضرر، عيب، مواد لا تطابق. مدير الموقع يتصل أو يرسل — للشخص الخطأ، أو لا أحد. وبحلول معرفة المكتب، يكون الخطأ قد أصبح مكلفًا. أو نُسي، حتى التسليم.',
+    'prob.4h':'بولندية ورومانية وهولندية على سقالة واحدة',
+    'prob.4p':'تعليمات السلامة بالهولندية. أوامر العمل بالهولندية. toolbox بالهولندية. نصف الطاقم لا يتحدثها. ما لا يفهمونه قد يعرضهم للخطر — ويعرضك لملف عند مفتشية العمل.',
+    'mod.label':'ما تفعله Flowmann فعليًا',
+    'mod.title':'ليست <em>برمجيات بناء تعد بكل شيء</em>. وظائف يستخدمها مدير موقعك صباح الغد.',
+    'mod.1h':'الإبلاغ السريع من موقع البناء',
+    'mod.1p':'عمل إضافي، ضرر، عيب، مواد لا تطابق؟ مدير الموقع يلتقط صورة، يملأ ثلاثة حقول، ضغطة واحدة. البلاغ يصل مباشرة للشخص المناسب في المكتب — مع الموقع والمشروع والصورة. المبلّغ يرى الحالة. لا مكالمات، لا رسائل ضائعة.',
+    'mod.2h':'LMRA وtoolbox رقمية بالتوقيع',
+    'mod.2p':'LMRA على الهاتف، قبل بدء العمل. اجتماع toolbox بتوقيع رقمي لكل مشارك، مترجم بلغته الخاصة. سجل تدقيق لكل إجراء. عند رقابة: كل شيء قابل للإثبات، لا أوراق ضائعة.',
+    'mod.3h':'ملف VCA والشهادات',
+    'mod.3p':'VCA، BHV، رخص القيادة، شهادات الآلات — مركزية لكل موظف. تنبيهات تلقائية عند انتهاء صلاحية شيء. عند تدقيق أو حادث: نقرة واحدة للملف الكامل. كن مستعدًا قبل أن يتصل المفتش، ليس بعد.',
+    'mod.4h':'تأهيل المقاولين من الباطن والمستقلين',
+    'mod.4p':'طاقم جديد في الموقع؟ حسابات مؤقتة، تنتهي تلقائيًا بنهاية المشروع. تعليمات السلامة وقواعد المشروع بلغتهم الخاصة، مفحوصة قبل دخولهم الموقع. تعرف بالضبط من تم تعريفه — ومن لم يتم بعد.',
+    'mod.5h':'الفحوصات والتسليمات رقمية',
+    'mod.5p':'نقاط التسليم، الفحوصات، قوائم النواقص — رقمية، مع إثبات بالصور، مرتبطة بالمشروع الصحيح. العميل يرى ما أُنجز وما لا يزال مفتوحًا. لا مزيد من قوائم Excel المتناثرة التي لا أحد يحدثها.',
+    'mod.6h':'شكاوى المواد والموردين',
+    'mod.6p':'توصيل خاطئ، مواد تالفة، متأخر في الموقع؟ مدير الموقع يسجله بصورة. المشتريات تحصل عليه مباشرة. تاريخ المورد يُبنى تلقائيًا — في المشروع التالي ستعرف أي مورد يكلفك تأخيرًا، وليس فقط ما يحاسبك عليه.',
+    'mod.7h':'الترجمة مدمجة',
+    'mod.7p':'طواقم دولية في الموقع؟ التعليمات وأوامر العمل والبلاغات تلقائيًا بخمس لغات. الحرفي البولندي والروماني يقرآن نفس المحتوى — كل بلغته. الفهم يصبح قابلًا للإثبات، وليس مسألة أمل.',
+    'mod.8h':'أنماط عبر المشاريع',
+    'mod.8p':'الذكاء الاصطناعي ينظر عبر كل مشاريعك. أي نوع عمل يتجاوز الوقت بشكل منهجي؟ أي مقاول من الباطن يسلّم عيوبًا متكررة؟ أين ينشأ نفس الضرر باستمرار؟ تحل السبب في المشروع التالي — وليس نفس المشكلة كل مرة من جديد.',
+    'bewijs.text':'مقاول لديه ثمانية مشاريع متزامنة يحصل على كل بلاغ مباشرة لمدير الموقع المناسب — مع صورة وموقع ومشروع. ملفات VCA جاهزة للتفتيش. toolbox موقعة ومترجمة. ما يحدث في الموقع، يعرفه المكتب الآن خلال دقائق بدلًا من أيام.',
+    'bewijs.tail':'البناء يقوم على الحرفية. <em>Flowmann يضمن</em> ألا تقف الأوراق في الطريق.',
+    'int.label':'بجانب — أو بدلًا من',
+    'int.title':'هل يعمل Flowmann بجانب <em>برمجياتك الحالية</em>، أم بدلًا منها؟',
+    'int.p1':'كلاهما ممكن. هل تعمل بحزمة حساب أو ERP أو إدارة مشاريع مثل Bouw7 أو Syntess أو نظام بناء آخر؟ يبقى كما هو. Flowmann يقف بجانبه ويتولى ما ينقص هناك: السلامة والبلاغات والشهادات والتواصل على مواقع البناء وبينها.',
+    'int.p2':'النظام الحالي لم يعد يعمل كما تريد؟ إذن Flowmann يحل محله، وتحتفظ بما كان يعمل. أنت تختار. لا نحارب بنيتك التحتية — نعمل معها، أو نتولاها. ما يحقق أكبر فائدة لشركتك.',
+    'cta.title':'هل تريد أن ترى كيف يعمل Flowmann في <em>موقع البناء الخاص بك</em>؟',
+    'cta.desc':'اطلب جولة دون التزام. لا مندوب مبيعات بسيناريو — شخص يعرف VCA وLMRA وواقع موقع البناء.',
+    'cta.btn':'تواصل معنا',
+    'foot.tag':'© 2026 Flowmann · منصة واحدة. كل قطاع. متصلون أخيرًا.',
+    'foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الرئيسية'
+  }
+};
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  try { localStorage.setItem('flowmann-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Update page title and meta description
+  if (translations[lang]) {
+    if (translations[lang]['page.title']) {
+      document.title = translations[lang]['page.title'];
+    }
+    if (translations[lang]['page.desc']) {
+      const metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['page.desc']);
+    }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Laad opgeslagen taalkeuze bij paginalading
+try {
+  const savedLang = localStorage.getItem('flowmann-lang');
+  if (savedLang && ['nl','en','de','fr','ar'].includes(savedLang)) {
+    setLang(savedLang);
+  }
+} catch (e) {}
+</script>
+
+</body>
+</html>
