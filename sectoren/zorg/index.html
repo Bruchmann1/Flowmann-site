@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0d12">
+
+<title>Zorg — Flowmann</title>
+<meta name="description" id="meta-description" content="Voor het woonzorgcentrum, de gehandicaptenzorg, begeleid wonen en het ziekenhuis waar zorgmedewerkers tijd verliezen aan telefoontjes, papieren checklists en zoekgeraakte meldingen. Flowmann regelt facilitaire meldingen, protocol-checks, audits en onboarding — zonder het EPD aan te raken.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://flowmann.com/sectoren/zorg">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://flowmann.com/sectoren/zorg">
+<meta property="og:title" content="Zorg — Flowmann">
+<meta property="og:description" content="Zorgmedewerkers kozen voor mensen. Niet voor telefoontjes naar facilitair, papieren checklists en zoekgeraakte meldingen. Flowmann brengt alles rondom de zorg in één app — het EPD blijft waar het hoort.">
+<meta property="og:image" content="https://flowmann.com/og-image.png">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0d12;
+    --bg-soft: #11151c;
+    --cream: #f5f1e8;
+    --cream-dark: #1a1d23;
+    --text: #f5f7fa;
+    --text-muted: #a4afbd;
+    --text-dim: #6b7684;
+    --amber: #f59e0b;
+    --amber-br: #fbbf24;
+    --amber-glow: rgba(245, 158, 11, 0.2);
+    --border: rgba(255, 255, 255, 0.1);
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    background: rgba(10, 13, 18, 0.75);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--text);
+    flex-shrink: 0;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%, #c47a04 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+  .nav-logo-text {
+    font-family: var(--display);
+    font-weight: 500; font-size: 21px;
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none; align-items: center;
+  }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions {
+    display: flex; gap: 10px; align-items: center;
+    flex-shrink: 0;
+  }
+  .lang-switcher {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: none; border: none; color: var(--text-dim);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 9px; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0.06em; transition: all 0.2s;
+  }
+  .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--text-muted); }
+  .nav-back { padding: 9px 16px; font-size: 13px; }
+  .nav-login { padding: 9px 18px; font-size: 13px; line-height: 1; }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, var(--amber-br) 0%, var(--amber) 100%);
+    color: #0a0d12;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--amber-glow);
+    filter: brightness(1.08);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: inherit;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    vertical-align: baseline;
+  }
+  .cream-section em {
+    background: linear-gradient(135deg, #c47a04 0%, #8b5a00 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  blockquote em {
+    background: none;
+    -webkit-text-fill-color: var(--amber-br);
+    color: var(--amber-br);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 90vh;
+    padding: 160px 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  .hero-bg-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.32;
+    transform: scale(1.05);
+    animation: slow-zoom 22s ease-in-out infinite alternate;
+  }
+  @keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+  .hero-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,13,18,0.55) 0%, rgba(10,13,18,0.85) 60%, rgba(10,13,18,1) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 920px; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--amber-br);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 7px 14px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(38px, 6.2vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    max-width: 680px;
+    font-weight: 400;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 120px 0; position: relative; }
+  .section-label {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--amber-br);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+    padding: 8px 18px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245,158,11,0.35);
+    border-radius: 100px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+
+  /* ===== PROBLEM (CREAM) ===== */
+  .cream-section {
+    background: var(--cream);
+    color: var(--cream-dark);
+    padding: 140px 0;
+  }
+  .cream-section .section-label {
+    color: #8b5a00;
+    background: rgba(139, 90, 0, 0.08);
+    border-color: rgba(139, 90, 0, 0.2);
+  }
+  .cream-section .section-desc { color: #555552; }
+  .problem-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid rgba(26,29,35,0.12);
+  }
+  .problem-list li {
+    padding: 36px 32px 36px 0;
+    border-bottom: 1px solid rgba(26,29,35,0.12);
+    display: flex;
+    gap: 22px;
+    align-items: start;
+  }
+  .problem-list li:nth-child(2n) { padding-right: 0; padding-left: 32px; border-left: 1px solid rgba(26,29,35,0.12); }
+  .problem-num {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--amber);
+    min-width: 44px;
+    font-style: italic;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .problem-list h4 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+  .problem-list p {
+    font-size: 15px;
+    color: #555552;
+    line-height: 1.55;
+  }
+
+  /* ===== MODULES ===== */
+  .modules-section { padding: 120px 0; }
+  .modules-head { max-width: 760px; margin-bottom: 56px; }
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .module-card {
+    padding: 32px;
+    background: linear-gradient(145deg, rgba(36,42,54,0.45) 0%, rgba(15,20,28,0.45) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(42,48,60,0.5) 0%, rgba(20,25,33,0.5) 100%);
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--amber-br), var(--amber));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .module-card:hover::before { opacity: 1; }
+  .module-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .module-icon svg {
+    width: 22px; height: 22px;
+    stroke: var(--amber-br);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .module-card h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .module-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== QUOTE / BEWIJS ===== */
+  .quote-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg) 0%, #14181f 50%, var(--bg) 100%);
+  }
+  .quote-bg { position: absolute; inset: 0; z-index: 0; }
+  .quote-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.08;
+    filter: blur(2px);
+  }
+  .quote-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20,24,31,0.5) 0%, rgba(10,13,18,0.95) 80%);
+  }
+  .quote-wrap {
+    position: relative; z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 64px 40px;
+    background: rgba(20, 24, 31, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 100px;
+    line-height: 0.5;
+    color: var(--amber);
+    opacity: 0.5;
+    margin-bottom: 20px;
+    display: block;
+    font-style: italic;
+  }
+  .quote-wrap blockquote {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+  .quote-tail {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--amber-br);
+    line-height: 1.5;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ===== INTEGRATION ===== */
+  .integration-section { padding: 100px 0; }
+  .integration-wrap { max-width: 820px; margin: 0 auto; text-align: center; }
+  .integration-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(28px, 3.8vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .integration-wrap p {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .cta-wrap { max-width: 720px; margin: 0 auto; }
+  .cta-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .cta-wrap p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 60px 0 40px; border-top: 1px solid var(--border); }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-legal { font-size: 12px; color: var(--text-dim); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-actions { gap: 6px; }
+    .container { padding: 0 20px; }
+    .hero { padding: 130px 0 60px; min-height: auto; }
+    section { padding: 80px 0; }
+    .cream-section { padding: 80px 0; }
+    .problem-list { grid-template-columns: 1fr; border-top: none; }
+    .problem-list li { padding: 24px 0 !important; border-left: none !important; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .module-card { padding: 26px; }
+    .quote-wrap { padding: 40px 24px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .lang-btn { font-size: 10px; padding: 4px 6px; letter-spacing: 0.04em; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+    .nav-back { padding: 8px 11px; font-size: 11px; }
+    .nav-back svg { display: none; }
+    .nav-login { padding: 8px 12px; font-size: 12px; }
+  }
+  @media (max-width: 520px) {
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn { justify-content: center; }
+    .lang-btn { font-size: 9px; padding: 3px 5px; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-mark">
+        <svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="nav-logo-text">Flowmann</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#sectors" data-i18n="nav.sectors">Sectoren</a></li>
+      <li><a href="/#ai" data-i18n="nav.ai">AI</a></li>
+      <li><a href="/#how" data-i18n="nav.how">Aanpak</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prijzen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+      <a href="/" class="btn btn-ghost nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1m0 0l5-5m-5 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="nav.home">Home</span>
+      </a>
+      <a href="https://app.flowmann.com" class="btn btn-primary nav-login">
+        <span data-i18n="nav.login">Login</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-bg-image">
+    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1920&q=80" alt="Zorgomgeving" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span data-i18n="hero.eyebrow">Sector · Zorg</span>
+      </span>
+      <h1 data-i18n="hero.title">Zorgmedewerkers kozen voor <em>mensen</em>. Niet voor administratie.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Voor het woonzorgcentrum, de gehandicaptenzorg, begeleid wonen en het ziekenhuis waar zorgmedewerkers tijd verliezen aan telefoontjes naar facilitair, papieren checklists en meldingen die zoekraken. Flowmann brengt alles rondom de zorg in één app — meldingen, protocollen, audits en onboarding. Het EPD blijft waar het hoort.
+      </p>
+      <div class="hero-ctas">
+        <a href="/#contact" class="btn btn-primary">
+          <span data-i18n="hero.cta1">Vraag een rondleiding aan</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/#sectors" class="btn btn-ghost" data-i18n="hero.cta2">Andere sectoren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEM ============== -->
+<section class="cream-section">
+  <div class="container">
+    <span class="section-label" data-i18n="prob.label">U herkent het waarschijnlijk</span>
+    <h2 class="section-title" data-i18n="prob.title">De zorg is goed geregeld. <em>Alles eromheen</em> niet.</h2>
+    <p class="section-desc" data-i18n="prob.desc">Het probleem zit niet bij de zorgverlening zelf. Het zit in vier patronen die elke zorglocatie — van woonzorgcentrum tot ziekenhuisafdeling — herkent. En die blijven liggen, omdat de cliënt altijd voorgaat.</p>
+    <ul class="problem-list">
+      <li>
+        <span class="problem-num">01</span>
+        <div>
+          <h4 data-i18n="prob.1h">Een kapot bed kost drie telefoontjes en vier dagen</h4>
+          <p data-i18n="prob.1p">De zorgmedewerker ziet een defecte tillift, een lekkage, een kapot bed. Belt facilitair. Niemand neemt op. Schrijft een briefje. Het briefje verdwijnt. Vier dagen later staat de tillift er nog — en niemand weet de status. De cliënt wacht mee.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">02</span>
+        <div>
+          <h4 data-i18n="prob.2h">Papieren checklists, afgevinkt zonder bewijs</h4>
+          <p data-i18n="prob.2p">Hygiëne-rondes, HACCP in de keuken, legionella-checks, medicijnkoelkast-temperaturen. Op papier afgevinkt — soms achteraf, soms vooruit. Bij een IGJ-inspectie blijkt het gat. Niet omdat het werk niet gedaan is, maar omdat het bewijs ontbreekt.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">03</span>
+        <div>
+          <h4 data-i18n="prob.3h">Steeds nieuwe gezichten, steeds dezelfde uitleg</h4>
+          <p data-i18n="prob.3p">Uitzendkrachten, ZZP'ers, invalkrachten. Elke dienst nieuwe mensen die de protocollen, de afdeling en de cliënten niet kennen. De inwerk-uitleg is mondeling, vluchtig en afhankelijk van wie er toevallig staat. Wat misgaat, komt op het bord van het vaste team.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">04</span>
+        <div>
+          <h4 data-i18n="prob.4h">De avonddienst erft problemen zonder context</h4>
+          <p data-i18n="prob.4p">De dagdienst weet dat de lift hapert, dat kamer 12 een losse drempel heeft, dat de leverancier morgen komt. De avond- en nachtdienst weet het niet. Informatie zit in hoofden en op briefjes — niet op een plek waar de volgende dienst het vindt.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== MODULES ============== -->
+<section class="modules-section">
+  <div class="container">
+    <div class="modules-head">
+      <span class="section-label" data-i18n="mod.label">Wat Flowmann concreet doet</span>
+      <h2 class="section-title" data-i18n="mod.title">Geen <em>zorgplatform dat alles belooft</em>. Functies die uw team vandaag al gebruikt.</h2>
+    </div>
+    <div class="modules-grid">
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 data-i18n="mod.1h">Snelle Melding voor facilitair & techniek</h3>
+        <p data-i18n="mod.1p">Zorgmedewerker ziet een defect. Foto, locatie, drie velden, één tap. De melding komt direct bij facilitair of de technische dienst — met alles erbij wat ze nodig hebben. De melder ziet de status: ontvangen, opgepakt, opgelost. Geen telefoontjes, geen briefjes, geen "wist ik niet".</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="mod.2h">Digitale protocol-checks</h3>
+        <p data-i18n="mod.2p">Hygiëne-rondes, HACCP, legionella, koelkast-temperaturen — digitaal, met foto-bewijs en tijdstempel. Vergeten check? Het systeem signaleert het dezelfde dag, niet bij de inspectie. Wat gedaan is, is aantoonbaar gedaan.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <h3 data-i18n="mod.3h">Audits zonder paniek</h3>
+        <p data-i18n="mod.3p">IGJ, HKZ, ISO 9001, interne audits. Status altijd inzichtelijk — niet pas in de week vóór de inspectie. Alle checks, meldingen en opvolgacties op één plek, met audit trail. De inspecteur vraagt, u klikt.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <h3 data-i18n="mod.4h">AI-triage per melding</h3>
+        <p data-i18n="mod.4p">AI leest elke melding, herkent urgentie en onderwerp, en stuurt 'm naar de juiste persoon. Een lekkage boven de medicijnkamer krijgt voorrang op een piepende deur. Niet omdat iemand dat handmatig besloot — het systeem ziet het zelf.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 data-i18n="mod.5h">Onboarding flexpersoneel, geverifieerd</h3>
+        <p data-i18n="mod.5p">Uitzendkracht of ZZP'er begint vanavond? Protocollen, afdelingsregels en veiligheidsinstructies op de telefoon, in de eigen taal, vóór de dienst begint. Digitale handtekening als bewijs. Het vaste team hoeft niet meer te hopen dat de uitleg is blijven hangen.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <h3 data-i18n="mod.6h">Dienst-overdracht met context</h3>
+        <p data-i18n="mod.6p">Lopende meldingen, bijzonderheden van de locatie, wat er morgen komt — automatisch zichtbaar voor de volgende dienst. De avonddienst begint met dezelfde informatie als waarmee de dagdienst eindigde. Niets meer in hoofden of op briefjes.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3 data-i18n="mod.7h">Vertaling ingebouwd</h3>
+        <p data-i18n="mod.7p">Zorgteams zijn internationaal. Protocollen, instructies en meldingen automatisch in vijf talen. De medewerker die net uit het buitenland komt, leest dezelfde inhoud als de collega van twintig jaar — ieder in de eigen taal.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>
+        </div>
+        <h3 data-i18n="mod.8h">Patronen zien vóór ze problemen worden</h3>
+        <p data-i18n="mod.8p">AI kijkt over alle meldingen heen. Welke afdeling meldt structureel dezelfde defecten? Welke leverancier levert steeds te laat? Welke check wordt het vaakst vergeten — en op welke dienst? U lost de oorzaak op, niet elke week hetzelfde symptoom.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== QUOTE / BEWIJS ============== -->
+<section class="quote-section">
+  <div class="quote-bg">
+    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1600&q=80" alt="Zorgomgeving" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <blockquote data-i18n="bewijs.text">
+        Een woonzorglocatie met 120 medewerkers verlost de zorg van telefoontjes naar facilitair. Meldingen komen direct bij de juiste persoon — met foto, locatie en urgentie. Checklists zijn digitaal en aantoonbaar. De inspectie-week is een formaliteit geworden.
+      </blockquote>
+      <div class="quote-tail" data-i18n="bewijs.tail">
+        Zorgmedewerkers kozen voor mensen. <em>Flowmann zorgt</em> dat ze daar hun tijd aan kwijt zijn.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTEGRATION ============== -->
+<section class="integration-section">
+  <div class="container">
+    <div class="integration-wrap">
+      <span class="section-label" data-i18n="int.label">Naast uw EPD — nooit erin</span>
+      <h2 data-i18n="int.title">Flowmann raakt het <em>EPD niet aan</em>. Bewust.</h2>
+      <p data-i18n="int.p1">Patiënt- en cliëntdossiers, medicatie, behandelinformatie — dat hoort in uw EPD of ECD en blijft daar. Flowmann pakt alles eromheen: facilitaire meldingen, protocol-checks, audits, onboarding en de communicatie tussen diensten en afdelingen.</p>
+      <p data-i18n="int.p2">Wat Flowmann vervangt zijn de losse Excel-lijsten, de papieren mappen, de WhatsApp-groepen en de telefoontjes die nergens worden vastgelegd. AVG-proof, met audit trail, gehost binnen de EU. Uw kwaliteitscoördinator krijgt eindelijk overzicht — zonder dat er een nieuw zorgsysteem bij komt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-wrap">
+      <h2 data-i18n="cta.title">Wilt u zien hoe Flowmann op <em>uw</em> locatie werkt?</h2>
+      <p data-i18n="cta.desc">Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die begrijpt dat in de zorg de cliënt altijd voorgaat, en de administratie dus vanzelf moet gaan.</p>
+      <a href="/#contact" class="btn btn-primary">
+        <span data-i18n="cta.btn">Neem contact op</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo-mark" style="width:30px;height:30px;border-radius:7px;">
+          <svg width="18" height="18" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                  stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </span>
+        <span class="footer-legal" data-i18n="foot.tag">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/#sectors" data-i18n="foot.l1">Sectoren</a></li>
+        <li><a href="/#pricing" data-i18n="foot.l2">Prijzen</a></li>
+        <li><a href="/#contact" data-i18n="foot.l3">Contact</a></li>
+        <li><a href="/" data-i18n="foot.l4">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  nl: {
+    'nav.sectors':'Sectoren','nav.ai':'AI','nav.how':'Aanpak','nav.pricing':'Prijzen','nav.home':'Home','nav.login':'Login',
+    'page.title':'Zorg — Flowmann',
+    'page.desc':'Voor het woonzorgcentrum, de gehandicaptenzorg, begeleid wonen en het ziekenhuis waar zorgmedewerkers tijd verliezen aan telefoontjes, papieren checklists en zoekgeraakte meldingen. Flowmann regelt facilitaire meldingen, protocol-checks, audits en onboarding — zonder het EPD aan te raken.',
+    'hero.eyebrow':'Sector · Zorg',
+    'hero.title':'Zorgmedewerkers kozen voor <em>mensen</em>. Niet voor administratie.',
+    'hero.sub':'Voor het woonzorgcentrum, de gehandicaptenzorg, begeleid wonen en het ziekenhuis waar zorgmedewerkers tijd verliezen aan telefoontjes naar facilitair, papieren checklists en meldingen die zoekraken. Flowmann brengt alles rondom de zorg in één app — meldingen, protocollen, audits en onboarding. Het EPD blijft waar het hoort.',
+    'hero.cta1':'Vraag een rondleiding aan','hero.cta2':'Andere sectoren',
+    'prob.label':'U herkent het waarschijnlijk',
+    'prob.title':'De zorg is goed geregeld. <em>Alles eromheen</em> niet.',
+    'prob.desc':'Het probleem zit niet bij de zorgverlening zelf. Het zit in vier patronen die elke zorglocatie — van woonzorgcentrum tot ziekenhuisafdeling — herkent. En die blijven liggen, omdat de cliënt altijd voorgaat.',
+    'prob.1h':'Een kapot bed kost drie telefoontjes en vier dagen',
+    'prob.1p':'De zorgmedewerker ziet een defecte tillift, een lekkage, een kapot bed. Belt facilitair. Niemand neemt op. Schrijft een briefje. Het briefje verdwijnt. Vier dagen later staat de tillift er nog — en niemand weet de status. De cliënt wacht mee.',
+    'prob.2h':'Papieren checklists, afgevinkt zonder bewijs',
+    'prob.2p':'Hygiëne-rondes, HACCP in de keuken, legionella-checks, medicijnkoelkast-temperaturen. Op papier afgevinkt — soms achteraf, soms vooruit. Bij een IGJ-inspectie blijkt het gat. Niet omdat het werk niet gedaan is, maar omdat het bewijs ontbreekt.',
+    'prob.3h':'Steeds nieuwe gezichten, steeds dezelfde uitleg',
+    'prob.3p':"Uitzendkrachten, ZZP'ers, invalkrachten. Elke dienst nieuwe mensen die de protocollen, de afdeling en de cliënten niet kennen. De inwerk-uitleg is mondeling, vluchtig en afhankelijk van wie er toevallig staat. Wat misgaat, komt op het bord van het vaste team.",
+    'prob.4h':'De avonddienst erft problemen zonder context',
+    'prob.4p':'De dagdienst weet dat de lift hapert, dat kamer 12 een losse drempel heeft, dat de leverancier morgen komt. De avond- en nachtdienst weet het niet. Informatie zit in hoofden en op briefjes — niet op een plek waar de volgende dienst het vindt.',
+    'mod.label':'Wat Flowmann concreet doet',
+    'mod.title':'Geen <em>zorgplatform dat alles belooft</em>. Functies die uw team vandaag al gebruikt.',
+    'mod.1h':'Snelle Melding voor facilitair & techniek',
+    'mod.1p':'Zorgmedewerker ziet een defect. Foto, locatie, drie velden, één tap. De melding komt direct bij facilitair of de technische dienst — met alles erbij wat ze nodig hebben. De melder ziet de status: ontvangen, opgepakt, opgelost. Geen telefoontjes, geen briefjes, geen "wist ik niet".',
+    'mod.2h':'Digitale protocol-checks',
+    'mod.2p':'Hygiëne-rondes, HACCP, legionella, koelkast-temperaturen — digitaal, met foto-bewijs en tijdstempel. Vergeten check? Het systeem signaleert het dezelfde dag, niet bij de inspectie. Wat gedaan is, is aantoonbaar gedaan.',
+    'mod.3h':'Audits zonder paniek',
+    'mod.3p':'IGJ, HKZ, ISO 9001, interne audits. Status altijd inzichtelijk — niet pas in de week vóór de inspectie. Alle checks, meldingen en opvolgacties op één plek, met audit trail. De inspecteur vraagt, u klikt.',
+    'mod.4h':'AI-triage per melding',
+    'mod.4p':"AI leest elke melding, herkent urgentie en onderwerp, en stuurt 'm naar de juiste persoon. Een lekkage boven de medicijnkamer krijgt voorrang op een piepende deur. Niet omdat iemand dat handmatig besloot — het systeem ziet het zelf.",
+    'mod.5h':'Onboarding flexpersoneel, geverifieerd',
+    'mod.5p':"Uitzendkracht of ZZP'er begint vanavond? Protocollen, afdelingsregels en veiligheidsinstructies op de telefoon, in de eigen taal, vóór de dienst begint. Digitale handtekening als bewijs. Het vaste team hoeft niet meer te hopen dat de uitleg is blijven hangen.",
+    'mod.6h':'Dienst-overdracht met context',
+    'mod.6p':'Lopende meldingen, bijzonderheden van de locatie, wat er morgen komt — automatisch zichtbaar voor de volgende dienst. De avonddienst begint met dezelfde informatie als waarmee de dagdienst eindigde. Niets meer in hoofden of op briefjes.',
+    'mod.7h':'Vertaling ingebouwd',
+    'mod.7p':'Zorgteams zijn internationaal. Protocollen, instructies en meldingen automatisch in vijf talen. De medewerker die net uit het buitenland komt, leest dezelfde inhoud als de collega van twintig jaar — ieder in de eigen taal.',
+    'mod.8h':'Patronen zien vóór ze problemen worden',
+    'mod.8p':'AI kijkt over alle meldingen heen. Welke afdeling meldt structureel dezelfde defecten? Welke leverancier levert steeds te laat? Welke check wordt het vaakst vergeten — en op welke dienst? U lost de oorzaak op, niet elke week hetzelfde symptoom.',
+    'bewijs.text':'Een woonzorglocatie met 120 medewerkers verlost de zorg van telefoontjes naar facilitair. Meldingen komen direct bij de juiste persoon — met foto, locatie en urgentie. Checklists zijn digitaal en aantoonbaar. De inspectie-week is een formaliteit geworden.',
+    'bewijs.tail':'Zorgmedewerkers kozen voor mensen. <em>Flowmann zorgt</em> dat ze daar hun tijd aan kwijt zijn.',
+    'int.label':'Naast uw EPD — nooit erin',
+    'int.title':'Flowmann raakt het <em>EPD niet aan</em>. Bewust.',
+    'int.p1':'Patiënt- en cliëntdossiers, medicatie, behandelinformatie — dat hoort in uw EPD of ECD en blijft daar. Flowmann pakt alles eromheen: facilitaire meldingen, protocol-checks, audits, onboarding en de communicatie tussen diensten en afdelingen.',
+    'int.p2':'Wat Flowmann vervangt zijn de losse Excel-lijsten, de papieren mappen, de WhatsApp-groepen en de telefoontjes die nergens worden vastgelegd. AVG-proof, met audit trail, gehost binnen de EU. Uw kwaliteitscoördinator krijgt eindelijk overzicht — zonder dat er een nieuw zorgsysteem bij komt.',
+    'cta.title':'Wilt u zien hoe Flowmann op <em>uw</em> locatie werkt?',
+    'cta.desc':'Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die begrijpt dat in de zorg de cliënt altijd voorgaat, en de administratie dus vanzelf moet gaan.',
+    'cta.btn':'Neem contact op',
+    'foot.tag':'© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.',
+    'foot.l1':'Sectoren','foot.l2':'Prijzen','foot.l3':'Contact','foot.l4':'Home'
+  },
+  en: {
+    'nav.sectors':'Sectors','nav.ai':'AI','nav.how':'Approach','nav.pricing':'Pricing','nav.home':'Home','nav.login':'Login',
+    'page.title':'Healthcare — Flowmann',
+    'page.desc':'For the care home, disability care, assisted living and the hospital where care staff lose time to phone calls, paper checklists and lost reports. Flowmann handles facility reports, protocol checks, audits and onboarding — without touching the EHR.',
+    'hero.eyebrow':'Sector · Healthcare',
+    'hero.title':'Care workers chose <em>people</em>. Not paperwork.',
+    'hero.sub':'For the care home, disability care, assisted living and the hospital where care staff lose time to phone calls to facilities, paper checklists and reports that get lost. Flowmann brings everything around the care into one app — reports, protocols, audits and onboarding. The EHR stays where it belongs.',
+    'hero.cta1':'Request a walkthrough','hero.cta2':'Other sectors',
+    'prob.label':'You probably recognise this',
+    'prob.title':'The care is well organised. <em>Everything around it</em> is not.',
+    'prob.desc':"The problem isn't the care itself. It's in four patterns every care location — from care home to hospital ward — recognises. And which stay unsolved, because the client always comes first.",
+    'prob.1h':'A broken bed costs three phone calls and four days',
+    'prob.1p':"The care worker spots a defective hoist, a leak, a broken bed. Calls facilities. No one picks up. Writes a note. The note disappears. Four days later the hoist is still there — and no one knows the status. The client waits along.",
+    'prob.2h':'Paper checklists, ticked off without proof',
+    'prob.2p':"Hygiene rounds, HACCP in the kitchen, legionella checks, medicine fridge temperatures. Ticked off on paper — sometimes afterwards, sometimes in advance. At an inspection the gap shows. Not because the work wasn't done, but because the proof is missing.",
+    'prob.3h':'New faces every shift, the same explanation every time',
+    'prob.3p':"Agency staff, freelancers, stand-ins. Every shift new people who don't know the protocols, the ward or the clients. The induction is verbal, fleeting and depends on whoever happens to be there. What goes wrong lands on the permanent team's plate.",
+    'prob.4h':'The evening shift inherits problems without context',
+    'prob.4p':"The day shift knows the lift is faulty, that room 12 has a loose threshold, that the supplier comes tomorrow. The evening and night shift don't. Information lives in heads and on notes — not in a place where the next shift finds it.",
+    'mod.label':'What Flowmann concretely does',
+    'mod.title':'Not <em>a care platform that promises everything</em>. Functions your team uses today.',
+    'mod.1h':'Quick Report for facilities & maintenance',
+    'mod.1p':'Care worker spots a defect. Photo, location, three fields, one tap. The report goes straight to facilities or maintenance — with everything they need. The reporter sees the status: received, picked up, resolved. No phone calls, no notes, no "I didn\'t know".',
+    'mod.2h':'Digital protocol checks',
+    'mod.2p':"Hygiene rounds, HACCP, legionella, fridge temperatures — digital, with photo evidence and timestamp. Missed check? The system flags it the same day, not at the inspection. What's done is provably done.",
+    'mod.3h':'Audits without panic',
+    'mod.3p':'IGJ (Dutch Health Inspectorate), HKZ, ISO 9001, internal audits. Status always visible — not just the week before the inspection. All checks, reports and follow-ups in one place, with an audit trail. The inspector asks, you click.',
+    'mod.4h':'AI triage per report',
+    'mod.4p':"AI reads every report, recognises urgency and topic, and routes it to the right person. A leak above the medicine room takes priority over a squeaky door. Not because someone decided that manually — the system sees it itself.",
+    'mod.5h':'Onboarding flex staff, verified',
+    'mod.5p':"Agency worker or freelancer starting tonight? Protocols, ward rules and safety instructions on their phone, in their own language, before the shift starts. Digital signature as proof. The permanent team no longer has to hope the explanation stuck.",
+    'mod.6h':'Shift handover with context',
+    'mod.6p':"Open reports, location particulars, what's coming tomorrow — automatically visible to the next shift. The evening shift starts with the same information the day shift ended with. Nothing left in heads or on notes.",
+    'mod.7h':'Translation built in',
+    'mod.7p':'Care teams are international. Protocols, instructions and reports automatically in five languages. The colleague who just arrived from abroad reads the same content as the colleague of twenty years — each in their own language.',
+    'mod.8h':'Spot patterns before they become problems',
+    'mod.8p':'AI looks across all reports. Which ward structurally reports the same defects? Which supplier keeps delivering late? Which check gets forgotten most often — and on which shift? You solve the cause, not the same symptom every week.',
+    'bewijs.text':'A residential care location with 120 employees frees the care team from phone calls to facilities. Reports go straight to the right person — with photo, location and urgency. Checklists are digital and provable. Inspection week has become a formality.',
+    'bewijs.tail':'Care workers chose people. <em>Flowmann makes sure</em> that\'s where their time goes.',
+    'int.label':'Alongside your EHR — never inside it',
+    'int.title':'Flowmann does <em>not touch the EHR</em>. By design.',
+    'int.p1':'Patient and client records, medication, treatment information — that belongs in your EHR or care record and stays there. Flowmann handles everything around it: facility reports, protocol checks, audits, onboarding and communication between shifts and wards.',
+    'int.p2':'What Flowmann replaces are the loose Excel lists, the paper binders, the WhatsApp groups and the phone calls that are never recorded. GDPR-proof, with audit trail, hosted within the EU. Your quality coordinator finally gets oversight — without adding yet another care system.',
+    'cta.title':'Want to see how Flowmann works at <em>your</em> location?',
+    'cta.desc':"Request a non-binding walkthrough. No salesperson with a script — someone who understands that in care, the client always comes first, so the administration has to run itself.",
+    'cta.btn':'Get in touch',
+    'foot.tag':'© 2026 Flowmann · One platform. Every sector. Finally connected.',
+    'foot.l1':'Sectors','foot.l2':'Pricing','foot.l3':'Contact','foot.l4':'Home'
+  },
+  de: {
+    'nav.sectors':'Branchen','nav.ai':'KI','nav.how':'Vorgehen','nav.pricing':'Preise','nav.home':'Home','nav.login':'Anmelden',
+    'page.title':'Pflege & Gesundheit — Flowmann',
+    'page.desc':'Für das Pflegeheim, die Behindertenhilfe, das betreute Wohnen und das Krankenhaus, wo Pflegekräfte Zeit durch Telefonate, Papier-Checklisten und verlorene Meldungen verlieren. Flowmann regelt Facility-Meldungen, Protokoll-Checks, Audits und Onboarding — ohne die Patientenakte anzufassen.',
+    'hero.eyebrow':'Branche · Pflege & Gesundheit',
+    'hero.title':'Pflegekräfte haben sich für <em>Menschen</em> entschieden. Nicht für Verwaltung.',
+    'hero.sub':'Für das Pflegeheim, die Behindertenhilfe, das betreute Wohnen und das Krankenhaus, wo Pflegekräfte Zeit verlieren durch Telefonate mit dem Facility-Management, Papier-Checklisten und Meldungen, die verloren gehen. Flowmann bringt alles rund um die Pflege in eine App — Meldungen, Protokolle, Audits und Onboarding. Die Patientenakte bleibt, wo sie hingehört.',
+    'hero.cta1':'Vorführung anfragen','hero.cta2':'Andere Branchen',
+    'prob.label':'Sie kennen das wahrscheinlich',
+    'prob.title':'Die Pflege ist gut organisiert. <em>Alles drumherum</em> nicht.',
+    'prob.desc':'Das Problem liegt nicht bei der Pflege selbst. Es liegt in vier Mustern, die jeder Pflegestandort — vom Pflegeheim bis zur Krankenhausstation — kennt. Und die liegen bleiben, weil der Klient immer vorgeht.',
+    'prob.1h':'Ein kaputtes Bett kostet drei Anrufe und vier Tage',
+    'prob.1p':'Die Pflegekraft sieht einen defekten Lifter, ein Leck, ein kaputtes Bett. Ruft das Facility-Management an. Niemand geht ran. Schreibt einen Zettel. Der Zettel verschwindet. Vier Tage später steht der Lifter noch da — und niemand kennt den Status. Der Klient wartet mit.',
+    'prob.2h':'Papier-Checklisten, abgehakt ohne Nachweis',
+    'prob.2p':'Hygiene-Runden, HACCP in der Küche, Legionellen-Checks, Medikamentenkühlschrank-Temperaturen. Auf Papier abgehakt — manchmal nachträglich, manchmal im Voraus. Bei einer Inspektion zeigt sich die Lücke. Nicht weil die Arbeit nicht gemacht wurde, sondern weil der Nachweis fehlt.',
+    'prob.3h':'Ständig neue Gesichter, ständig dieselbe Erklärung',
+    'prob.3p':'Zeitarbeitskräfte, Freiberufler, Springer. Jede Schicht neue Menschen, die die Protokolle, die Station und die Klienten nicht kennen. Die Einarbeitung ist mündlich, flüchtig und hängt davon ab, wer zufällig da ist. Was schiefgeht, landet beim festen Team.',
+    'prob.4h':'Die Abendschicht erbt Probleme ohne Kontext',
+    'prob.4p':'Die Tagschicht weiß, dass der Aufzug hakt, dass Zimmer 12 eine lose Schwelle hat, dass der Lieferant morgen kommt. Die Abend- und Nachtschicht weiß es nicht. Informationen stecken in Köpfen und auf Zetteln — nicht an einem Ort, wo die nächste Schicht sie findet.',
+    'mod.label':'Was Flowmann konkret leistet',
+    'mod.title':'Keine <em>Pflegeplattform, die alles verspricht</em>. Funktionen, die Ihr Team heute schon nutzt.',
+    'mod.1h':'Schnellmeldung für Facility & Technik',
+    'mod.1p':'Pflegekraft sieht einen Defekt. Foto, Standort, drei Felder, ein Tipp. Die Meldung geht direkt an Facility oder Technik — mit allem, was sie brauchen. Die meldende Person sieht den Status: empfangen, aufgenommen, gelöst. Keine Anrufe, keine Zettel, kein "wusste ich nicht".',
+    'mod.2h':'Digitale Protokoll-Checks',
+    'mod.2p':'Hygiene-Runden, HACCP, Legionellen, Kühlschrank-Temperaturen — digital, mit Foto-Nachweis und Zeitstempel. Vergessener Check? Das System meldet es am selben Tag, nicht bei der Inspektion. Was getan ist, ist nachweisbar getan.',
+    'mod.3h':'Audits ohne Panik',
+    'mod.3p':'Aufsichtsbehörde, HKZ, ISO 9001, interne Audits. Status jederzeit einsehbar — nicht erst in der Woche vor der Inspektion. Alle Checks, Meldungen und Folgeaktionen an einem Ort, mit Audit-Trail. Der Inspektor fragt, Sie klicken.',
+    'mod.4h':'KI-Triage pro Meldung',
+    'mod.4p':'KI liest jede Meldung, erkennt Dringlichkeit und Thema und leitet sie an die richtige Person weiter. Ein Leck über dem Medikamentenraum hat Vorrang vor einer quietschenden Tür. Nicht weil jemand das manuell entschieden hat — das System sieht es selbst.',
+    'mod.5h':'Onboarding von Flexpersonal, verifiziert',
+    'mod.5p':'Zeitarbeitskraft oder Freiberufler fängt heute Abend an? Protokolle, Stationsregeln und Sicherheitsanweisungen auf dem Handy, in der eigenen Sprache, bevor die Schicht beginnt. Digitale Unterschrift als Nachweis. Das feste Team muss nicht mehr hoffen, dass die Erklärung hängen geblieben ist.',
+    'mod.6h':'Schichtübergabe mit Kontext',
+    'mod.6p':'Laufende Meldungen, Besonderheiten des Standorts, was morgen kommt — automatisch sichtbar für die nächste Schicht. Die Abendschicht beginnt mit denselben Informationen, mit denen die Tagschicht endete. Nichts mehr in Köpfen oder auf Zetteln.',
+    'mod.7h':'Übersetzung eingebaut',
+    'mod.7p':'Pflegeteams sind international. Protokolle, Anweisungen und Meldungen automatisch in fünf Sprachen. Die Mitarbeiterin, die gerade aus dem Ausland kommt, liest denselben Inhalt wie der Kollege mit zwanzig Jahren Erfahrung — jeder in der eigenen Sprache.',
+    'mod.8h':'Muster erkennen, bevor sie zu Problemen werden',
+    'mod.8p':'KI blickt über alle Meldungen hinweg. Welche Station meldet strukturell dieselben Defekte? Welcher Lieferant liefert ständig zu spät? Welcher Check wird am häufigsten vergessen — und in welcher Schicht? Sie lösen die Ursache, nicht jede Woche dasselbe Symptom.',
+    'bewijs.text':'Ein Pflegestandort mit 120 Mitarbeitenden befreit die Pflege von Anrufen beim Facility-Management. Meldungen gehen direkt an die richtige Person — mit Foto, Standort und Dringlichkeit. Checklisten sind digital und nachweisbar. Die Inspektionswoche ist zur Formalität geworden.',
+    'bewijs.tail':'Pflegekräfte haben sich für Menschen entschieden. <em>Flowmann sorgt dafür</em>, dass ihre Zeit dorthin geht.',
+    'int.label':'Neben Ihrer Patientenakte — nie darin',
+    'int.title':'Flowmann fasst die <em>Patientenakte nicht an</em>. Bewusst.',
+    'int.p1':'Patienten- und Klientenakten, Medikation, Behandlungsinformationen — das gehört in Ihre elektronische Patientenakte und bleibt dort. Flowmann übernimmt alles drumherum: Facility-Meldungen, Protokoll-Checks, Audits, Onboarding und die Kommunikation zwischen Schichten und Stationen.',
+    'int.p2':'Was Flowmann ersetzt, sind die losen Excel-Listen, die Papierordner, die WhatsApp-Gruppen und die Anrufe, die nirgends festgehalten werden. DSGVO-konform, mit Audit-Trail, gehostet in der EU. Ihre Qualitätskoordination bekommt endlich Überblick — ohne dass ein neues Pflegesystem dazukommt.',
+    'cta.title':'Möchten Sie sehen, wie Flowmann an <em>Ihrem</em> Standort funktioniert?',
+    'cta.desc':'Vereinbaren Sie eine unverbindliche Vorführung. Kein Verkäufer mit Skript — jemand, der versteht, dass in der Pflege der Klient immer vorgeht und die Verwaltung deshalb von selbst laufen muss.',
+    'cta.btn':'Kontakt aufnehmen',
+    'foot.tag':'© 2026 Flowmann · Eine Plattform. Jede Branche. Endlich verbunden.',
+    'foot.l1':'Branchen','foot.l2':'Preise','foot.l3':'Kontakt','foot.l4':'Home'
+  },
+  fr: {
+    'nav.sectors':'Secteurs','nav.ai':'IA','nav.how':'Approche','nav.pricing':'Tarifs','nav.home':'Accueil','nav.login':'Connexion',
+    'page.title':'Santé & Soins — Flowmann',
+    'page.desc':"Pour la maison de repos, le secteur du handicap, l'habitat accompagné et l'hôpital où les soignants perdent du temps en appels, checklists papier et signalements égarés. Flowmann gère les signalements techniques, les contrôles de protocoles, les audits et l'onboarding — sans toucher au dossier patient.",
+    'hero.eyebrow':'Secteur · Santé & Soins',
+    'hero.title':'Les soignants ont choisi les <em>personnes</em>. Pas la paperasse.',
+    'hero.sub':"Pour la maison de repos, le secteur du handicap, l'habitat accompagné et l'hôpital où les soignants perdent du temps en appels au service technique, checklists papier et signalements qui se perdent. Flowmann réunit tout ce qui entoure les soins dans une seule application — signalements, protocoles, audits et onboarding. Le dossier patient reste là où il doit être.",
+    'hero.cta1':'Demander une visite','hero.cta2':'Autres secteurs',
+    'prob.label':'Vous reconnaissez probablement cela',
+    'prob.title':'Les soins sont bien organisés. <em>Tout ce qui les entoure</em>, non.',
+    'prob.desc':"Le problème ne vient pas des soins eux-mêmes. Il vient de quatre schémas que chaque établissement — de la maison de repos au service hospitalier — reconnaît. Et qui restent en suspens, car le résident passe toujours en premier.",
+    'prob.1h':'Un lit cassé coûte trois appels et quatre jours',
+    'prob.1p':"Le soignant repère un lève-personne défectueux, une fuite, un lit cassé. Appelle le service technique. Personne ne répond. Écrit un mot. Le mot disparaît. Quatre jours plus tard, le lève-personne est toujours là — et personne ne connaît le statut. Le résident attend aussi.",
+    'prob.2h':'Checklists papier, cochées sans preuve',
+    'prob.2p':"Rondes d'hygiène, HACCP en cuisine, contrôles légionelle, températures du frigo à médicaments. Cochées sur papier — parfois après coup, parfois à l'avance. Lors d'une inspection, l'écart apparaît. Non pas parce que le travail n'a pas été fait, mais parce que la preuve manque.",
+    'prob.3h':'Toujours de nouveaux visages, toujours la même explication',
+    'prob.3p':"Intérimaires, indépendants, remplaçants. À chaque service, de nouvelles personnes qui ne connaissent ni les protocoles, ni le service, ni les résidents. L'accueil est oral, éphémère et dépend de qui est présent. Ce qui rate retombe sur l'équipe fixe.",
+    'prob.4h':"L'équipe du soir hérite de problèmes sans contexte",
+    'prob.4p':"L'équipe de jour sait que l'ascenseur a des ratés, que la chambre 12 a un seuil détaché, que le fournisseur vient demain. Les équipes du soir et de nuit ne le savent pas. L'information vit dans les têtes et sur des papiers — pas à un endroit où l'équipe suivante la trouve.",
+    'mod.label':'Ce que Flowmann fait concrètement',
+    'mod.title':"Pas <em>une plateforme de soins qui promet tout</em>. Des fonctions que votre équipe utilise dès aujourd'hui.",
+    'mod.1h':'Signalement Rapide pour technique & logistique',
+    'mod.1p':"Le soignant repère un défaut. Photo, lieu, trois champs, un tap. Le signalement arrive directement au service technique — avec tout ce dont il a besoin. Le déclarant voit le statut : reçu, pris en charge, résolu. Plus d'appels, plus de mots, plus de « je ne savais pas ».",
+    'mod.2h':'Contrôles de protocoles numériques',
+    'mod.2p':"Rondes d'hygiène, HACCP, légionelle, températures de frigo — numériques, avec preuve photo et horodatage. Contrôle oublié ? Le système le signale le jour même, pas lors de l'inspection. Ce qui est fait est prouvé.",
+    'mod.3h':'Audits sans panique',
+    'mod.3p':"Inspection sanitaire, certification qualité, ISO 9001, audits internes. Statut toujours visible — pas seulement la semaine avant l'inspection. Tous les contrôles, signalements et suivis au même endroit, avec piste d'audit. L'inspecteur demande, vous cliquez.",
+    'mod.4h':'Triage IA par signalement',
+    'mod.4p':"L'IA lit chaque signalement, reconnaît l'urgence et le sujet, et le route vers la bonne personne. Une fuite au-dessus de la pharmacie passe avant une porte qui grince. Non pas parce que quelqu'un l'a décidé manuellement — le système le voit lui-même.",
+    'mod.5h':'Onboarding du personnel flexible, vérifié',
+    'mod.5p':"Un intérimaire ou un indépendant commence ce soir ? Protocoles, règles du service et consignes de sécurité sur son téléphone, dans sa langue, avant le début du service. Signature numérique comme preuve. L'équipe fixe n'a plus à espérer que l'explication soit retenue.",
+    'mod.6h':'Relève avec contexte',
+    'mod.6p':"Signalements en cours, particularités du site, ce qui arrive demain — automatiquement visibles pour l'équipe suivante. L'équipe du soir commence avec les mêmes informations que celles avec lesquelles l'équipe de jour a terminé. Plus rien dans les têtes ou sur des papiers.",
+    'mod.7h':'Traduction intégrée',
+    'mod.7p':"Les équipes de soins sont internationales. Protocoles, consignes et signalements automatiquement en cinq langues. La collègue qui vient d'arriver de l'étranger lit le même contenu que le collègue de vingt ans d'ancienneté — chacun dans sa langue.",
+    'mod.8h':'Voir les schémas avant qu\'ils ne deviennent des problèmes',
+    'mod.8p':"L'IA regarde l'ensemble des signalements. Quel service signale structurellement les mêmes défauts ? Quel fournisseur livre toujours en retard ? Quel contrôle est le plus souvent oublié — et sur quel service ? Vous résolvez la cause, pas le même symptôme chaque semaine.",
+    'bewijs.text':"Un établissement de 120 employés libère les soignants des appels au service technique. Les signalements arrivent directement à la bonne personne — avec photo, lieu et urgence. Les checklists sont numériques et prouvables. La semaine d'inspection est devenue une formalité.",
+    'bewijs.tail':'Les soignants ont choisi les personnes. <em>Flowmann veille</em> à ce que leur temps y soit consacré.',
+    'int.label':'À côté de votre dossier patient — jamais dedans',
+    'int.title':'Flowmann ne touche <em>pas au dossier patient</em>. Volontairement.',
+    'int.p1':"Dossiers patients et résidents, médication, informations de traitement — cela appartient à votre dossier médical électronique et y reste. Flowmann prend en charge tout ce qui l'entoure : signalements techniques, contrôles de protocoles, audits, onboarding et communication entre équipes et services.",
+    'int.p2':"Ce que Flowmann remplace, ce sont les listes Excel éparses, les classeurs papier, les groupes WhatsApp et les appels jamais enregistrés. Conforme RGPD, avec piste d'audit, hébergé dans l'UE. Votre coordinateur qualité obtient enfin une vue d'ensemble — sans ajouter un énième système de soins.",
+    'cta.title':'Voulez-vous voir comment Flowmann fonctionne dans <em>votre</em> établissement ?',
+    'cta.desc':"Demandez une visite sans engagement. Pas un commercial avec un script — quelqu'un qui comprend que dans les soins, le résident passe toujours en premier, et que l'administration doit donc fonctionner toute seule.",
+    'cta.btn':'Nous contacter',
+    'foot.tag':'© 2026 Flowmann · Une plateforme. Chaque secteur. Enfin connectés.',
+    'foot.l1':'Secteurs','foot.l2':'Tarifs','foot.l3':'Contact','foot.l4':'Accueil'
+  },
+  ar: {
+    'nav.sectors':'القطاعات','nav.ai':'الذكاء الاصطناعي','nav.how':'النهج','nav.pricing':'الأسعار','nav.home':'الرئيسية','nav.login':'تسجيل الدخول',
+    'page.title':'الرعاية الصحية — Flowmann',
+    'page.desc':'لدار رعاية المسنين ورعاية ذوي الإعاقة والسكن المدعوم والمستشفى حيث يفقد العاملون في الرعاية وقتهم في المكالمات وقوائم التحقق الورقية والبلاغات المفقودة. Flowmann يدير البلاغات الفنية وفحوصات البروتوكولات والتدقيقات والتأهيل — دون لمس ملف المريض.',
+    'hero.eyebrow':'قطاع · الرعاية الصحية',
+    'hero.title':'العاملون في الرعاية اختاروا <em>الناس</em>. ليس الأوراق.',
+    'hero.sub':'لدار رعاية المسنين ورعاية ذوي الإعاقة والسكن المدعوم والمستشفى حيث يفقد العاملون وقتهم في الاتصال بالخدمات الفنية وقوائم التحقق الورقية والبلاغات التي تضيع. Flowmann يجمع كل ما يحيط بالرعاية في تطبيق واحد — البلاغات والبروتوكولات والتدقيقات والتأهيل. ملف المريض يبقى حيث ينتمي.',
+    'hero.cta1':'اطلب جولة','hero.cta2':'قطاعات أخرى',
+    'prob.label':'ربما تتعرف على هذا',
+    'prob.title':'الرعاية منظمة جيدًا. <em>كل ما حولها</em> ليس كذلك.',
+    'prob.desc':'المشكلة ليست في الرعاية نفسها. إنها في أربعة أنماط يعرفها كل موقع رعاية — من دار المسنين إلى جناح المستشفى. وتبقى دون حل، لأن المقيم يأتي دائمًا أولًا.',
+    'prob.1h':'سرير معطل يكلف ثلاث مكالمات وأربعة أيام',
+    'prob.1p':'العامل في الرعاية يرى رافعة معطلة، تسربًا، سريرًا مكسورًا. يتصل بالخدمات الفنية. لا أحد يرد. يكتب ورقة. الورقة تختفي. بعد أربعة أيام لا تزال الرافعة هناك — ولا أحد يعرف الحالة. المقيم ينتظر أيضًا.',
+    'prob.2h':'قوائم تحقق ورقية، موقعة دون إثبات',
+    'prob.2p':'جولات النظافة، HACCP في المطبخ، فحوصات الليجيونيلا، درجات حرارة ثلاجة الأدوية. موقعة على الورق — أحيانًا لاحقًا، أحيانًا مسبقًا. عند التفتيش تظهر الفجوة. ليس لأن العمل لم يُنجز، بل لأن الإثبات مفقود.',
+    'prob.3h':'وجوه جديدة باستمرار، نفس الشرح كل مرة',
+    'prob.3p':'عمال مؤقتون، مستقلون، بدلاء. في كل نوبة أشخاص جدد لا يعرفون البروتوكولات ولا القسم ولا المقيمين. التعريف شفهي وعابر ويعتمد على من يتواجد صدفة. ما يفشل يقع على عاتق الفريق الثابت.',
+    'prob.4h':'نوبة المساء ترث المشاكل بدون سياق',
+    'prob.4p':'نوبة النهار تعرف أن المصعد يتعطل، أن الغرفة 12 بها عتبة مفكوكة، أن المورد يأتي غدًا. نوبتا المساء والليل لا تعرفان. المعلومات في الرؤوس وعلى الأوراق — وليست في مكان تجدها فيه النوبة التالية.',
+    'mod.label':'ما تفعله Flowmann فعليًا',
+    'mod.title':'ليست <em>منصة رعاية تعد بكل شيء</em>. وظائف يستخدمها فريقك اليوم بالفعل.',
+    'mod.1h':'الإبلاغ السريع للخدمات الفنية والصيانة',
+    'mod.1p':'العامل في الرعاية يرى عطلًا. صورة، موقع، ثلاثة حقول، ضغطة واحدة. البلاغ يصل مباشرة للخدمات الفنية أو الصيانة — مع كل ما يحتاجونه. المبلّغ يرى الحالة: مستلم، قيد المعالجة، تم الحل. لا مكالمات، لا أوراق، لا "لم أكن أعلم".',
+    'mod.2h':'فحوصات البروتوكولات الرقمية',
+    'mod.2p':'جولات النظافة، HACCP، الليجيونيلا، درجات حرارة الثلاجات — رقمية، مع إثبات بالصور وختم زمني. فحص منسي؟ النظام ينبه في نفس اليوم، وليس عند التفتيش. ما أُنجز قابل للإثبات.',
+    'mod.3h':'تدقيقات بدون ذعر',
+    'mod.3p':'هيئة التفتيش الصحي، شهادات الجودة، ISO 9001، التدقيقات الداخلية. الحالة دائمًا مرئية — وليس فقط في الأسبوع السابق للتفتيش. كل الفحوصات والبلاغات وإجراءات المتابعة في مكان واحد، مع سجل تدقيق. المفتش يسأل، أنت تنقر.',
+    'mod.4h':'فرز ذكي لكل بلاغ',
+    'mod.4p':'الذكاء الاصطناعي يقرأ كل بلاغ، يتعرف على الإلحاح والموضوع، ويوجهه للشخص المناسب. تسرب فوق غرفة الأدوية له أولوية على باب يصرّ. ليس لأن أحدًا قرر ذلك يدويًا — النظام يراه بنفسه.',
+    'mod.5h':'تأهيل العاملين المؤقتين، موثق',
+    'mod.5p':'عامل مؤقت أو مستقل يبدأ الليلة؟ البروتوكولات وقواعد القسم وتعليمات السلامة على الهاتف، بلغته الخاصة، قبل بدء النوبة. توقيع رقمي كإثبات. الفريق الثابت لم يعد عليه أن يأمل أن الشرح قد رسخ.',
+    'mod.6h':'تسليم النوبات مع السياق',
+    'mod.6p':'البلاغات الجارية، خصوصيات الموقع، ما يأتي غدًا — مرئية تلقائيًا للنوبة التالية. نوبة المساء تبدأ بنفس المعلومات التي انتهت بها نوبة النهار. لا شيء في الرؤوس أو على الأوراق.',
+    'mod.7h':'الترجمة مدمجة',
+    'mod.7p':'فرق الرعاية دولية. البروتوكولات والتعليمات والبلاغات تلقائيًا بخمس لغات. الزميلة القادمة حديثًا من الخارج تقرأ نفس المحتوى الذي يقرأه زميل العشرين عامًا — كل بلغته الخاصة.',
+    'mod.8h':'رؤية الأنماط قبل أن تصبح مشاكل',
+    'mod.8p':'الذكاء الاصطناعي ينظر عبر جميع البلاغات. أي قسم يبلغ بشكل منهجي عن نفس الأعطال؟ أي مورد يتأخر دائمًا في التسليم؟ أي فحص يُنسى أكثر — وفي أي نوبة؟ تحل السبب، وليس نفس العَرَض كل أسبوع.',
+    'bewijs.text':'موقع رعاية سكنية به 120 موظفًا يحرر فريق الرعاية من الاتصال بالخدمات الفنية. البلاغات تصل مباشرة للشخص المناسب — مع صورة وموقع وإلحاح. قوائم التحقق رقمية وقابلة للإثبات. أسبوع التفتيش أصبح إجراءً شكليًا.',
+    'bewijs.tail':'العاملون في الرعاية اختاروا الناس. <em>Flowmann يضمن</em> أن يذهب وقتهم إلى ذلك.',
+    'int.label':'بجانب ملف المريض — ليس داخله أبدًا',
+    'int.title':'Flowmann لا يلمس <em>ملف المريض</em>. عن قصد.',
+    'int.p1':'ملفات المرضى والمقيمين، الأدوية، معلومات العلاج — هذا ينتمي لملف المريض الإلكتروني الخاص بك ويبقى هناك. Flowmann يتولى كل ما حوله: البلاغات الفنية، فحوصات البروتوكولات، التدقيقات، التأهيل، والتواصل بين النوبات والأقسام.',
+    'int.p2':'ما يستبدله Flowmann هو قوائم Excel المتفرقة والمجلدات الورقية ومجموعات WhatsApp والمكالمات التي لا تُسجل أبدًا. متوافق مع GDPR، مع سجل تدقيق، مستضاف داخل الاتحاد الأوروبي. منسق الجودة لديك يحصل أخيرًا على نظرة شاملة — دون إضافة نظام رعاية جديد.',
+    'cta.title':'هل تريد أن ترى كيف يعمل Flowmann في <em>موقعك</em>؟',
+    'cta.desc':'اطلب جولة دون التزام. لا مندوب مبيعات بسيناريو — شخص يفهم أن المقيم في الرعاية يأتي دائمًا أولًا، ولذلك يجب أن تسير الإدارة من تلقاء نفسها.',
+    'cta.btn':'تواصل معنا',
+    'foot.tag':'© 2026 Flowmann · منصة واحدة. كل قطاع. متصلون أخيرًا.',
+    'foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الرئيسية'
+  }
+};
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  try { localStorage.setItem('flowmann-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Update page title and meta description
+  if (translations[lang]) {
+    if (translations[lang]['page.title']) {
+      document.title = translations[lang]['page.title'];
+    }
+    if (translations[lang]['page.desc']) {
+      const metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['page.desc']);
+    }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Laad opgeslagen taalkeuze bij paginalading
+try {
+  const savedLang = localStorage.getItem('flowmann-lang');
+  if (savedLang && ['nl','en','de','fr','ar'].includes(savedLang)) {
+    setLang(savedLang);
+  }
+} catch (e) {}
+</script>
+
+</body>
+</html>
