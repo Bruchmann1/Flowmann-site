@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0a0d12">
 
 <title>Arbeidsbemiddeling — Flowmann</title>
-<meta name="description" content="Voor het uitzendbureau — groot of klein — dat klaar wil zijn voor de WTTA, gelijkwaardige beloning automatisch wil toepassen en geen overtype-werk meer wil. Urenregistratie, contractopbouw, onboarding en compliance in één app.">
+<meta name="description" id="meta-description" content="Voor het uitzendbureau — groot of klein — dat klaar wil zijn voor de WTTA, gelijkwaardige beloning automatisch wil toepassen en geen overtype-werk meer wil. Urenregistratie, contractopbouw, onboarding en compliance in één app.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://flowmann.com/sectoren/arbeidsbemiddeling">
 
@@ -102,9 +102,24 @@
   }
   .nav-links a:hover { color: var(--text); }
   .nav-actions {
-    display: flex; gap: 12px; align-items: center;
+    display: flex; gap: 10px; align-items: center;
     flex-shrink: 0;
   }
+  .lang-switcher {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: none; border: none; color: var(--text-dim);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 9px; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0.06em; transition: all 0.2s;
+  }
+  .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--text-muted); }
   .nav-back { padding: 9px 16px; font-size: 13px; }
   .nav-login { padding: 9px 18px; font-size: 13px; line-height: 1; }
 
@@ -506,7 +521,7 @@
   @media (max-width: 960px) {
     .nav { padding: 14px 20px; }
     .nav-links { display: none; }
-    .nav-actions { gap: 8px; }
+    .nav-actions { gap: 6px; }
     .container { padding: 0 20px; }
     .hero { padding: 130px 0 60px; min-height: auto; }
     section { padding: 80px 0; }
@@ -518,10 +533,16 @@
     .quote-wrap { padding: 40px 24px; }
     .footer-inner { flex-direction: column; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
+    .lang-btn { font-size: 10px; padding: 4px 6px; letter-spacing: 0.04em; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+    .nav-back { padding: 8px 11px; font-size: 11px; }
+    .nav-back svg { display: none; }
+    .nav-login { padding: 8px 12px; font-size: 12px; }
   }
   @media (max-width: 520px) {
     .hero-ctas { flex-direction: column; align-items: stretch; }
     .hero-ctas .btn { justify-content: center; }
+    .lang-btn { font-size: 9px; padding: 3px 5px; }
   }
 </style>
 
@@ -541,18 +562,25 @@
       <span class="nav-logo-text">Flowmann</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/#sectors">Sectoren</a></li>
-      <li><a href="/#ai">AI</a></li>
-      <li><a href="/#how">Aanpak</a></li>
-      <li><a href="/#pricing">Prijzen</a></li>
+      <li><a href="/#sectors" data-i18n="nav.sectors">Sectoren</a></li>
+      <li><a href="/#ai" data-i18n="nav.ai">AI</a></li>
+      <li><a href="/#how" data-i18n="nav.how">Aanpak</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prijzen</a></li>
     </ul>
     <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
       <a href="/" class="btn btn-ghost nav-back">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1m0 0l5-5m-5 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Home</span>
+        <span data-i18n="nav.home">Home</span>
       </a>
       <a href="https://app.flowmann.com" class="btn btn-primary nav-login">
-        <span>Login</span>
+        <span data-i18n="nav.login">Login</span>
       </a>
     </div>
   </div>
@@ -567,18 +595,18 @@
     <div class="hero-content">
       <span class="hero-eyebrow">
         <span class="hero-dot"></span>
-        Sector · Arbeidsbemiddeling
+        <span data-i18n="hero.eyebrow">Sector · Arbeidsbemiddeling</span>
       </span>
-      <h1>Een uitzendbureau hoort mensen te <em>bemiddelen</em>. Niet papier.</h1>
-      <p class="hero-sub">
+      <h1 data-i18n="hero.title">Een uitzendbureau hoort mensen te <em>bemiddelen</em>. Niet papier.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">
         Voor elk uitzendbureau — groot of klein — dat klaar wil zijn voor de WTTA, gelijkwaardige beloning automatisch wil toepassen en eens niet meer afhankelijk wil zijn van WhatsApp, mailtjes en overtype-werk. Flowmann brengt urenregistratie, beloning, contractopbouw, onboarding en compliance samen — voor flexkracht, coördinator én inlener.
       </p>
       <div class="hero-ctas">
         <a href="/#contact" class="btn btn-primary">
-          <span>Vraag een rondleiding aan</span>
+          <span data-i18n="hero.cta1">Vraag een rondleiding aan</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="/#sectors" class="btn btn-ghost">Andere sectoren</a>
+        <a href="/#sectors" class="btn btn-ghost" data-i18n="hero.cta2">Andere sectoren</a>
       </div>
     </div>
   </div>
@@ -587,36 +615,36 @@
 <!-- ============== PROBLEM ============== -->
 <section class="cream-section">
   <div class="container">
-    <span class="section-label">U herkent het waarschijnlijk</span>
-    <h2 class="section-title">U bemiddelt mensen. <em>De rest van de week</em> bemiddelt u administratie.</h2>
-    <p class="section-desc">Het probleem zit niet in een gebrek aan systemen. Het zit in vier patronen die elk uitzendbureau — van vijf flexkrachten tot vijfhonderd — herkent. En die nooit echt worden opgelost, omdat er geen tijd voor is.</p>
+    <span class="section-label" data-i18n="prob.label">U herkent het waarschijnlijk</span>
+    <h2 class="section-title" data-i18n="prob.title">U bemiddelt mensen. <em>De rest van de week</em> bemiddelt u administratie.</h2>
+    <p class="section-desc" data-i18n="prob.desc">Het probleem zit niet in een gebrek aan systemen. Het zit in vier patronen die elk uitzendbureau — van vijf flexkrachten tot vijfhonderd — herkent. En die nooit echt worden opgelost, omdat er geen tijd voor is.</p>
     <ul class="problem-list">
       <li>
         <span class="problem-num">01</span>
         <div>
-          <h4>Wekelijks dezelfde administratie-marathon</h4>
-          <p>Urenbriefjes via WhatsApp. Accordering via mail. Overtype-werk naar het systeem. Een proces dat elke week opnieuw begint en elke week opnieuw uitloopt. Wat fout gaat in één schakel, valt door de hele keten — bij u, bij de flexkracht, bij de inlener.</p>
+          <h4 data-i18n="prob.1h">Wekelijks dezelfde administratie-marathon</h4>
+          <p data-i18n="prob.1p">Urenbriefjes via WhatsApp. Accordering via mail. Overtype-werk naar het systeem. Een proces dat elke week opnieuw begint en elke week opnieuw uitloopt. Wat fout gaat in één schakel, valt door de hele keten — bij u, bij de flexkracht, bij de inlener.</p>
         </div>
       </li>
       <li>
         <span class="problem-num">02</span>
         <div>
-          <h4>De ene inlener CAO Metaal. De volgende CAO Bouw.</h4>
-          <p>Voor één flexkracht moet u weten welke CAO geldt bij welke inlener. Gelijkwaardige beloning is geen suggestie — het is wet. Maar de berekening per situatie is handmatig, kennis-afhankelijk en foutgevoelig. Eén keer mis, en de inspectie heeft dossier-input.</p>
+          <h4 data-i18n="prob.2h">De ene inlener CAO Metaal. De volgende CAO Bouw.</h4>
+          <p data-i18n="prob.2p">Voor één flexkracht moet u weten welke CAO geldt bij welke inlener. Gelijkwaardige beloning is geen suggestie — het is wet. Maar de berekening per situatie is handmatig, kennis-afhankelijk en foutgevoelig. Eén keer mis, en de inspectie heeft dossier-input.</p>
         </div>
       </li>
       <li>
         <span class="problem-num">03</span>
         <div>
-          <h4>De WTTA komt eraan. Uw administratie is er nog niet klaar voor.</h4>
-          <p>Verplichte vergunning, verplichte financiële bewijsvoering, verplichte documentatie per flexkracht. Een uitzendbureau dat zijn dossier niet op orde heeft krijgt geen vergunning. Geen vergunning, geen werk. De deadline komt niet later. Uw dossier wel.</p>
+          <h4 data-i18n="prob.3h">De WTTA komt eraan. Uw administratie is er nog niet klaar voor.</h4>
+          <p data-i18n="prob.3p">Verplichte vergunning, verplichte financiële bewijsvoering, verplichte documentatie per flexkracht. Een uitzendbureau dat zijn dossier niet op orde heeft krijgt geen vergunning. Geen vergunning, geen werk. De deadline komt niet later. Uw dossier wel.</p>
         </div>
       </li>
       <li>
         <span class="problem-num">04</span>
         <div>
-          <h4>Pools, Roemeens, Nederlands door elkaar</h4>
-          <p>Urenstaten in NL. Veiligheidsinstructies in NL. CAO-uitleg in NL. De flexkracht spreekt Pools. Wat hij niet snapt, kan hem in gevaar brengen — en u in een dossier bij de Arbeidsinspectie.</p>
+          <h4 data-i18n="prob.4h">Pools, Roemeens, Nederlands door elkaar</h4>
+          <p data-i18n="prob.4p">Urenstaten in NL. Veiligheidsinstructies in NL. CAO-uitleg in NL. De flexkracht spreekt Pools. Wat hij niet snapt, kan hem in gevaar brengen — en u in een dossier bij de Arbeidsinspectie.</p>
         </div>
       </li>
     </ul>
@@ -627,8 +655,8 @@
 <section class="modules-section">
   <div class="container">
     <div class="modules-head">
-      <span class="section-label">Wat Flowmann concreet doet</span>
-      <h2 class="section-title">Geen <em>HR-tool die alles belooft</em>. Functies die uw coördinator maandagochtend al gebruikt.</h2>
+      <span class="section-label" data-i18n="mod.label">Wat Flowmann concreet doet</span>
+      <h2 class="section-title" data-i18n="mod.title">Geen <em>HR-tool die alles belooft</em>. Functies die uw coördinator maandagochtend al gebruikt.</h2>
     </div>
     <div class="modules-grid">
 
@@ -636,64 +664,64 @@
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M12 6v6l4 2M12 22a10 10 0 110-20 10 10 0 010 20z"/></svg>
         </div>
-        <h3>Urenregistratie via mobiel</h3>
-        <p>Flexkracht klokt in en uit via QR-scan of GPS-validatie op locatie. Coördinator en inlener zien live wie waar werkt en hoeveel uren gemaakt. De flexkracht ziet zelf ook z'n uren en wat dat oplevert deze week. Vrijdag: één export richting uw payroll. Geen briefjes, geen overtype-werk, geen ruzie over een half uur.</p>
+        <h3 data-i18n="mod.1h">Urenregistratie via mobiel</h3>
+        <p data-i18n="mod.1p">Flexkracht klokt in en uit via QR-scan of GPS-validatie op locatie. Coördinator en inlener zien live wie waar werkt en hoeveel uren gemaakt. De flexkracht ziet zelf ook z'n uren en wat dat oplevert deze week. Vrijdag: één export richting uw payroll. Geen briefjes, geen overtype-werk, geen ruzie over een half uur.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-        <h3>Gelijkwaardige beloning per inlener-CAO</h3>
-        <p>Elke inlener z'n eigen CAO. Het systeem koppelt de geldende CAO aan de plaatsing — toeslagen, vakantietoeslag, reisuren, ploegen-toeslag, alles correct vanaf dag één. Coördinator kiest de plaatsing, het systeem rekent de juiste basis. Inspectie-klaar zonder mentale rekenmachine.</p>
+        <h3 data-i18n="mod.2h">Gelijkwaardige beloning per inlener-CAO</h3>
+        <p data-i18n="mod.2p">Elke inlener z'n eigen CAO. Het systeem koppelt de geldende CAO aan de plaatsing — toeslagen, vakantietoeslag, reisuren, ploegen-toeslag, alles correct vanaf dag één. Coördinator kiest de plaatsing, het systeem rekent de juiste basis. Inspectie-klaar zonder mentale rekenmachine.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M3 21h6V11H3v10zm6-10h6V6H9v15zm6-5h6V3h-6v18z"/></svg>
         </div>
-        <h3>Contractopbouw & fase-tracking</h3>
-        <p>Welke fase de flexkracht in zit, hoeveel weken aaneengesloten, wanneer de volgende fase ingaat. Het systeem signaleert vooraf — niet pas wanneer u tegen een wettelijke grens aanloopt. Verlenging of einde van rechtswege: u beslist op tijd, niet onder druk.</p>
+        <h3 data-i18n="mod.3h">Contractopbouw & fase-tracking</h3>
+        <p data-i18n="mod.3p">Welke fase de flexkracht in zit, hoeveel weken aaneengesloten, wanneer de volgende fase ingaat. Het systeem signaleert vooraf — niet pas wanneer u tegen een wettelijke grens aanloopt. Verlenging of einde van rechtswege: u beslist op tijd, niet onder druk.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M9 13l2 2 4-4"/></svg>
         </div>
-        <h3>WTTA-dossier per flexkracht</h3>
-        <p>ID-check, BSN, VCA, BHV, taalbeheersing — alles per flexkracht centraal. Automatische signalen wanneer documenten verlopen. Bij audit-vraag: één klik naar volledig dossier. Niet pas op de dag dat de inspecteur belt zoeken — voorbereid zijn voordat hij belt.</p>
+        <h3 data-i18n="mod.4h">WTTA-dossier per flexkracht</h3>
+        <p data-i18n="mod.4p">ID-check, BSN, VCA, BHV, taalbeheersing — alles per flexkracht centraal. Automatische signalen wanneer documenten verlopen. Bij audit-vraag: één klik naar volledig dossier. Niet pas op de dag dat de inspecteur belt zoeken — voorbereid zijn voordat hij belt.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
-        <h3>Onboarding per inlener, geverifieerd</h3>
-        <p>Elke inlener heeft eigen safety-instructies — automatisch vertaald, automatisch opgediept. Flexkracht doorloopt de modules op z'n telefoon vóór hij op terrein komt. Digitale handtekening, audit trail. Inlener krijgt bewijs dat compliance geen kwestie van vertrouwen is.</p>
+        <h3 data-i18n="mod.5h">Onboarding per inlener, geverifieerd</h3>
+        <p data-i18n="mod.5p">Elke inlener heeft eigen safety-instructies — automatisch vertaald, automatisch opgediept. Flexkracht doorloopt de modules op z'n telefoon vóór hij op terrein komt. Digitale handtekening, audit trail. Inlener krijgt bewijs dat compliance geen kwestie van vertrouwen is.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
-        <h3>Vertaling ingebouwd</h3>
-        <p>Urenstaten, veiligheidsinstructies, CAO-uitleg automatisch in vijf talen. De Poolse flexkracht leest dezelfde inhoud in z'n eigen taal. Begrijpen wordt niet meer iets dat u hoopt — het is iets dat u kunt aantonen.</p>
+        <h3 data-i18n="mod.6h">Vertaling ingebouwd</h3>
+        <p data-i18n="mod.6p">Urenstaten, veiligheidsinstructies, CAO-uitleg automatisch in vijf talen. De Poolse flexkracht leest dezelfde inhoud in z'n eigen taal. Begrijpen wordt niet meer iets dat u hoopt — het is iets dat u kunt aantonen.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
         </div>
-        <h3>Inlener-portaal</h3>
-        <p>Inlener heeft eigen login. Ziet wie er deze week werkt, registreert eindtijd, accordeert uren, geeft feedback. Vraagt vervanging of extra capaciteit aan. Geen telefoontje meer naar uw coördinator om "even" wat te regelen — alles via één plek.</p>
+        <h3 data-i18n="mod.7h">Inlener-portaal</h3>
+        <p data-i18n="mod.7p">Inlener heeft eigen login. Ziet wie er deze week werkt, registreert eindtijd, accordeert uren, geeft feedback. Vraagt vervanging of extra capaciteit aan. Geen telefoontje meer naar uw coördinator om "even" wat te regelen — alles via één plek.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7M21 3v6h-6"/></svg>
         </div>
-        <h3>Last-minute planningwijzigingen</h3>
-        <p>Flexkracht meldt zich ziek. Inlener heeft een spoedaanvraag. Een opdracht schuift een week op. Het systeem geeft direct alle betrokkenen een signaal, schuift contracten en uren waar nodig, en biedt beschikbare alternatieven aan. De coördinator coördineert — niet jongleert.</p>
+        <h3 data-i18n="mod.8h">Last-minute planningwijzigingen</h3>
+        <p data-i18n="mod.8p">Flexkracht meldt zich ziek. Inlener heeft een spoedaanvraag. Een opdracht schuift een week op. Het systeem geeft direct alle betrokkenen een signaal, schuift contracten en uren waar nodig, en biedt beschikbare alternatieven aan. De coördinator coördineert — niet jongleert.</p>
       </div>
 
     </div>
@@ -708,10 +736,10 @@
   <div class="container">
     <div class="quote-wrap">
       <span class="quote-mark">"</span>
-      <blockquote>
+      <blockquote data-i18n="bewijs.text">
         Of u nu tien flexkrachten heeft of duizend — het probleem is hetzelfde. Te veel administratie, te weinig tijd voor wat het bureau onderscheidt. Met Flowmann valt het overtype-werk weg. Accordering loopt automatisch. CAO-berekening klopt vanaf dag één. De coördinator houdt tijd over voor matching, relatie en groei.
       </blockquote>
-      <div class="quote-tail">
+      <div class="quote-tail" data-i18n="bewijs.tail">
         U bemiddelt mensen — niet papier. <em>Flowmann zorgt</em> dat dat ook zo blijft.
       </div>
     </div>
@@ -722,10 +750,10 @@
 <section class="integration-section">
   <div class="container">
     <div class="integration-wrap">
-      <span class="section-label">Naast — of in plaats van</span>
-      <h2>Past Flowmann naast uw <em>bestaande systeem</em>, of in plaats ervan?</h2>
-      <p>Allebei kan. Werkt u met Carerix, Tigris, eXact, Otys, Pivotal, Tempolution of een ander uitzend-ATS? Flowmann staat ernaast en vult aan wat hapert — meestal urenregistratie, gelijkwaardige beloning, onboarding en inlener-communicatie. Uw payroll-software blijft staan; Flowmann levert de gevalideerde uren en juiste CAO-basis aan.</p>
-      <p>Werkt het bestaande systeem niet meer zoals u wilt? Dan vervangt Flowmann het, en u behoudt wat wel werkte (vaak match-database en payroll-koppeling). U kiest. We vechten niet met uw infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor uw bureau.</p>
+      <span class="section-label" data-i18n="int.label">Naast — of in plaats van</span>
+      <h2 data-i18n="int.title">Past Flowmann naast uw <em>bestaande systeem</em>, of in plaats ervan?</h2>
+      <p data-i18n="int.p1">Allebei kan. Werkt u met Carerix, Tigris, eXact, Otys, Pivotal, Tempolution of een ander uitzend-ATS? Flowmann staat ernaast en vult aan wat hapert — meestal urenregistratie, gelijkwaardige beloning, onboarding en inlener-communicatie. Uw payroll-software blijft staan; Flowmann levert de gevalideerde uren en juiste CAO-basis aan.</p>
+      <p data-i18n="int.p2">Werkt het bestaande systeem niet meer zoals u wilt? Dan vervangt Flowmann het, en u behoudt wat wel werkte (vaak match-database en payroll-koppeling). U kiest. We vechten niet met uw infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor uw bureau.</p>
     </div>
   </div>
 </section>
@@ -734,10 +762,10 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-wrap">
-      <h2>Wilt u zien hoe Flowmann in <em>uw</em> bureau werkt?</h2>
-      <p>Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de uitzendwereld kent, de WTTA-eisen, en het verschil tussen een goede match en een snelle match.</p>
+      <h2 data-i18n="cta.title">Wilt u zien hoe Flowmann in <em>uw</em> bureau werkt?</h2>
+      <p data-i18n="cta.desc">Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de uitzendwereld kent, de WTTA-eisen, en het verschil tussen een goede match en een snelle match.</p>
       <a href="/#contact" class="btn btn-primary">
-        <span>Neem contact op</span>
+        <span data-i18n="cta.btn">Neem contact op</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -755,17 +783,304 @@
                   stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
         </span>
-        <span class="footer-legal">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
+        <span class="footer-legal" data-i18n="foot.tag">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
       </div>
       <ul class="footer-links">
-        <li><a href="/#sectors">Sectoren</a></li>
-        <li><a href="/#pricing">Prijzen</a></li>
-        <li><a href="/#contact">Contact</a></li>
-        <li><a href="/">Home</a></li>
+        <li><a href="/#sectors" data-i18n="foot.l1">Sectoren</a></li>
+        <li><a href="/#pricing" data-i18n="foot.l2">Prijzen</a></li>
+        <li><a href="/#contact" data-i18n="foot.l3">Contact</a></li>
+        <li><a href="/" data-i18n="foot.l4">Home</a></li>
       </ul>
     </div>
   </div>
 </footer>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  nl: {
+    'nav.sectors':'Sectoren','nav.ai':'AI','nav.how':'Aanpak','nav.pricing':'Prijzen','nav.home':'Home','nav.login':'Login',
+    'page.title':'Arbeidsbemiddeling — Flowmann',
+    'page.desc':'Voor het uitzendbureau — groot of klein — dat klaar wil zijn voor de WTTA, gelijkwaardige beloning automatisch wil toepassen en geen overtype-werk meer wil. Urenregistratie, contractopbouw, onboarding en compliance in één app.',
+    'hero.eyebrow':'Sector · Arbeidsbemiddeling',
+    'hero.title':'Een uitzendbureau hoort mensen te <em>bemiddelen</em>. Niet papier.',
+    'hero.sub':'Voor elk uitzendbureau — groot of klein — dat klaar wil zijn voor de WTTA, gelijkwaardige beloning automatisch wil toepassen en eens niet meer afhankelijk wil zijn van WhatsApp, mailtjes en overtype-werk. Flowmann brengt urenregistratie, beloning, contractopbouw, onboarding en compliance samen — voor flexkracht, coördinator én inlener.',
+    'hero.cta1':'Vraag een rondleiding aan','hero.cta2':'Andere sectoren',
+    'prob.label':'U herkent het waarschijnlijk',
+    'prob.title':'U bemiddelt mensen. <em>De rest van de week</em> bemiddelt u administratie.',
+    'prob.desc':'Het probleem zit niet in een gebrek aan systemen. Het zit in vier patronen die elk uitzendbureau — van vijf flexkrachten tot vijfhonderd — herkent. En die nooit echt worden opgelost, omdat er geen tijd voor is.',
+    'prob.1h':'Wekelijks dezelfde administratie-marathon',
+    'prob.1p':'Urenbriefjes via WhatsApp. Accordering via mail. Overtype-werk naar het systeem. Een proces dat elke week opnieuw begint en elke week opnieuw uitloopt. Wat fout gaat in één schakel, valt door de hele keten — bij u, bij de flexkracht, bij de inlener.',
+    'prob.2h':'De ene inlener CAO Metaal. De volgende CAO Bouw.',
+    'prob.2p':'Voor één flexkracht moet u weten welke CAO geldt bij welke inlener. Gelijkwaardige beloning is geen suggestie — het is wet. Maar de berekening per situatie is handmatig, kennis-afhankelijk en foutgevoelig. Eén keer mis, en de inspectie heeft dossier-input.',
+    'prob.3h':'De WTTA komt eraan. Uw administratie is er nog niet klaar voor.',
+    'prob.3p':'Verplichte vergunning, verplichte financiële bewijsvoering, verplichte documentatie per flexkracht. Een uitzendbureau dat zijn dossier niet op orde heeft krijgt geen vergunning. Geen vergunning, geen werk. De deadline komt niet later. Uw dossier wel.',
+    'prob.4h':'Pools, Roemeens, Nederlands door elkaar',
+    'prob.4p':'Urenstaten in NL. Veiligheidsinstructies in NL. CAO-uitleg in NL. De flexkracht spreekt Pools. Wat hij niet snapt, kan hem in gevaar brengen — en u in een dossier bij de Arbeidsinspectie.',
+    'mod.label':'Wat Flowmann concreet doet',
+    'mod.title':'Geen <em>HR-tool die alles belooft</em>. Functies die uw coördinator maandagochtend al gebruikt.',
+    'mod.1h':'Urenregistratie via mobiel',
+    'mod.1p':"Flexkracht klokt in en uit via QR-scan of GPS-validatie op locatie. Coördinator en inlener zien live wie waar werkt en hoeveel uren gemaakt. De flexkracht ziet zelf ook z'n uren en wat dat oplevert deze week. Vrijdag: één export richting uw payroll. Geen briefjes, geen overtype-werk, geen ruzie over een half uur.",
+    'mod.2h':'Gelijkwaardige beloning per inlener-CAO',
+    'mod.2p':"Elke inlener z'n eigen CAO. Het systeem koppelt de geldende CAO aan de plaatsing — toeslagen, vakantietoeslag, reisuren, ploegen-toeslag, alles correct vanaf dag één. Coördinator kiest de plaatsing, het systeem rekent de juiste basis. Inspectie-klaar zonder mentale rekenmachine.",
+    'mod.3h':'Contractopbouw & fase-tracking',
+    'mod.3p':'Welke fase de flexkracht in zit, hoeveel weken aaneengesloten, wanneer de volgende fase ingaat. Het systeem signaleert vooraf — niet pas wanneer u tegen een wettelijke grens aanloopt. Verlenging of einde van rechtswege: u beslist op tijd, niet onder druk.',
+    'mod.4h':'WTTA-dossier per flexkracht',
+    'mod.4p':'ID-check, BSN, VCA, BHV, taalbeheersing — alles per flexkracht centraal. Automatische signalen wanneer documenten verlopen. Bij audit-vraag: één klik naar volledig dossier. Niet pas op de dag dat de inspecteur belt zoeken — voorbereid zijn voordat hij belt.',
+    'mod.5h':'Onboarding per inlener, geverifieerd',
+    'mod.5p':"Elke inlener heeft eigen safety-instructies — automatisch vertaald, automatisch opgediept. Flexkracht doorloopt de modules op z'n telefoon vóór hij op terrein komt. Digitale handtekening, audit trail. Inlener krijgt bewijs dat compliance geen kwestie van vertrouwen is.",
+    'mod.6h':'Vertaling ingebouwd',
+    'mod.6p':"Urenstaten, veiligheidsinstructies, CAO-uitleg automatisch in vijf talen. De Poolse flexkracht leest dezelfde inhoud in z'n eigen taal. Begrijpen wordt niet meer iets dat u hoopt — het is iets dat u kunt aantonen.",
+    'mod.7h':'Inlener-portaal',
+    'mod.7p':'Inlener heeft eigen login. Ziet wie er deze week werkt, registreert eindtijd, accordeert uren, geeft feedback. Vraagt vervanging of extra capaciteit aan. Geen telefoontje meer naar uw coördinator om "even" wat te regelen — alles via één plek.',
+    'mod.8h':'Last-minute planningwijzigingen',
+    'mod.8p':'Flexkracht meldt zich ziek. Inlener heeft een spoedaanvraag. Een opdracht schuift een week op. Het systeem geeft direct alle betrokkenen een signaal, schuift contracten en uren waar nodig, en biedt beschikbare alternatieven aan. De coördinator coördineert — niet jongleert.',
+    'bewijs.text':'Of u nu tien flexkrachten heeft of duizend — het probleem is hetzelfde. Te veel administratie, te weinig tijd voor wat het bureau onderscheidt. Met Flowmann valt het overtype-werk weg. Accordering loopt automatisch. CAO-berekening klopt vanaf dag één. De coördinator houdt tijd over voor matching, relatie en groei.',
+    'bewijs.tail':'U bemiddelt mensen — niet papier. <em>Flowmann zorgt</em> dat dat ook zo blijft.',
+    'int.label':'Naast — of in plaats van',
+    'int.title':'Past Flowmann naast uw <em>bestaande systeem</em>, of in plaats ervan?',
+    'int.p1':'Allebei kan. Werkt u met Carerix, Tigris, eXact, Otys, Pivotal, Tempolution of een ander uitzend-ATS? Flowmann staat ernaast en vult aan wat hapert — meestal urenregistratie, gelijkwaardige beloning, onboarding en inlener-communicatie. Uw payroll-software blijft staan; Flowmann levert de gevalideerde uren en juiste CAO-basis aan.',
+    'int.p2':'Werkt het bestaande systeem niet meer zoals u wilt? Dan vervangt Flowmann het, en u behoudt wat wel werkte (vaak match-database en payroll-koppeling). U kiest. We vechten niet met uw infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor uw bureau.',
+    'cta.title':'Wilt u zien hoe Flowmann in <em>uw</em> bureau werkt?',
+    'cta.desc':'Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de uitzendwereld kent, de WTTA-eisen, en het verschil tussen een goede match en een snelle match.',
+    'cta.btn':'Neem contact op',
+    'foot.tag':'© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.',
+    'foot.l1':'Sectoren','foot.l2':'Prijzen','foot.l3':'Contact','foot.l4':'Home'
+  },
+  en: {
+    'nav.sectors':'Sectors','nav.ai':'AI','nav.how':'Approach','nav.pricing':'Pricing','nav.home':'Home','nav.login':'Login',
+    'page.title':'Staffing & Placement — Flowmann',
+    'page.desc':'For the staffing agency — large or small — that wants to be ready for the WTTA (Dutch staffing act), apply equal pay automatically and eliminate retyping work. Time tracking, contract phases, onboarding and compliance in one app.',
+    'hero.eyebrow':'Sector · Staffing & Placement',
+    'hero.title':'A staffing agency should place <em>people</em>. Not paperwork.',
+    'hero.sub':'For every staffing agency — large or small — that wants to be ready for the WTTA (the Dutch staffing act), apply equal pay automatically and finally stop depending on WhatsApp, emails and retyping work. Flowmann brings time tracking, pay, contract phases, onboarding and compliance together — for flex worker, coordinator and client company alike.',
+    'hero.cta1':'Request a walkthrough','hero.cta2':'Other sectors',
+    'prob.label':'You probably recognise this',
+    'prob.title':'You place people. <em>The rest of the week</em> you place paperwork.',
+    'prob.desc':"The problem isn't a lack of systems. It's in four patterns every staffing agency — from five flex workers to five hundred — recognises. And which never truly get solved, because there's no time for it.",
+    'prob.1h':'The same administration marathon every week',
+    'prob.1p':'Timesheets via WhatsApp. Approval via email. Retyping into the system. A process that restarts every week and overruns every week. What goes wrong in one link falls through the entire chain — for you, the flex worker, the client company.',
+    'prob.2h':'One client under the Metal CAO. The next under Construction.',
+    'prob.2p':"For one flex worker you must know which collective agreement (CAO) applies at which client. Equal pay isn't a suggestion — it's law. But the calculation per situation is manual, knowledge-dependent and error-prone. One mistake, and the inspectorate has file material.",
+    'prob.3h':'The WTTA is coming. Your administration is not ready yet.',
+    'prob.3p':"Mandatory licensing, mandatory financial evidence, mandatory documentation per flex worker. A staffing agency without its files in order gets no licence. No licence, no work. The deadline won't move. Your files will have to.",
+    'prob.4h':'Polish, Romanian, Dutch all mixed together',
+    'prob.4p':"Timesheets in Dutch. Safety instructions in Dutch. CAO explanations in Dutch. The flex worker speaks Polish. What he doesn't understand can put him in danger — and you in a file at the Labour Inspectorate.",
+    'mod.label':'What Flowmann concretely does',
+    'mod.title':'Not <em>an HR tool that promises everything</em>. Functions your coordinator uses Monday morning.',
+    'mod.1h':'Time tracking via mobile',
+    'mod.1p':"Flex worker clocks in and out via QR scan or GPS validation on site. Coordinator and client see live who works where and how many hours. The flex worker also sees their own hours and what they earn this week. Friday: one export to your payroll. No paper slips, no retyping, no arguments over half an hour.",
+    'mod.2h':'Equal pay per client CAO',
+    'mod.2p':"Each client company has its own collective agreement. The system links the applicable CAO to the placement — allowances, holiday pay, travel hours, shift premiums, everything correct from day one. The coordinator picks the placement, the system calculates the right basis. Inspection-ready without mental arithmetic.",
+    'mod.3h':'Contract phases & tracking',
+    'mod.3p':"Which phase the flex worker is in, how many consecutive weeks, when the next phase starts. The system signals in advance — not when you hit a legal limit. Extension or statutory end: you decide on time, not under pressure.",
+    'mod.4h':'WTTA file per flex worker',
+    'mod.4p':'ID check, BSN, VCA, BHV, language proficiency — everything per flex worker in one place. Automatic alerts when documents expire. For an audit question: one click to the complete file. Not searching on the day the inspector calls — prepared before he calls.',
+    'mod.5h':'Onboarding per client, verified',
+    'mod.5p':"Each client company has its own safety instructions — automatically translated, automatically surfaced. The flex worker completes the modules on their phone before arriving on site. Digital signature, audit trail. The client gets proof that compliance isn't a matter of trust.",
+    'mod.6h':'Translation built in',
+    'mod.6p':"Timesheets, safety instructions, CAO explanations automatically in five languages. The Polish flex worker reads the same content in their own language. Understanding is no longer something you hope for — it's something you can prove.",
+    'mod.7h':'Client portal',
+    'mod.7p':'The client company has its own login. Sees who works this week, registers end times, approves hours, gives feedback. Requests replacement or extra capacity. No more calls to your coordinator to "quickly" arrange something — everything in one place.',
+    'mod.8h':'Last-minute schedule changes',
+    'mod.8p':"A flex worker calls in sick. A client has an urgent request. A job shifts by a week. The system immediately signals everyone involved, shifts contracts and hours where needed, and offers available alternatives. The coordinator coordinates — doesn't juggle.",
+    'bewijs.text':"Whether you have ten flex workers or a thousand — the problem is the same. Too much administration, too little time for what sets the agency apart. With Flowmann the retyping disappears. Approval runs automatically. CAO calculations are right from day one. The coordinator keeps time for matching, relationships and growth.",
+    'bewijs.tail':"You place people — not paperwork. <em>Flowmann makes sure</em> it stays that way.",
+    'int.label':'Alongside — or instead of',
+    'int.title':'Does Flowmann fit alongside your <em>existing system</em>, or replace it?',
+    'int.p1':"Both work. Do you use Carerix, Tigris, eXact, Otys, Pivotal, Tempolution or another staffing ATS? Flowmann sits alongside and fills the gaps — usually time tracking, equal pay, onboarding and client communication. Your payroll software stays; Flowmann delivers the validated hours and the right CAO basis.",
+    'int.p2':"Is the existing system no longer working the way you want? Then Flowmann replaces it, and you keep what did work (often the match database and payroll link). You choose. We don't fight your infrastructure — we work with it, or we take it over. Whatever delivers the most for your agency.",
+    'cta.title':'Want to see how Flowmann works in <em>your</em> agency?',
+    'cta.desc':"Request a non-binding walkthrough. No salesperson with a script — someone who knows the staffing world, the WTTA requirements, and the difference between a good match and a fast match.",
+    'cta.btn':'Get in touch',
+    'foot.tag':'© 2026 Flowmann · One platform. Every sector. Finally connected.',
+    'foot.l1':'Sectors','foot.l2':'Pricing','foot.l3':'Contact','foot.l4':'Home'
+  },
+  de: {
+    'nav.sectors':'Branchen','nav.ai':'KI','nav.how':'Vorgehen','nav.pricing':'Preise','nav.home':'Home','nav.login':'Anmelden',
+    'page.title':'Arbeitsvermittlung — Flowmann',
+    'page.desc':'Für die Zeitarbeitsagentur — groß oder klein — die bereit sein will für die WTTA (das niederländische Zeitarbeitsgesetz), gleichwertige Bezahlung automatisch anwenden und keine Abtipparbeit mehr will. Zeiterfassung, Vertragsphasen, Onboarding und Compliance in einer App.',
+    'hero.eyebrow':'Branche · Arbeitsvermittlung',
+    'hero.title':'Eine Zeitarbeitsagentur sollte <em>Menschen</em> vermitteln. Kein Papier.',
+    'hero.sub':'Für jede Zeitarbeitsagentur — groß oder klein — die bereit sein will für die WTTA (das niederländische Zeitarbeitsgesetz), gleichwertige Bezahlung automatisch anwenden und endlich nicht mehr von WhatsApp, Mails und Abtipparbeit abhängig sein will. Flowmann vereint Zeiterfassung, Bezahlung, Vertragsaufbau, Onboarding und Compliance — für Zeitarbeitskraft, Koordinator und Entleiher.',
+    'hero.cta1':'Vorführung anfragen','hero.cta2':'Andere Branchen',
+    'prob.label':'Sie kennen das wahrscheinlich',
+    'prob.title':'Sie vermitteln Menschen. <em>Den Rest der Woche</em> vermitteln Sie Verwaltung.',
+    'prob.desc':'Das Problem liegt nicht im Mangel an Systemen. Es liegt in vier Mustern, die jede Zeitarbeitsagentur — von fünf bis fünfhundert Zeitarbeitskräften — kennt. Und die nie wirklich gelöst werden, weil keine Zeit dafür ist.',
+    'prob.1h':'Jede Woche derselbe Verwaltungsmarathon',
+    'prob.1p':'Stundenzettel per WhatsApp. Freigabe per Mail. Abtippen ins System. Ein Prozess, der jede Woche neu beginnt und jede Woche überläuft. Was in einem Glied schiefgeht, fällt durch die ganze Kette — bei Ihnen, bei der Zeitarbeitskraft, beim Entleiher.',
+    'prob.2h':'Der eine Entleiher CAO Metall. Der nächste CAO Bau.',
+    'prob.2p':'Für eine Zeitarbeitskraft müssen Sie wissen, welcher Tarifvertrag (CAO) bei welchem Entleiher gilt. Gleichwertige Bezahlung ist kein Vorschlag — es ist Gesetz. Aber die Berechnung pro Situation ist manuell, wissensabhängig und fehleranfällig. Einmal falsch, und die Inspektion hat Aktenmaterial.',
+    'prob.3h':'Die WTTA kommt. Ihre Verwaltung ist noch nicht bereit.',
+    'prob.3p':'Pflichtlizenz, verpflichtende Finanznachweise, verpflichtende Dokumentation pro Zeitarbeitskraft. Eine Agentur ohne geordnete Akten bekommt keine Lizenz. Keine Lizenz, keine Arbeit. Die Frist verschiebt sich nicht. Ihre Akten schon.',
+    'prob.4h':'Polnisch, Rumänisch, Niederländisch durcheinander',
+    'prob.4p':'Stundenzettel auf NL. Sicherheitsanweisungen auf NL. CAO-Erklärungen auf NL. Die Zeitarbeitskraft spricht Polnisch. Was sie nicht versteht, kann sie in Gefahr bringen — und Sie in eine Akte bei der Arbeitsinspektion.',
+    'mod.label':'Was Flowmann konkret leistet',
+    'mod.title':'Kein <em>HR-Tool, das alles verspricht</em>. Funktionen, die Ihr Koordinator Montagmorgen schon nutzt.',
+    'mod.1h':'Zeiterfassung per Handy',
+    'mod.1p':'Die Zeitarbeitskraft stempelt per QR-Scan oder GPS-Validierung vor Ort ein und aus. Koordinator und Entleiher sehen live, wer wo arbeitet und wie viele Stunden. Die Zeitarbeitskraft sieht auch selbst ihre Stunden und was das diese Woche bringt. Freitag: ein Export an Ihre Lohnabrechnung. Keine Zettel, kein Abtippen, kein Streit über eine halbe Stunde.',
+    'mod.2h':'Gleichwertige Bezahlung pro Entleiher-CAO',
+    'mod.2p':'Jeder Entleiher hat seinen eigenen Tarifvertrag. Das System verknüpft den geltenden CAO mit dem Einsatz — Zulagen, Urlaubsgeld, Reisestunden, Schichtzuschläge, alles korrekt ab Tag eins. Der Koordinator wählt den Einsatz, das System berechnet die richtige Basis. Inspektionsbereit ohne Kopfrechnen.',
+    'mod.3h':'Vertragsaufbau & Phasen-Tracking',
+    'mod.3p':'In welcher Phase die Zeitarbeitskraft ist, wie viele Wochen am Stück, wann die nächste Phase beginnt. Das System signalisiert vorab — nicht erst, wenn Sie an eine gesetzliche Grenze stoßen. Verlängerung oder Ende von Rechts wegen: Sie entscheiden rechtzeitig, nicht unter Druck.',
+    'mod.4h':'WTTA-Akte pro Zeitarbeitskraft',
+    'mod.4p':'ID-Check, BSN, VCA, BHV, Sprachkenntnisse — alles pro Zeitarbeitskraft zentral. Automatische Signale, wenn Dokumente ablaufen. Bei einer Audit-Frage: ein Klick zur vollständigen Akte. Nicht erst suchen, wenn der Inspektor anruft — vorbereitet sein, bevor er anruft.',
+    'mod.5h':'Onboarding pro Entleiher, verifiziert',
+    'mod.5p':'Jeder Entleiher hat eigene Sicherheitsanweisungen — automatisch übersetzt, automatisch bereitgestellt. Die Zeitarbeitskraft durchläuft die Module auf ihrem Handy, bevor sie das Gelände betritt. Digitale Unterschrift, Audit-Trail. Der Entleiher bekommt den Nachweis, dass Compliance keine Vertrauensfrage ist.',
+    'mod.6h':'Übersetzung eingebaut',
+    'mod.6p':'Stundenzettel, Sicherheitsanweisungen, CAO-Erklärungen automatisch in fünf Sprachen. Die polnische Zeitarbeitskraft liest denselben Inhalt in ihrer eigenen Sprache. Verstehen ist nicht mehr etwas, das Sie hoffen — es ist etwas, das Sie nachweisen können.',
+    'mod.7h':'Entleiher-Portal',
+    'mod.7p':'Der Entleiher hat einen eigenen Login. Sieht, wer diese Woche arbeitet, registriert Endzeiten, gibt Stunden frei, gibt Feedback. Fragt Ersatz oder zusätzliche Kapazität an. Kein Anruf mehr beim Koordinator, um "schnell" etwas zu regeln — alles an einem Ort.',
+    'mod.8h':'Last-Minute-Planänderungen',
+    'mod.8p':'Eine Zeitarbeitskraft meldet sich krank. Ein Entleiher hat eine Eilanfrage. Ein Auftrag verschiebt sich um eine Woche. Das System signalisiert sofort allen Beteiligten, verschiebt Verträge und Stunden wo nötig und bietet verfügbare Alternativen an. Der Koordinator koordiniert — jongliert nicht.',
+    'bewijs.text':'Ob Sie zehn Zeitarbeitskräfte haben oder tausend — das Problem ist dasselbe. Zu viel Verwaltung, zu wenig Zeit für das, was die Agentur auszeichnet. Mit Flowmann fällt das Abtippen weg. Die Freigabe läuft automatisch. Die CAO-Berechnung stimmt ab Tag eins. Der Koordinator behält Zeit für Matching, Beziehung und Wachstum.',
+    'bewijs.tail':'Sie vermitteln Menschen — kein Papier. <em>Flowmann sorgt dafür</em>, dass das so bleibt.',
+    'int.label':'Neben — oder anstelle von',
+    'int.title':'Passt Flowmann neben Ihr <em>bestehendes System</em>, oder ersetzt es?',
+    'int.p1':'Beides ist möglich. Arbeiten Sie mit Carerix, Tigris, eXact, Otys, Pivotal, Tempolution oder einem anderen Zeitarbeits-ATS? Flowmann steht daneben und füllt die Lücken — meist Zeiterfassung, gleichwertige Bezahlung, Onboarding und Entleiher-Kommunikation. Ihre Lohnsoftware bleibt; Flowmann liefert die validierten Stunden und die richtige CAO-Basis.',
+    'int.p2':'Funktioniert das bestehende System nicht mehr, wie Sie wollen? Dann ersetzt Flowmann es, und Sie behalten, was funktioniert hat (oft Match-Datenbank und Lohn-Anbindung). Sie entscheiden. Wir kämpfen nicht mit Ihrer Infrastruktur — wir arbeiten damit, oder wir übernehmen sie. Was den größten Nutzen für Ihre Agentur bringt.',
+    'cta.title':'Möchten Sie sehen, wie Flowmann in <em>Ihrer</em> Agentur funktioniert?',
+    'cta.desc':'Vereinbaren Sie eine unverbindliche Vorführung. Kein Verkäufer mit Skript — jemand, der die Zeitarbeitswelt kennt, die WTTA-Anforderungen und den Unterschied zwischen einem guten Match und einem schnellen Match.',
+    'cta.btn':'Kontakt aufnehmen',
+    'foot.tag':'© 2026 Flowmann · Eine Plattform. Jede Branche. Endlich verbunden.',
+    'foot.l1':'Branchen','foot.l2':'Preise','foot.l3':'Kontakt','foot.l4':'Home'
+  },
+  fr: {
+    'nav.sectors':'Secteurs','nav.ai':'IA','nav.how':'Approche','nav.pricing':'Tarifs','nav.home':'Accueil','nav.login':'Connexion',
+    'page.title':'Placement et intérim — Flowmann',
+    'page.desc':"Pour l'agence d'intérim — grande ou petite — qui veut être prête pour la WTTA (loi néerlandaise sur l'intérim), appliquer automatiquement la rémunération équivalente et en finir avec la ressaisie. Pointage, phases contractuelles, onboarding et conformité dans une seule application.",
+    'hero.eyebrow':'Secteur · Placement et intérim',
+    'hero.title':"Une agence d'intérim doit placer des <em>personnes</em>. Pas de la paperasse.",
+    'hero.sub':"Pour chaque agence d'intérim — grande ou petite — qui veut être prête pour la WTTA (la loi néerlandaise sur l'intérim), appliquer automatiquement la rémunération équivalente et ne plus dépendre de WhatsApp, des mails et de la ressaisie. Flowmann réunit pointage, rémunération, phases contractuelles, onboarding et conformité — pour l'intérimaire, le coordinateur et l'entreprise utilisatrice.",
+    'hero.cta1':'Demander une visite','hero.cta2':'Autres secteurs',
+    'prob.label':'Vous reconnaissez probablement cela',
+    'prob.title':'Vous placez des personnes. <em>Le reste de la semaine</em>, vous placez de la paperasse.',
+    'prob.desc':"Le problème ne vient pas du manque de systèmes. Il vient de quatre schémas que chaque agence d'intérim — de cinq à cinq cents intérimaires — reconnaît. Et qui ne sont jamais vraiment résolus, faute de temps.",
+    'prob.1h':'Chaque semaine, le même marathon administratif',
+    'prob.1p':"Feuilles d'heures par WhatsApp. Validation par mail. Ressaisie dans le système. Un processus qui recommence chaque semaine et déborde chaque semaine. Ce qui rate dans un maillon traverse toute la chaîne — chez vous, chez l'intérimaire, chez l'entreprise utilisatrice.",
+    'prob.2h':"Un client sous la CAO Métal. Le suivant sous la CAO Construction.",
+    'prob.2p':"Pour un seul intérimaire, vous devez savoir quelle convention collective (CAO) s'applique chez quel client. La rémunération équivalente n'est pas une suggestion — c'est la loi. Mais le calcul par situation est manuel, dépendant des connaissances et source d'erreurs. Une erreur, et l'inspection a de quoi remplir un dossier.",
+    'prob.3h':"La WTTA arrive. Votre administration n'est pas encore prête.",
+    'prob.3p':"Licence obligatoire, preuves financières obligatoires, documentation obligatoire par intérimaire. Une agence dont les dossiers ne sont pas en ordre n'obtient pas de licence. Pas de licence, pas de travail. La date limite ne bougera pas. Vos dossiers devront bouger.",
+    'prob.4h':'Polonais, roumain, néerlandais mélangés',
+    'prob.4p':"Feuilles d'heures en NL. Consignes de sécurité en NL. Explications CAO en NL. L'intérimaire parle polonais. Ce qu'il ne comprend pas peut le mettre en danger — et vous dans un dossier de l'Inspection du travail.",
+    'mod.label':'Ce que Flowmann fait concrètement',
+    'mod.title':"Pas <em>un outil RH qui promet tout</em>. Des fonctions que votre coordinateur utilise dès lundi matin.",
+    'mod.1h':'Pointage via mobile',
+    'mod.1p':"L'intérimaire pointe via scan QR ou validation GPS sur site. Coordinateur et client voient en direct qui travaille où et combien d'heures. L'intérimaire voit aussi ses propres heures et ce que cela rapporte cette semaine. Vendredi : un export vers votre paie. Plus de papiers, plus de ressaisie, plus de disputes pour une demi-heure.",
+    'mod.2h':'Rémunération équivalente par CAO client',
+    'mod.2p':"Chaque entreprise utilisatrice a sa propre convention collective. Le système relie la CAO applicable au placement — primes, pécule de vacances, heures de déplacement, primes d'équipe, tout correct dès le premier jour. Le coordinateur choisit le placement, le système calcule la bonne base. Prêt pour l'inspection sans calcul mental.",
+    'mod.3h':'Phases contractuelles & suivi',
+    'mod.3p':"Dans quelle phase se trouve l'intérimaire, combien de semaines consécutives, quand commence la phase suivante. Le système signale à l'avance — pas quand vous touchez une limite légale. Prolongation ou fin de plein droit : vous décidez à temps, pas sous pression.",
+    'mod.4h':'Dossier WTTA par intérimaire',
+    'mod.4p':"Contrôle d'identité, BSN, VCA, BHV, maîtrise de la langue — tout centralisé par intérimaire. Alertes automatiques quand des documents expirent. Pour une question d'audit : un clic vers le dossier complet. Ne pas chercher le jour où l'inspecteur appelle — être prêt avant qu'il n'appelle.",
+    'mod.5h':'Onboarding par client, vérifié',
+    'mod.5p':"Chaque entreprise utilisatrice a ses propres consignes de sécurité — automatiquement traduites, automatiquement présentées. L'intérimaire suit les modules sur son téléphone avant d'arriver sur site. Signature numérique, piste d'audit. Le client obtient la preuve que la conformité n'est pas une question de confiance.",
+    'mod.6h':'Traduction intégrée',
+    'mod.6p':"Feuilles d'heures, consignes de sécurité, explications CAO automatiquement en cinq langues. L'intérimaire polonais lit le même contenu dans sa propre langue. Comprendre n'est plus quelque chose que vous espérez — c'est quelque chose que vous pouvez prouver.",
+    'mod.7h':'Portail client',
+    'mod.7p':"L'entreprise utilisatrice a son propre accès. Voit qui travaille cette semaine, enregistre les heures de fin, valide les heures, donne du feedback. Demande un remplacement ou de la capacité supplémentaire. Plus d'appel à votre coordinateur pour « vite » arranger quelque chose — tout au même endroit.",
+    'mod.8h':'Changements de planning de dernière minute',
+    'mod.8p':"Un intérimaire se déclare malade. Un client a une demande urgente. Une mission se décale d'une semaine. Le système alerte immédiatement tous les concernés, décale contrats et heures si nécessaire, et propose des alternatives disponibles. Le coordinateur coordonne — ne jongle pas.",
+    'bewijs.text':"Que vous ayez dix intérimaires ou mille — le problème est le même. Trop d'administration, trop peu de temps pour ce qui distingue l'agence. Avec Flowmann, la ressaisie disparaît. La validation est automatique. Le calcul CAO est juste dès le premier jour. Le coordinateur garde du temps pour le matching, la relation et la croissance.",
+    'bewijs.tail':"Vous placez des personnes — pas de la paperasse. <em>Flowmann veille</em> à ce que cela reste ainsi.",
+    'int.label':'À côté — ou à la place',
+    'int.title':'Flowmann fonctionne-t-il à côté de votre <em>système existant</em>, ou le remplace-t-il ?',
+    'int.p1':"Les deux sont possibles. Travaillez-vous avec Carerix, Tigris, eXact, Otys, Pivotal, Tempolution ou un autre ATS d'intérim ? Flowmann se place à côté et comble les manques — généralement le pointage, la rémunération équivalente, l'onboarding et la communication client. Votre logiciel de paie reste ; Flowmann fournit les heures validées et la bonne base CAO.",
+    'int.p2':"Le système existant ne fonctionne plus comme vous le souhaitez ? Alors Flowmann le remplace, et vous gardez ce qui marchait (souvent la base de matching et le lien paie). Vous choisissez. Nous ne luttons pas contre votre infrastructure — nous travaillons avec elle, ou nous prenons le relais. Ce qui apporte le plus à votre agence.",
+    'cta.title':'Voulez-vous voir comment Flowmann fonctionne dans <em>votre</em> agence ?',
+    'cta.desc':"Demandez une visite sans engagement. Pas un commercial avec un script — quelqu'un qui connaît le monde de l'intérim, les exigences WTTA, et la différence entre un bon match et un match rapide.",
+    'cta.btn':'Nous contacter',
+    'foot.tag':'© 2026 Flowmann · Une plateforme. Chaque secteur. Enfin connectés.',
+    'foot.l1':'Secteurs','foot.l2':'Tarifs','foot.l3':'Contact','foot.l4':'Accueil'
+  },
+  ar: {
+    'nav.sectors':'القطاعات','nav.ai':'الذكاء الاصطناعي','nav.how':'النهج','nav.pricing':'الأسعار','nav.home':'الرئيسية','nav.login':'تسجيل الدخول',
+    'page.title':'الوساطة في التوظيف — Flowmann',
+    'page.desc':'لوكالة التوظيف — كبيرة أو صغيرة — التي تريد أن تكون جاهزة لقانون WTTA الهولندي، وتطبيق المساواة في الأجور تلقائيًا، والتخلص من إعادة الإدخال. تسجيل الساعات ومراحل العقد والتأهيل والامتثال في تطبيق واحد.',
+    'hero.eyebrow':'قطاع · الوساطة في التوظيف',
+    'hero.title':'وكالة التوظيف يجب أن توظف <em>الناس</em>. ليس الأوراق.',
+    'hero.sub':'لكل وكالة توظيف — كبيرة أو صغيرة — تريد أن تكون جاهزة لقانون WTTA (قانون التوظيف المؤقت الهولندي)، وتطبيق المساواة في الأجور تلقائيًا، والتوقف أخيرًا عن الاعتماد على WhatsApp والرسائل وإعادة الإدخال. Flowmann يجمع تسجيل الساعات والأجور ومراحل العقد والتأهيل والامتثال — للعامل المرن والمنسق والشركة المستفيدة.',
+    'hero.cta1':'اطلب جولة','hero.cta2':'قطاعات أخرى',
+    'prob.label':'ربما تتعرف على هذا',
+    'prob.title':'أنت توظف الناس. <em>بقية الأسبوع</em> توظف الإدارة.',
+    'prob.desc':'المشكلة ليست في نقص الأنظمة. إنها في أربعة أنماط تعرفها كل وكالة توظيف — من خمسة عمال مرنين إلى خمسمائة. ولا تُحل أبدًا، لأنه لا وقت لها.',
+    'prob.1h':'نفس ماراثون الإدارة كل أسبوع',
+    'prob.1p':'كشوف ساعات عبر WhatsApp. موافقات عبر البريد. إعادة إدخال في النظام. عملية تبدأ من جديد كل أسبوع وتتجاوز وقتها كل أسبوع. ما يفشل في حلقة واحدة يسقط عبر السلسلة كلها — عندك، عند العامل المرن، عند الشركة المستفيدة.',
+    'prob.2h':'شركة تحت CAO المعادن. والتالية تحت CAO البناء.',
+    'prob.2p':'لعامل مرن واحد يجب أن تعرف أي اتفاقية عمل جماعية (CAO) تنطبق عند أي شركة. المساواة في الأجور ليست اقتراحًا — إنها قانون. لكن الحساب لكل حالة يدوي، يعتمد على المعرفة، ومعرض للأخطاء. خطأ واحد، والتفتيش لديه مادة للملف.',
+    'prob.3h':'قانون WTTA قادم. إدارتك ليست جاهزة بعد.',
+    'prob.3p':'ترخيص إلزامي، إثباتات مالية إلزامية، توثيق إلزامي لكل عامل مرن. وكالة لا تملك ملفات منظمة لا تحصل على ترخيص. لا ترخيص، لا عمل. الموعد النهائي لن يتأخر. ملفاتك يجب أن تتقدم.',
+    'prob.4h':'بولندية ورومانية وهولندية مختلطة',
+    'prob.4p':'كشوف ساعات بالهولندية. تعليمات سلامة بالهولندية. شروحات CAO بالهولندية. العامل المرن يتحدث البولندية. ما لا يفهمه قد يعرضه للخطر — ويعرضك لملف عند مفتشية العمل.',
+    'mod.label':'ما تفعله Flowmann فعليًا',
+    'mod.title':'ليست <em>أداة موارد بشرية تعد بكل شيء</em>. وظائف يستخدمها منسقك صباح الإثنين.',
+    'mod.1h':'تسجيل الساعات عبر الجوال',
+    'mod.1p':'العامل المرن يسجل الدخول والخروج عبر مسح QR أو التحقق بـ GPS في الموقع. المنسق والشركة يريان مباشرة من يعمل أين وكم ساعة. العامل المرن يرى أيضًا ساعاته وما يكسبه هذا الأسبوع. الجمعة: تصدير واحد لنظام الرواتب. لا أوراق، لا إعادة إدخال، لا خلافات على نصف ساعة.',
+    'mod.2h':'المساواة في الأجور حسب CAO الشركة',
+    'mod.2p':'كل شركة مستفيدة لها اتفاقيتها الجماعية الخاصة. النظام يربط CAO المعمول بها بالتوظيف — البدلات، بدل الإجازة، ساعات السفر، علاوات النوبات، كل شيء صحيح من اليوم الأول. المنسق يختار التوظيف، النظام يحسب الأساس الصحيح. جاهز للتفتيش دون حساب ذهني.',
+    'mod.3h':'بناء العقد وتتبع المراحل',
+    'mod.3p':'في أي مرحلة يوجد العامل المرن، كم أسبوعًا متتاليًا، متى تبدأ المرحلة التالية. النظام ينبه مسبقًا — ليس عندما تصطدم بحد قانوني. تمديد أو إنهاء بقوة القانون: تقرر في الوقت المناسب، ليس تحت الضغط.',
+    'mod.4h':'ملف WTTA لكل عامل مرن',
+    'mod.4p':'فحص الهوية، BSN، VCA، BHV، إتقان اللغة — كل شيء مركزي لكل عامل مرن. تنبيهات تلقائية عند انتهاء صلاحية المستندات. عند سؤال تدقيق: نقرة واحدة للملف الكامل. لا تبحث يوم اتصال المفتش — كن مستعدًا قبل أن يتصل.',
+    'mod.5h':'تأهيل لكل شركة، موثق',
+    'mod.5p':'كل شركة مستفيدة لها تعليمات سلامة خاصة — مترجمة تلقائيًا، معروضة تلقائيًا. العامل المرن يكمل الوحدات على هاتفه قبل وصوله للموقع. توقيع رقمي، سجل تدقيق. الشركة تحصل على إثبات أن الامتثال ليس مسألة ثقة.',
+    'mod.6h':'الترجمة مدمجة',
+    'mod.6p':'كشوف الساعات وتعليمات السلامة وشروحات CAO تلقائيًا بخمس لغات. العامل المرن البولندي يقرأ نفس المحتوى بلغته الخاصة. الفهم لم يعد شيئًا تأمله — بل شيئًا يمكنك إثباته.',
+    'mod.7h':'بوابة الشركة المستفيدة',
+    'mod.7p':'الشركة المستفيدة لها دخول خاص. ترى من يعمل هذا الأسبوع، تسجل أوقات الانتهاء، توافق على الساعات، تعطي ملاحظات. تطلب بديلًا أو قدرة إضافية. لا مزيد من الاتصال بمنسقك لترتيب شيء "بسرعة" — كل شيء في مكان واحد.',
+    'mod.8h':'تغييرات الجدولة في اللحظة الأخيرة',
+    'mod.8p':'عامل مرن يبلغ عن مرضه. شركة لديها طلب عاجل. مهمة تنتقل أسبوعًا. النظام ينبه فورًا جميع المعنيين، ينقل العقود والساعات حيث يلزم، ويقدم بدائل متاحة. المنسق ينسق — لا يتلاعب.',
+    'bewijs.text':'سواء كان لديك عشرة عمال مرنين أو ألف — المشكلة واحدة. إدارة كثيرة جدًا، وقت قليل جدًا لما يميز الوكالة. مع Flowmann تختفي إعادة الإدخال. الموافقات تلقائية. حساب CAO صحيح من اليوم الأول. المنسق يحتفظ بوقت للمطابقة والعلاقات والنمو.',
+    'bewijs.tail':'أنت توظف الناس — لا الأوراق. <em>Flowmann يضمن</em> أن يبقى الأمر كذلك.',
+    'int.label':'بجانب — أو بدلًا من',
+    'int.title':'هل يعمل Flowmann بجانب <em>نظامك الحالي</em>، أم بدلًا منه؟',
+    'int.p1':'كلاهما ممكن. هل تعمل بـ Carerix أو Tigris أو eXact أو Otys أو Pivotal أو Tempolution أو نظام ATS آخر للتوظيف؟ Flowmann يقف بجانبه ويملأ الثغرات — عادة تسجيل الساعات والمساواة في الأجور والتأهيل والتواصل مع الشركات. برنامج الرواتب يبقى؛ Flowmann يوفر الساعات الموثقة وأساس CAO الصحيح.',
+    'int.p2':'النظام الحالي لم يعد يعمل كما تريد؟ إذن Flowmann يحل محله، وتحتفظ بما كان يعمل (غالبًا قاعدة المطابقة وربط الرواتب). أنت تختار. لا نحارب بنيتك التحتية — نعمل معها، أو نتولاها. ما يحقق أكبر فائدة لوكالتك.',
+    'cta.title':'هل تريد أن ترى كيف يعمل Flowmann في <em>وكالتك</em>؟',
+    'cta.desc':'اطلب جولة دون التزام. لا مندوب مبيعات بسيناريو — شخص يعرف عالم التوظيف المؤقت ومتطلبات WTTA والفرق بين المطابقة الجيدة والمطابقة السريعة.',
+    'cta.btn':'تواصل معنا',
+    'foot.tag':'© 2026 Flowmann · منصة واحدة. كل قطاع. متصلون أخيرًا.',
+    'foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الرئيسية'
+  }
+};
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  try { localStorage.setItem('flowmann-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Update page title and meta description
+  if (translations[lang]) {
+    if (translations[lang]['page.title']) {
+      document.title = translations[lang]['page.title'];
+    }
+    if (translations[lang]['page.desc']) {
+      const metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['page.desc']);
+    }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Laad opgeslagen taalkeuze bij paginalading
+try {
+  const savedLang = localStorage.getItem('flowmann-lang');
+  if (savedLang && ['nl','en','de','fr','ar'].includes(savedLang)) {
+    setLang(savedLang);
+  }
+} catch (e) {}
+</script>
 
 </body>
 </html>
