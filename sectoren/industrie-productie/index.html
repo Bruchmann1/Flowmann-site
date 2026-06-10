@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0a0d12">
 
 <title>Industrie & Productie — Flowmann</title>
-<meta name="description" content="Van vier uur stilstand naar acht minuten oplossing. Flowmann voor de fabriek: OCAP-assistent met AI, digitale inspecties, SAP M1-meldingsketen, klachtenregister, en storingsanalyse die patronen vindt die mensen missen.">
+<meta name="description" id="meta-description" content="Van vier uur stilstand naar acht minuten oplossing. Flowmann voor de fabriek: OCAP-assistent met AI, digitale inspecties, SAP M1-meldingsketen, klachtenregister, en storingsanalyse die patronen vindt die mensen missen.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://flowmann.com/sectoren/industrie-productie">
 
@@ -102,18 +102,26 @@
   }
   .nav-links a:hover { color: var(--text); }
   .nav-actions {
-    display: flex; gap: 12px; align-items: center;
+    display: flex; gap: 10px; align-items: center;
     flex-shrink: 0;
   }
-  .nav-back {
-    padding: 9px 16px;
-    font-size: 13px;
+  .lang-switcher {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px;
+    flex-shrink: 0;
   }
-  .nav-login {
-    padding: 9px 18px;
-    font-size: 13px;
-    line-height: 1;
+  .lang-btn {
+    background: none; border: none; color: var(--text-dim);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 9px; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0.06em; transition: all 0.2s;
   }
+  .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--text-muted); }
+  .nav-back { padding: 9px 16px; font-size: 13px; }
+  .nav-login { padding: 9px 18px; font-size: 13px; line-height: 1; }
 
   /* ===== BUTTONS ===== */
   .btn {
@@ -188,12 +196,7 @@
     position: relative;
     overflow: hidden;
   }
-  .hero-bg-image {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-  }
+  .hero-bg-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
   .hero-bg-image img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -201,21 +204,14 @@
     transform: scale(1.05);
     animation: slow-zoom 22s ease-in-out infinite alternate;
   }
-  @keyframes slow-zoom {
-    from { transform: scale(1.05); }
-    to { transform: scale(1.12); }
-  }
+  @keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
   .hero-bg-image::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(10,13,18,0.55) 0%, rgba(10,13,18,0.85) 60%, rgba(10,13,18,1) 100%);
   }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-  }
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -238,10 +234,7 @@
     box-shadow: 0 0 10px var(--amber);
     animation: pulse 2s ease-in-out infinite;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
   .hero h1 {
     font-family: var(--display);
     font-weight: 300;
@@ -258,10 +251,7 @@
     max-width: 640px;
     font-weight: 400;
   }
-  .hero-ctas {
-    display: flex; gap: 14px;
-    flex-wrap: wrap;
-  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
   /* ===== SECTIONS ===== */
   section { padding: 120px 0; position: relative; }
@@ -347,10 +337,7 @@
 
   /* ===== MODULES ===== */
   .modules-section { padding: 120px 0; }
-  .modules-head {
-    max-width: 760px;
-    margin-bottom: 56px;
-  }
+  .modules-head { max-width: 760px; margin-bottom: 56px; }
   .modules-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -417,11 +404,7 @@
     overflow: hidden;
     background: linear-gradient(180deg, var(--bg) 0%, #14181f 50%, var(--bg) 100%);
   }
-  .quote-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
+  .quote-bg { position: absolute; inset: 0; z-index: 0; }
   .quote-bg img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -475,14 +458,8 @@
   }
 
   /* ===== INTEGRATION ===== */
-  .integration-section {
-    padding: 100px 0;
-  }
-  .integration-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .integration-section { padding: 100px 0; }
+  .integration-wrap { max-width: 820px; margin: 0 auto; text-align: center; }
   .integration-wrap h2 {
     font-family: var(--display);
     font-weight: 300;
@@ -504,10 +481,7 @@
     border-top: 1px solid var(--border);
     text-align: center;
   }
-  .cta-wrap {
-    max-width: 720px;
-    margin: 0 auto;
-  }
+  .cta-wrap { max-width: 720px; margin: 0 auto; }
   .cta-wrap h2 {
     font-family: var(--display);
     font-weight: 300;
@@ -524,10 +498,7 @@
   }
 
   /* ===== FOOTER ===== */
-  footer {
-    padding: 60px 0 40px;
-    border-top: 1px solid var(--border);
-  }
+  footer { padding: 60px 0 40px; border-top: 1px solid var(--border); }
   .footer-inner {
     display: flex;
     justify-content: space-between;
@@ -536,13 +507,8 @@
     gap: 20px;
   }
   .footer-brand { display: flex; align-items: center; gap: 12px; }
-  .footer-legal {
-    font-size: 12px;
-    color: var(--text-dim);
-  }
-  .footer-links {
-    display: flex; gap: 28px; list-style: none;
-  }
+  .footer-legal { font-size: 12px; color: var(--text-dim); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
   .footer-links a {
     font-size: 13px;
     color: var(--text-muted);
@@ -555,8 +521,7 @@
   @media (max-width: 960px) {
     .nav { padding: 14px 20px; }
     .nav-links { display: none; }
-    .nav-actions { gap: 8px; }
-    .nav-back span, .nav-login span { display: inline; }
+    .nav-actions { gap: 6px; }
     .container { padding: 0 20px; }
     .hero { padding: 130px 0 60px; min-height: auto; }
     section { padding: 80px 0; }
@@ -568,10 +533,16 @@
     .quote-wrap { padding: 40px 24px; }
     .footer-inner { flex-direction: column; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
+    .lang-btn { font-size: 10px; padding: 4px 6px; letter-spacing: 0.04em; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+    .nav-back { padding: 8px 11px; font-size: 11px; }
+    .nav-back svg { display: none; }
+    .nav-login { padding: 8px 12px; font-size: 12px; }
   }
   @media (max-width: 520px) {
     .hero-ctas { flex-direction: column; align-items: stretch; }
     .hero-ctas .btn { justify-content: center; }
+    .lang-btn { font-size: 9px; padding: 3px 5px; }
   }
 </style>
 
@@ -591,18 +562,25 @@
       <span class="nav-logo-text">Flowmann</span>
     </a>
     <ul class="nav-links">
-      <li><a href="/#sectors">Sectoren</a></li>
-      <li><a href="/#ai">AI</a></li>
-      <li><a href="/#how">Aanpak</a></li>
-      <li><a href="/#pricing">Prijzen</a></li>
+      <li><a href="/#sectors" data-i18n="nav.sectors">Sectoren</a></li>
+      <li><a href="/#ai" data-i18n="nav.ai">AI</a></li>
+      <li><a href="/#how" data-i18n="nav.how">Aanpak</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prijzen</a></li>
     </ul>
     <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
       <a href="/" class="btn btn-ghost nav-back">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1m0 0l5-5m-5 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Home</span>
+        <span data-i18n="nav.home">Home</span>
       </a>
       <a href="https://app.flowmann.com" class="btn btn-primary nav-login">
-        <span>Login</span>
+        <span data-i18n="nav.login">Login</span>
       </a>
     </div>
   </div>
@@ -617,18 +595,18 @@
     <div class="hero-content">
       <span class="hero-eyebrow">
         <span class="hero-dot"></span>
-        Sector · Industrie & Productie
+        <span data-i18n="hero.eyebrow">Sector · Industrie & Productie</span>
       </span>
-      <h1>Van vier uur stilstand naar <em>acht minuten</em> oplossing.</h1>
-      <p class="hero-sub">
+      <h1 data-i18n="hero.title">Van vier uur stilstand naar <em>acht minuten</em> oplossing.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">
         Voor de fabriek waar Excel-bestanden met pensioen gaan, Teams een graveyard is en jonge monteurs leren door fouten te maken. Flowmann brengt uw onderhoudsorganisatie in één app — met AI als senior collega die nooit met pensioen gaat.
       </p>
       <div class="hero-ctas">
         <a href="/#contact" class="btn btn-primary">
-          <span>Vraag een rondleiding aan</span>
+          <span data-i18n="hero.cta1">Vraag een rondleiding aan</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="/#sectors" class="btn btn-ghost">Andere sectoren</a>
+        <a href="/#sectors" class="btn btn-ghost" data-i18n="hero.cta2">Andere sectoren</a>
       </div>
     </div>
   </div>
@@ -637,36 +615,36 @@
 <!-- ============== PROBLEM ============== -->
 <section class="cream-section">
   <div class="container">
-    <span class="section-label">U herkent het waarschijnlijk</span>
-    <h2 class="section-title">De fabriek heeft <em>tools</em>. Tools die ooit een keer werkten.</h2>
-    <p class="section-desc">Het probleem zit niet in een gebrek aan systemen. Het zit in vier patronen die elke productieomgeving herkent.</p>
+    <span class="section-label" data-i18n="prob.label">U herkent het waarschijnlijk</span>
+    <h2 class="section-title" data-i18n="prob.title">De fabriek heeft <em>tools</em>. Tools die ooit een keer werkten.</h2>
+    <p class="section-desc" data-i18n="prob.desc">Het probleem zit niet in een gebrek aan systemen. Het zit in vier patronen die elke productieomgeving herkent.</p>
     <ul class="problem-list">
       <li>
         <span class="problem-num">01</span>
         <div>
-          <h4>Teams is een graveyard geworden</h4>
-          <p>Ooit bedoeld om communicatie te versimpelen. Vandaag een vergaarbak vol documenten die niemand meer kan terugvinden. De kennis zit er — vinden is het probleem.</p>
+          <h4 data-i18n="prob.1h">Teams is een graveyard geworden</h4>
+          <p data-i18n="prob.1p">Ooit bedoeld om communicatie te versimpelen. Vandaag een vergaarbak vol documenten die niemand meer kan terugvinden. De kennis zit er — vinden is het probleem.</p>
         </div>
       </li>
       <li>
         <span class="problem-num">02</span>
         <div>
-          <h4>Excel houdt uw bedrijf in de lucht. Tot de maker weggaat.</h4>
-          <p>De handigste collega bouwde een Excel met formules die alles regelt. Hij gaat met pensioen. Niemand kan 'm onderhouden. U begint opnieuw of bouwt verder op een fundament dat scheuren vertoont. Beide kosten geld dat niet op de begroting staat.</p>
+          <h4 data-i18n="prob.2h">Excel houdt uw bedrijf in de lucht. Tot de maker weggaat.</h4>
+          <p data-i18n="prob.2p">De handigste collega bouwde een Excel met formules die alles regelt. Hij gaat met pensioen. Niemand kan 'm onderhouden. U begint opnieuw of bouwt verder op een fundament dat scheuren vertoont. Beide kosten geld dat niet op de begroting staat.</p>
         </div>
       </li>
       <li>
         <span class="problem-num">03</span>
         <div>
-          <h4>Jonge monteurs leren te weinig praktijk</h4>
-          <p>De seniors staan onder druk. Hun mentor-tijd verdwijnt. Jongeren leren door storingen op te lossen — maar zonder begeleiding stollen verkeerde gewoontes in routine. De volgende generatie erft niet de ervaring, alleen de problemen.</p>
+          <h4 data-i18n="prob.3h">Jonge monteurs leren te weinig praktijk</h4>
+          <p data-i18n="prob.3p">De seniors staan onder druk. Hun mentor-tijd verdwijnt. Jongeren leren door storingen op te lossen — maar zonder begeleiding stollen verkeerde gewoontes in routine. De volgende generatie erft niet de ervaring, alleen de problemen.</p>
         </div>
       </li>
       <li>
         <span class="problem-num">04</span>
         <div>
-          <h4>Elke afdeling z'n eigen lapmiddel</h4>
-          <p>TD heeft eigen mappen. Productie een WhatsApp-groep. Inkoop een eigen Excel. Niemand ziet het totaalplaatje. De storing van vorige week komt deze week terug — niemand legt de link.</p>
+          <h4 data-i18n="prob.4h">Elke afdeling z'n eigen lapmiddel</h4>
+          <p data-i18n="prob.4p">TD heeft eigen mappen. Productie een WhatsApp-groep. Inkoop een eigen Excel. Niemand ziet het totaalplaatje. De storing van vorige week komt deze week terug — niemand legt de link.</p>
         </div>
       </li>
     </ul>
@@ -677,8 +655,8 @@
 <section class="modules-section">
   <div class="container">
     <div class="modules-head">
-      <span class="section-label">Wat Flowmann concreet doet</span>
-      <h2 class="section-title">Geen <em>platform met flexibele oplossingen</em>. Functies die uw monteurs vandaag al gebruiken.</h2>
+      <span class="section-label" data-i18n="mod.label">Wat Flowmann concreet doet</span>
+      <h2 class="section-title" data-i18n="mod.title">Geen <em>platform met flexibele oplossingen</em>. Functies die uw monteurs vandaag al gebruiken.</h2>
     </div>
     <div class="modules-grid">
 
@@ -686,64 +664,64 @@
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 6v4l3 3"/></svg>
         </div>
-        <h3>OCAP-assistent met AI</h3>
-        <p>Monteur ziet een storing. Maakt een foto. AI stelt de eerste vragen, doorloopt het OCAP-pad, escaleert naar de engineer wanneer dat nodig is. De junior gedraagt zich tijdelijk als senior. De senior houdt tijd over voor zaken die er echt toe doen.</p>
+        <h3 data-i18n="mod.1h">OCAP-assistent met AI</h3>
+        <p data-i18n="mod.1p">Monteur ziet een storing. Maakt een foto. AI stelt de eerste vragen, doorloopt het OCAP-pad, escaleert naar de engineer wanneer dat nodig is. De junior gedraagt zich tijdelijk als senior. De senior houdt tijd over voor zaken die er echt toe doen.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <h3>Snelle Melding</h3>
-        <p>Operator ziet iets. Scant de QR naast de machine, vult drie velden in, foto erbij. Eén tap — en de juiste persoon weet ervan, in zijn eigen taal. Geen "ik dacht dat iemand anders het al gemeld had".</p>
+        <h3 data-i18n="mod.2h">Snelle Melding</h3>
+        <p data-i18n="mod.2p">Operator ziet iets. Scant de QR naast de machine, vult drie velden in, foto erbij. Eén tap — en de juiste persoon weet ervan, in zijn eigen taal. Geen "ik dacht dat iemand anders het al gemeld had".</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2zM12 17a4 4 0 100-8 4 4 0 000 8z"/></svg>
         </div>
-        <h3>Digitale inspecties met foto</h3>
-        <p>Geen papier dat verdwijnt. Geen Excel-tabbladen die niemand bijhoudt. Inspectiepunten met foto-bewijs, gekoppeld aan de juiste machine. Risico-matrix dwingt afwegingen af voordat ze worden weggeschoven.</p>
+        <h3 data-i18n="mod.3h">Digitale inspecties met foto</h3>
+        <p data-i18n="mod.3p">Geen papier dat verdwijnt. Geen Excel-tabbladen die niemand bijhoudt. Inspectiepunten met foto-bewijs, gekoppeld aan de juiste machine. Risico-matrix dwingt afwegingen af voordat ze worden weggeschoven.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M9 13l2 2 4-4"/></svg>
         </div>
-        <h3>SAP M1-meldingsketen</h3>
-        <p>Operator hoeft SAP niet te kennen. Hij maakt een melding in Flowmann, het systeem stelt een nette M1-tekst voor SAP voor, de chain richting onderhoudsplanner loopt door. Meerdere locaties, één werkwijze.</p>
+        <h3 data-i18n="mod.4h">SAP M1-meldingsketen</h3>
+        <p data-i18n="mod.4p">Operator hoeft SAP niet te kennen. Hij maakt een melding in Flowmann, het systeem stelt een nette M1-tekst voor SAP voor, de chain richting onderhoudsplanner loopt door. Meerdere locaties, één werkwijze.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
         </div>
-        <h3>Klachtenregister leveranciers</h3>
-        <p>Verkeerde levering, beschadigde onderdelen, te laat? Operator legt het vast met foto. Inkoop krijgt 'm op het bureau, leveranciersgeschiedenis bouwt zich automatisch op. Volgend jaar weet u welke leverancier u kost — niet alleen wat hij rekent.</p>
+        <h3 data-i18n="mod.5h">Klachtenregister leveranciers</h3>
+        <p data-i18n="mod.5p">Verkeerde levering, beschadigde onderdelen, te laat? Operator legt het vast met foto. Inkoop krijgt 'm op het bureau, leveranciersgeschiedenis bouwt zich automatisch op. Volgend jaar weet u welke leverancier u kost — niet alleen wat hij rekent.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
         </div>
-        <h3>Audits zonder paniek</h3>
-        <p>ISO 9001, klant-audits, intern. Status altijd inzichtelijk — niet pas op audit-dag. De audit-week wordt een formaliteit in plaats van een crisis.</p>
+        <h3 data-i18n="mod.6h">Audits zonder paniek</h3>
+        <p data-i18n="mod.6p">ISO 9001, klant-audits, intern. Status altijd inzichtelijk — niet pas op audit-dag. De audit-week wordt een formaliteit in plaats van een crisis.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>
         </div>
-        <h3>Storingsanalyses met patronen</h3>
-        <p>AI kijkt naar weer, dag, ploeg, monteur, machine. Vindt patronen die mensen niet zien. "Machine X faalt vaak op maandag na een vrijdagse stop." U lost de oorzaak op, niet alleen het symptoom.</p>
+        <h3 data-i18n="mod.7h">Storingsanalyses met patronen</h3>
+        <p data-i18n="mod.7p">AI kijkt naar weer, dag, ploeg, monteur, machine. Vindt patronen die mensen niet zien. "Machine X faalt vaak op maandag na een vrijdagse stop." U lost de oorzaak op, niet alleen het symptoom.</p>
       </div>
 
       <div class="module-card">
         <div class="module-icon">
           <svg viewBox="0 0 24 24"><path d="M5 8l6 6m-7 0l6-6 2-3M2 5h12M7 2h1m13 20l-5-10-5 10m2-4h6"/></svg>
         </div>
-        <h3>Vertaling ingebouwd</h3>
-        <p>Werkvloer met meerdere nationaliteiten? UI in vijf talen. Geen taalbarrière tussen Pools, Roemeens en Nederlands op dezelfde shift.</p>
+        <h3 data-i18n="mod.8h">Vertaling ingebouwd</h3>
+        <p data-i18n="mod.8p">Werkvloer met meerdere nationaliteiten? UI in vijf talen. Geen taalbarrière tussen Pools, Roemeens en Nederlands op dezelfde shift.</p>
       </div>
 
     </div>
@@ -758,10 +736,10 @@
   <div class="container">
     <div class="quote-wrap">
       <span class="quote-mark">"</span>
-      <blockquote>
+      <blockquote data-i18n="bewijs.text">
         Een staalfabriek met 80 medewerkers en een TD-team van 20 monteurs gebruikt Flowmann om binnen <em>acht minuten</em> van storing naar oplossing te komen. Wat normaal vier uur kostte.
       </blockquote>
-      <div class="quote-tail">
+      <div class="quote-tail" data-i18n="bewijs.tail">
         U kunt AI negeren. Maar dan haalt het u in. Net als het internet. Net als de smartphone. Het slimme is om het in uw voordeel te laten werken.
       </div>
     </div>
@@ -772,10 +750,10 @@
 <section class="integration-section">
   <div class="container">
     <div class="integration-wrap">
-      <span class="section-label">Naast — of in plaats van</span>
-      <h2>Past Flowmann naast uw <em>bestaande systemen</em>, of in plaats ervan?</h2>
-      <p>Allebei kan. Werkt u met een ERP-omgeving, een CMMS, een onderhoudssysteem? Flowmann staat ernaast en vult aan wat hapert. Werkt het systeem al niet meer? Dan vervangt Flowmann het, en u behoudt wat wel werkte.</p>
-      <p>U kiest. We vechten niet met uw bestaande infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor u.</p>
+      <span class="section-label" data-i18n="int.label">Naast — of in plaats van</span>
+      <h2 data-i18n="int.title">Past Flowmann naast uw <em>bestaande systemen</em>, of in plaats ervan?</h2>
+      <p data-i18n="int.p1">Allebei kan. Werkt u met een ERP-omgeving, een CMMS, een onderhoudssysteem? Flowmann staat ernaast en vult aan wat hapert. Werkt het systeem al niet meer? Dan vervangt Flowmann het, en u behoudt wat wel werkte.</p>
+      <p data-i18n="int.p2">U kiest. We vechten niet met uw bestaande infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor u.</p>
     </div>
   </div>
 </section>
@@ -784,10 +762,10 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-wrap">
-      <h2>Wilt u zien hoe Flowmann in <em>uw</em> fabriek werkt?</h2>
-      <p>Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de werkvloer kent.</p>
+      <h2 data-i18n="cta.title">Wilt u zien hoe Flowmann in <em>uw</em> fabriek werkt?</h2>
+      <p data-i18n="cta.desc">Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de werkvloer kent.</p>
       <a href="/#contact" class="btn btn-primary">
-        <span>Neem contact op</span>
+        <span data-i18n="cta.btn">Neem contact op</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -805,17 +783,304 @@
                   stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
         </span>
-        <span class="footer-legal">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
+        <span class="footer-legal" data-i18n="foot.tag">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
       </div>
       <ul class="footer-links">
-        <li><a href="/#sectors">Sectoren</a></li>
-        <li><a href="/#pricing">Prijzen</a></li>
-        <li><a href="/#contact">Contact</a></li>
-        <li><a href="/">Home</a></li>
+        <li><a href="/#sectors" data-i18n="foot.l1">Sectoren</a></li>
+        <li><a href="/#pricing" data-i18n="foot.l2">Prijzen</a></li>
+        <li><a href="/#contact" data-i18n="foot.l3">Contact</a></li>
+        <li><a href="/" data-i18n="foot.l4">Home</a></li>
       </ul>
     </div>
   </div>
 </footer>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  nl: {
+    'nav.sectors':'Sectoren','nav.ai':'AI','nav.how':'Aanpak','nav.pricing':'Prijzen','nav.home':'Home','nav.login':'Login',
+    'page.title':'Industrie & Productie — Flowmann',
+    'page.desc':'Van vier uur stilstand naar acht minuten oplossing. Flowmann voor de fabriek: OCAP-assistent met AI, digitale inspecties, SAP M1-meldingsketen, klachtenregister, en storingsanalyse die patronen vindt die mensen missen.',
+    'hero.eyebrow':'Sector · Industrie & Productie',
+    'hero.title':'Van vier uur stilstand naar <em>acht minuten</em> oplossing.',
+    'hero.sub':'Voor de fabriek waar Excel-bestanden met pensioen gaan, Teams een graveyard is en jonge monteurs leren door fouten te maken. Flowmann brengt uw onderhoudsorganisatie in één app — met AI als senior collega die nooit met pensioen gaat.',
+    'hero.cta1':'Vraag een rondleiding aan','hero.cta2':'Andere sectoren',
+    'prob.label':'U herkent het waarschijnlijk',
+    'prob.title':'De fabriek heeft <em>tools</em>. Tools die ooit een keer werkten.',
+    'prob.desc':'Het probleem zit niet in een gebrek aan systemen. Het zit in vier patronen die elke productieomgeving herkent.',
+    'prob.1h':'Teams is een graveyard geworden',
+    'prob.1p':'Ooit bedoeld om communicatie te versimpelen. Vandaag een vergaarbak vol documenten die niemand meer kan terugvinden. De kennis zit er — vinden is het probleem.',
+    'prob.2h':'Excel houdt uw bedrijf in de lucht. Tot de maker weggaat.',
+    'prob.2p':"De handigste collega bouwde een Excel met formules die alles regelt. Hij gaat met pensioen. Niemand kan 'm onderhouden. U begint opnieuw of bouwt verder op een fundament dat scheuren vertoont. Beide kosten geld dat niet op de begroting staat.",
+    'prob.3h':'Jonge monteurs leren te weinig praktijk',
+    'prob.3p':'De seniors staan onder druk. Hun mentor-tijd verdwijnt. Jongeren leren door storingen op te lossen — maar zonder begeleiding stollen verkeerde gewoontes in routine. De volgende generatie erft niet de ervaring, alleen de problemen.',
+    'prob.4h':"Elke afdeling z'n eigen lapmiddel",
+    'prob.4p':'TD heeft eigen mappen. Productie een WhatsApp-groep. Inkoop een eigen Excel. Niemand ziet het totaalplaatje. De storing van vorige week komt deze week terug — niemand legt de link.',
+    'mod.label':'Wat Flowmann concreet doet',
+    'mod.title':'Geen <em>platform met flexibele oplossingen</em>. Functies die uw monteurs vandaag al gebruiken.',
+    'mod.1h':'OCAP-assistent met AI',
+    'mod.1p':'Monteur ziet een storing. Maakt een foto. AI stelt de eerste vragen, doorloopt het OCAP-pad, escaleert naar de engineer wanneer dat nodig is. De junior gedraagt zich tijdelijk als senior. De senior houdt tijd over voor zaken die er echt toe doen.',
+    'mod.2h':'Snelle Melding',
+    'mod.2p':'Operator ziet iets. Scant de QR naast de machine, vult drie velden in, foto erbij. Eén tap — en de juiste persoon weet ervan, in zijn eigen taal. Geen "ik dacht dat iemand anders het al gemeld had".',
+    'mod.3h':'Digitale inspecties met foto',
+    'mod.3p':'Geen papier dat verdwijnt. Geen Excel-tabbladen die niemand bijhoudt. Inspectiepunten met foto-bewijs, gekoppeld aan de juiste machine. Risico-matrix dwingt afwegingen af voordat ze worden weggeschoven.',
+    'mod.4h':'SAP M1-meldingsketen',
+    'mod.4p':'Operator hoeft SAP niet te kennen. Hij maakt een melding in Flowmann, het systeem stelt een nette M1-tekst voor SAP voor, de chain richting onderhoudsplanner loopt door. Meerdere locaties, één werkwijze.',
+    'mod.5h':'Klachtenregister leveranciers',
+    'mod.5p':"Verkeerde levering, beschadigde onderdelen, te laat? Operator legt het vast met foto. Inkoop krijgt 'm op het bureau, leveranciersgeschiedenis bouwt zich automatisch op. Volgend jaar weet u welke leverancier u kost — niet alleen wat hij rekent.",
+    'mod.6h':'Audits zonder paniek',
+    'mod.6p':'ISO 9001, klant-audits, intern. Status altijd inzichtelijk — niet pas op audit-dag. De audit-week wordt een formaliteit in plaats van een crisis.',
+    'mod.7h':'Storingsanalyses met patronen',
+    'mod.7p':'AI kijkt naar weer, dag, ploeg, monteur, machine. Vindt patronen die mensen niet zien. "Machine X faalt vaak op maandag na een vrijdagse stop." U lost de oorzaak op, niet alleen het symptoom.',
+    'mod.8h':'Vertaling ingebouwd',
+    'mod.8p':'Werkvloer met meerdere nationaliteiten? UI in vijf talen. Geen taalbarrière tussen Pools, Roemeens en Nederlands op dezelfde shift.',
+    'bewijs.text':'Een staalfabriek met 80 medewerkers en een TD-team van 20 monteurs gebruikt Flowmann om binnen <em>acht minuten</em> van storing naar oplossing te komen. Wat normaal vier uur kostte.',
+    'bewijs.tail':'U kunt AI negeren. Maar dan haalt het u in. Net als het internet. Net als de smartphone. Het slimme is om het in uw voordeel te laten werken.',
+    'int.label':'Naast — of in plaats van',
+    'int.title':'Past Flowmann naast uw <em>bestaande systemen</em>, of in plaats ervan?',
+    'int.p1':'Allebei kan. Werkt u met een ERP-omgeving, een CMMS, een onderhoudssysteem? Flowmann staat ernaast en vult aan wat hapert. Werkt het systeem al niet meer? Dan vervangt Flowmann het, en u behoudt wat wel werkte.',
+    'int.p2':'U kiest. We vechten niet met uw bestaande infrastructuur — we werken ermee, of we nemen het over. Wat het meest oplevert voor u.',
+    'cta.title':'Wilt u zien hoe Flowmann in <em>uw</em> fabriek werkt?',
+    'cta.desc':'Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de werkvloer kent.',
+    'cta.btn':'Neem contact op',
+    'foot.tag':'© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.',
+    'foot.l1':'Sectoren','foot.l2':'Prijzen','foot.l3':'Contact','foot.l4':'Home'
+  },
+  en: {
+    'nav.sectors':'Sectors','nav.ai':'AI','nav.how':'Approach','nav.pricing':'Pricing','nav.home':'Home','nav.login':'Login',
+    'page.title':'Manufacturing & Industry — Flowmann',
+    'page.desc':'From four hours of downtime to eight minutes to a solution. Flowmann for the factory: OCAP assistant with AI, digital inspections, SAP M1 reporting chain, supplier complaints register, and incident analysis that finds patterns people miss.',
+    'hero.eyebrow':'Sector · Manufacturing & Industry',
+    'hero.title':'From four hours of downtime to <em>eight minutes</em> to a solution.',
+    'hero.sub':'For the factory where Excel files retire, Teams has become a graveyard and young technicians learn by making mistakes. Flowmann brings your maintenance organisation into one app — with AI as a senior colleague who never retires.',
+    'hero.cta1':'Request a walkthrough','hero.cta2':'Other sectors',
+    'prob.label':'You probably recognise this',
+    'prob.title':'The factory has <em>tools</em>. Tools that worked once.',
+    'prob.desc':"The problem isn't a shortage of systems. It's in four patterns every manufacturing environment recognises.",
+    'prob.1h':'Teams has become a graveyard',
+    'prob.1p':'Once meant to simplify communication. Today a dumping ground for documents no one can find anymore. The knowledge is there — finding it is the problem.',
+    'prob.2h':'Excel keeps your business running. Until its maker leaves.',
+    'prob.2p':"The handiest colleague built an Excel with formulas that regulate everything. He retires. No one can maintain it. You start over or build on a foundation showing cracks. Both cost money that isn't in the budget.",
+    'prob.3h':'Young technicians learn too little practical skill',
+    'prob.3p':'Seniors are under pressure. Their mentoring time vanishes. Juniors learn by solving incidents — but without guidance, wrong habits crystallise into routine. The next generation inherits not the experience, only the problems.',
+    'prob.4h':'Every department has its own workaround',
+    'prob.4p':'Maintenance has its own folders. Production a WhatsApp group. Procurement its own Excel. No one sees the full picture. The incident from last week returns this week — no one connects the dots.',
+    'mod.label':'What Flowmann concretely does',
+    'mod.title':'Not <em>a platform with flexible solutions</em>. Functions your technicians use today.',
+    'mod.1h':'OCAP assistant with AI',
+    'mod.1p':'Technician sees an incident. Takes a photo. AI asks the first questions, walks through the OCAP path, escalates to the engineer when needed. The junior temporarily behaves like a senior. The senior gains time for what really matters.',
+    'mod.2h':'Quick Report',
+    'mod.2p':'Operator sees something. Scans the QR next to the machine, fills three fields, adds a photo. One tap — and the right person knows about it, in their own language. No more "I thought someone else had already reported it".',
+    'mod.3h':'Digital inspections with photo',
+    'mod.3p':'No paper that disappears. No Excel sheets no one maintains. Inspection points with photo evidence, linked to the right machine. Risk matrix forces trade-offs before they can be brushed aside.',
+    'mod.4h':'SAP M1 reporting chain',
+    'mod.4p':"Operator doesn't need to know SAP. They create a report in Flowmann, the system suggests a proper M1 text for SAP, the chain to the maintenance planner runs through. Multiple sites, one way of working.",
+    'mod.5h':'Supplier complaints register',
+    'mod.5p':'Wrong delivery, damaged parts, late? Operator captures it with a photo. Procurement gets it on their desk, supplier history builds automatically. Next year you know which supplier costs you — not just what they charge.',
+    'mod.6h':'Audits without panic',
+    'mod.6p':'ISO 9001, customer audits, internal. Status always visible — not just on audit day. The audit week becomes a formality instead of a crisis.',
+    'mod.7h':'Incident analysis with pattern recognition',
+    'mod.7p':'AI looks at weather, day, shift, technician, machine. Finds patterns people don\'t see. "Machine X fails often on Monday after a Friday stop." You solve the cause, not just the symptom.',
+    'mod.8h':'Translation built in',
+    'mod.8p':'Workforce with multiple nationalities? UI in five languages. No language barrier between Polish, Romanian and Dutch on the same shift.',
+    'bewijs.text':'A steel plant with 80 employees and a maintenance team of 20 technicians uses Flowmann to go from incident to resolution within <em>eight minutes</em>. What used to take four hours.',
+    'bewijs.tail':'You can ignore AI. But then it will catch up with you. Just like the internet. Just like the smartphone. The smart move is to make it work in your favour.',
+    'int.label':'Alongside — or instead of',
+    'int.title':'Does Flowmann fit alongside your <em>existing systems</em>, or replace them?',
+    'int.p1':'Both work. Do you use an ERP environment, a CMMS, a maintenance system? Flowmann sits alongside and fills the gaps. Is the system no longer working? Then Flowmann replaces it, and you keep what did work.',
+    'int.p2':"You choose. We don't fight with your existing infrastructure — we work with it, or we take it over. Whatever delivers the most value for you.",
+    'cta.title':'Want to see how Flowmann works in <em>your</em> factory?',
+    'cta.desc':'Request a non-binding walkthrough. No salesperson with a script — someone who knows the shop floor.',
+    'cta.btn':'Get in touch',
+    'foot.tag':'© 2026 Flowmann · One platform. Every sector. Finally connected.',
+    'foot.l1':'Sectors','foot.l2':'Pricing','foot.l3':'Contact','foot.l4':'Home'
+  },
+  de: {
+    'nav.sectors':'Branchen','nav.ai':'KI','nav.how':'Vorgehen','nav.pricing':'Preise','nav.home':'Home','nav.login':'Anmelden',
+    'page.title':'Industrie & Produktion — Flowmann',
+    'page.desc':'Von vier Stunden Stillstand zu acht Minuten Lösung. Flowmann für die Fabrik: OCAP-Assistent mit KI, digitale Inspektionen, SAP M1-Meldekette, Lieferanten-Beschwerderegister und Störungsanalyse mit Mustererkennung.',
+    'hero.eyebrow':'Branche · Industrie & Produktion',
+    'hero.title':'Von vier Stunden Stillstand zu <em>acht Minuten</em> Lösung.',
+    'hero.sub':'Für die Fabrik, in der Excel-Dateien in Rente gehen, Teams ein Friedhof ist und junge Techniker durch Fehler lernen. Flowmann bringt Ihre Instandhaltungsorganisation in eine App — mit KI als Senior-Kollege, der nie in Rente geht.',
+    'hero.cta1':'Vorführung anfragen','hero.cta2':'Andere Branchen',
+    'prob.label':'Sie kennen das wahrscheinlich',
+    'prob.title':'Die Fabrik hat <em>Tools</em>. Tools, die einmal funktioniert haben.',
+    'prob.desc':'Das Problem liegt nicht im Mangel an Systemen. Es liegt in vier Mustern, die jede Produktionsumgebung kennt.',
+    'prob.1h':'Teams ist zum Friedhof geworden',
+    'prob.1p':'Einst dazu gedacht, die Kommunikation zu vereinfachen. Heute eine Sammelstelle für Dokumente, die niemand mehr findet. Das Wissen ist da — das Finden ist das Problem.',
+    'prob.2h':'Excel hält Ihr Unternehmen am Laufen. Bis der Ersteller geht.',
+    'prob.2p':'Der geschickteste Kollege hat ein Excel mit Formeln gebaut, die alles regeln. Er geht in Rente. Niemand kann es pflegen. Sie fangen von vorne an oder bauen auf einem Fundament weiter, das Risse zeigt. Beides kostet Geld, das nicht im Budget steht.',
+    'prob.3h':'Junge Techniker lernen zu wenig Praxis',
+    'prob.3p':'Die Senioren stehen unter Druck. Ihre Mentor-Zeit verschwindet. Jüngere lernen durch das Lösen von Störungen — aber ohne Begleitung erstarren falsche Gewohnheiten zur Routine. Die nächste Generation erbt nicht die Erfahrung, nur die Probleme.',
+    'prob.4h':'Jede Abteilung ihre eigene Notlösung',
+    'prob.4p':'Instandhaltung hat eigene Ordner. Produktion eine WhatsApp-Gruppe. Einkauf ein eigenes Excel. Niemand sieht das Gesamtbild. Die Störung der letzten Woche kommt diese Woche zurück — niemand verbindet die Punkte.',
+    'mod.label':'Was Flowmann konkret leistet',
+    'mod.title':'Keine <em>Plattform mit flexiblen Lösungen</em>. Funktionen, die Ihre Techniker heute schon nutzen.',
+    'mod.1h':'OCAP-Assistent mit KI',
+    'mod.1p':'Techniker sieht eine Störung. Macht ein Foto. KI stellt die ersten Fragen, durchläuft den OCAP-Pfad, eskaliert an den Ingenieur, wenn nötig. Der Junior verhält sich vorübergehend wie ein Senior. Der Senior gewinnt Zeit für das, was wirklich zählt.',
+    'mod.2h':'Schnellmeldung',
+    'mod.2p':'Operator sieht etwas. Scannt den QR neben der Maschine, füllt drei Felder aus, fügt ein Foto hinzu. Ein Tipp — und die richtige Person weiß davon, in ihrer eigenen Sprache. Kein "Ich dachte, jemand anderes hätte es schon gemeldet" mehr.',
+    'mod.3h':'Digitale Inspektionen mit Foto',
+    'mod.3p':'Kein Papier, das verschwindet. Keine Excel-Tabellen, die niemand pflegt. Inspektionspunkte mit Foto-Beweis, der richtigen Maschine zugeordnet. Risiko-Matrix erzwingt Abwägungen, bevor sie beiseite geschoben werden.',
+    'mod.4h':'SAP M1-Meldekette',
+    'mod.4p':'Operator muss SAP nicht kennen. Er erstellt eine Meldung in Flowmann, das System schlägt einen ordentlichen M1-Text für SAP vor, die Kette zum Instandhaltungsplaner läuft durch. Mehrere Standorte, eine Arbeitsweise.',
+    'mod.5h':'Lieferanten-Beschwerderegister',
+    'mod.5p':'Falsche Lieferung, beschädigte Teile, zu spät? Operator hält es mit einem Foto fest. Einkauf bekommt es auf den Tisch, Lieferantenhistorie baut sich automatisch auf. Nächstes Jahr wissen Sie, welcher Lieferant Sie kostet — nicht nur, was er berechnet.',
+    'mod.6h':'Audits ohne Panik',
+    'mod.6p':'ISO 9001, Kundenaudits, intern. Status jederzeit einsehbar — nicht erst am Audit-Tag. Die Audit-Woche wird zur Formalität statt zur Krise.',
+    'mod.7h':'Störungsanalyse mit Mustererkennung',
+    'mod.7p':'KI betrachtet Wetter, Tag, Schicht, Techniker, Maschine. Findet Muster, die Menschen nicht sehen. "Maschine X fällt oft am Montag nach einem Freitagstopp aus." Sie lösen die Ursache, nicht nur das Symptom.',
+    'mod.8h':'Übersetzung eingebaut',
+    'mod.8p':'Belegschaft mit mehreren Nationalitäten? UI in fünf Sprachen. Keine Sprachbarriere zwischen Polnisch, Rumänisch und Deutsch in derselben Schicht.',
+    'bewijs.text':'Ein Stahlwerk mit 80 Mitarbeitern und einem Instandhaltungsteam von 20 Technikern nutzt Flowmann, um innerhalb von <em>acht Minuten</em> von der Störung zur Lösung zu kommen. Was normalerweise vier Stunden gekostet hat.',
+    'bewijs.tail':'Sie können KI ignorieren. Aber dann holt sie Sie ein. Wie das Internet. Wie das Smartphone. Das Schlaue ist, sie zu Ihrem Vorteil arbeiten zu lassen.',
+    'int.label':'Neben — oder anstelle von',
+    'int.title':'Passt Flowmann neben Ihre <em>bestehenden Systeme</em>, oder ersetzt sie?',
+    'int.p1':'Beides ist möglich. Arbeiten Sie mit einer ERP-Umgebung, einem CMMS, einem Instandhaltungssystem? Flowmann steht daneben und füllt die Lücken. Funktioniert das System nicht mehr? Dann ersetzt Flowmann es, und Sie behalten, was funktioniert hat.',
+    'int.p2':'Sie entscheiden. Wir kämpfen nicht mit Ihrer bestehenden Infrastruktur — wir arbeiten damit, oder wir übernehmen sie. Was den größten Nutzen für Sie bringt.',
+    'cta.title':'Möchten Sie sehen, wie Flowmann in <em>Ihrer</em> Fabrik funktioniert?',
+    'cta.desc':'Vereinbaren Sie eine unverbindliche Vorführung. Kein Verkäufer mit Skript — jemand, der die Werkshalle kennt.',
+    'cta.btn':'Kontakt aufnehmen',
+    'foot.tag':'© 2026 Flowmann · Eine Plattform. Jede Branche. Endlich verbunden.',
+    'foot.l1':'Branchen','foot.l2':'Preise','foot.l3':'Kontakt','foot.l4':'Home'
+  },
+  fr: {
+    'nav.sectors':'Secteurs','nav.ai':'IA','nav.how':'Approche','nav.pricing':'Tarifs','nav.home':'Accueil','nav.login':'Connexion',
+    'page.title':'Industrie & Production — Flowmann',
+    'page.desc':"De quatre heures d'arrêt à huit minutes de résolution. Flowmann pour l'usine : assistant OCAP avec IA, inspections numériques, chaîne de signalement SAP M1, registre des réclamations fournisseurs, et analyse des pannes par reconnaissance de motifs.",
+    'hero.eyebrow':'Secteur · Industrie & Production',
+    'hero.title':"De quatre heures d'arrêt à <em>huit minutes</em> de résolution.",
+    'hero.sub':"Pour l'usine où les fichiers Excel partent à la retraite, où Teams est devenu un cimetière et où les jeunes techniciens apprennent en faisant des erreurs. Flowmann réunit toute votre organisation de maintenance dans une application — avec l'IA comme collègue senior qui ne prend jamais sa retraite.",
+    'hero.cta1':'Demander une visite','hero.cta2':'Autres secteurs',
+    'prob.label':'Vous reconnaissez probablement cela',
+    'prob.title':"L'usine a des <em>outils</em>. Des outils qui ont marché une fois.",
+    'prob.desc':'Le problème ne vient pas du manque de systèmes. Il vient de quatre schémas que chaque environnement de production reconnaît.',
+    'prob.1h':'Teams est devenu un cimetière',
+    'prob.1p':"Conçu pour simplifier la communication. Aujourd'hui un dépotoir de documents que personne ne retrouve. La connaissance est là — la trouver est le problème.",
+    'prob.2h':"Excel maintient votre entreprise à flot. Jusqu'au départ de son créateur.",
+    'prob.2p':"Le collègue le plus malin a construit un Excel avec des formules qui règlent tout. Il part à la retraite. Personne ne peut le maintenir. Vous repartez de zéro ou continuez sur une fondation qui se fissure. Les deux coûtent de l'argent qui n'est pas au budget.",
+    'prob.3h':'Les jeunes techniciens manquent de pratique',
+    'prob.3p':"Les seniors sont sous pression. Leur temps de mentorat disparaît. Les juniors apprennent en résolvant des pannes — mais sans accompagnement, les mauvaises habitudes deviennent routine. La génération suivante hérite non de l'expérience, mais des problèmes.",
+    'prob.4h':'Chaque service a sa propre solution de fortune',
+    'prob.4p':"La maintenance a ses dossiers. La production un groupe WhatsApp. Les achats leur Excel. Personne ne voit l'image globale. La panne de la semaine dernière revient cette semaine — personne ne fait le lien.",
+    'mod.label':'Ce que Flowmann fait concrètement',
+    'mod.title':"Pas <em>une plateforme aux solutions flexibles</em>. Des fonctions que vos techniciens utilisent dès aujourd'hui.",
+    'mod.1h':'Assistant OCAP avec IA',
+    'mod.1p':"Le technicien voit une panne. Prend une photo. L'IA pose les premières questions, parcourt le chemin OCAP, escalade vers l'ingénieur si nécessaire. Le junior se comporte temporairement comme un senior. Le senior gagne du temps pour ce qui compte vraiment.",
+    'mod.2h':'Signalement Rapide',
+    'mod.2p':"L'opérateur voit quelque chose. Scanne le QR près de la machine, remplit trois champs, ajoute une photo. Un seul tap — et la bonne personne le sait, dans sa propre langue. Plus de « je pensais que quelqu'un d'autre l'avait déjà signalé ».",
+    'mod.3h':'Inspections numériques avec photo',
+    'mod.3p':"Plus de papier qui disparaît. Plus d'onglets Excel que personne ne tient à jour. Points d'inspection avec preuve photo, liés à la bonne machine. La matrice de risque force les arbitrages avant qu'ils ne soient mis de côté.",
+    'mod.4h':'Chaîne de signalement SAP M1',
+    'mod.4p':"L'opérateur n'a pas besoin de connaître SAP. Il crée un signalement dans Flowmann, le système propose un texte M1 propre pour SAP, la chaîne vers le planificateur de maintenance se déroule. Plusieurs sites, une seule méthode de travail.",
+    'mod.5h':'Registre des réclamations fournisseurs',
+    'mod.5p':"Livraison incorrecte, pièces endommagées, en retard ? L'opérateur le consigne avec une photo. Les achats le reçoivent, l'historique du fournisseur se construit automatiquement. L'an prochain, vous saurez quel fournisseur vous coûte — pas seulement ce qu'il facture.",
+    'mod.6h':'Audits sans panique',
+    'mod.6p':"ISO 9001, audits clients, audits internes. Statut toujours visible — pas seulement le jour de l'audit. La semaine d'audit devient une formalité au lieu d'une crise.",
+    'mod.7h':'Analyse des pannes par reconnaissance de motifs',
+    'mod.7p':"L'IA regarde la météo, le jour, l'équipe, le technicien, la machine. Trouve des motifs que les gens ne voient pas. « La machine X tombe souvent en panne le lundi après un arrêt du vendredi. » Vous résolvez la cause, pas seulement le symptôme.",
+    'mod.8h':'Traduction intégrée',
+    'mod.8p':"Atelier multinational ? Interface en cinq langues. Plus de barrière linguistique entre le polonais, le roumain et le néerlandais dans la même équipe.",
+    'bewijs.text':"Une aciérie de 80 employés avec une équipe de maintenance de 20 techniciens utilise Flowmann pour passer d'une panne à une résolution en <em>huit minutes</em>. Ce qui prenait normalement quatre heures.",
+    'bewijs.tail':"Vous pouvez ignorer l'IA. Mais elle vous rattrapera. Comme Internet. Comme le smartphone. Le mieux est de la faire travailler à votre avantage.",
+    'int.label':'À côté — ou à la place',
+    'int.title':'Flowmann fonctionne-t-il à côté de vos <em>systèmes existants</em>, ou les remplace-t-il ?',
+    'int.p1':'Les deux sont possibles. Travaillez-vous avec un environnement ERP, un CMMS, un système de maintenance ? Flowmann se place à côté et comble les manques. Le système ne fonctionne plus ? Alors Flowmann le remplace, et vous gardez ce qui marchait.',
+    'int.p2':"Vous choisissez. Nous ne luttons pas contre votre infrastructure existante — nous travaillons avec elle, ou nous prenons le relais. Ce qui apporte le plus de valeur pour vous.",
+    'cta.title':'Voulez-vous voir comment Flowmann fonctionne dans <em>votre</em> usine ?',
+    'cta.desc':"Demandez une visite sans engagement. Pas un commercial avec un script — quelqu'un qui connaît l'atelier.",
+    'cta.btn':'Nous contacter',
+    'foot.tag':'© 2026 Flowmann · Une plateforme. Chaque secteur. Enfin connectés.',
+    'foot.l1':'Secteurs','foot.l2':'Tarifs','foot.l3':'Contact','foot.l4':'Accueil'
+  },
+  ar: {
+    'nav.sectors':'القطاعات','nav.ai':'الذكاء الاصطناعي','nav.how':'النهج','nav.pricing':'الأسعار','nav.home':'الرئيسية','nav.login':'تسجيل الدخول',
+    'page.title':'الصناعة والإنتاج — Flowmann',
+    'page.desc':'من أربع ساعات توقف إلى ثماني دقائق حل. Flowmann للمصنع: مساعد OCAP بالذكاء الاصطناعي، فحوصات رقمية، سلسلة بلاغات SAP M1، سجل شكاوى الموردين، وتحليل الأعطال بالتعرف على الأنماط.',
+    'hero.eyebrow':'قطاع · الصناعة والإنتاج',
+    'hero.title':'من أربع ساعات توقف إلى <em>ثماني دقائق</em> حل.',
+    'hero.sub':'للمصنع حيث ملفات Excel تتقاعد، وTeams أصبح مقبرة، والفنيون الشباب يتعلمون من خلال ارتكاب الأخطاء. تجمع Flowmann منظمة الصيانة الخاصة بك في تطبيق واحد — مع الذكاء الاصطناعي كزميل خبير لا يتقاعد أبدًا.',
+    'hero.cta1':'اطلب جولة','hero.cta2':'قطاعات أخرى',
+    'prob.label':'ربما تتعرف على هذا',
+    'prob.title':'المصنع لديه <em>أدوات</em>. أدوات عملت ذات مرة.',
+    'prob.desc':'المشكلة ليست في نقص الأنظمة. إنها في أربعة أنماط تعرفها كل بيئة إنتاجية.',
+    'prob.1h':'Teams تحول إلى مقبرة',
+    'prob.1p':'كان يهدف ذات يوم إلى تبسيط التواصل. اليوم مكب نفايات للمستندات التي لم يعد أحد يجدها. المعرفة موجودة — العثور عليها هي المشكلة.',
+    'prob.2h':'Excel يبقي شركتك واقفة. حتى يغادر منشئه.',
+    'prob.2p':'بنى الزميل الأكثر مهارة ملف Excel بصيغ تنظم كل شيء. يتقاعد. لا أحد يستطيع صيانته. تبدأ من الصفر أو تبني على أساس متصدع. كلاهما يكلف مالًا لم يكن في الميزانية.',
+    'prob.3h':'الفنيون الشباب لا يتعلمون ما يكفي من الممارسة العملية',
+    'prob.3p':'كبار الفنيين تحت ضغط. وقت إرشادهم يختفي. الشباب يتعلمون بحل الأعطال — لكن دون توجيه، تتجمد العادات الخاطئة لتصبح روتينًا. الجيل التالي لا يرث الخبرة، فقط المشاكل.',
+    'prob.4h':'كل قسم لديه حله المؤقت الخاص',
+    'prob.4p':'الصيانة لديها مجلداتها. الإنتاج لديه مجموعة WhatsApp. المشتريات لديها Excel الخاص بها. لا أحد يرى الصورة الكاملة. عطل الأسبوع الماضي يعود هذا الأسبوع — لا أحد يربط النقاط.',
+    'mod.label':'ما تفعله Flowmann فعليًا',
+    'mod.title':'ليست <em>منصة بحلول مرنة</em>. وظائف يستخدمها فنيوك اليوم بالفعل.',
+    'mod.1h':'مساعد OCAP بالذكاء الاصطناعي',
+    'mod.1p':'يرى الفني عطلًا. يلتقط صورة. يطرح الذكاء الاصطناعي الأسئلة الأولى، يسير في مسار OCAP، يصعّد إلى المهندس عند الحاجة. الجونيور يتصرف مؤقتًا كخبير. الخبير يكسب وقتًا لما يهم حقًا.',
+    'mod.2h':'الإبلاغ السريع',
+    'mod.2p':'يرى المشغل شيئًا ما. يمسح رمز QR بجوار الآلة، يملأ ثلاثة حقول، يضيف صورة. ضغطة واحدة — والشخص المناسب يعرف عنه، بلغته الخاصة. لا مزيد من "ظننت أن شخصًا آخر قد أبلغ عنه".',
+    'mod.3h':'فحوصات رقمية بصور',
+    'mod.3p':'لا ورق يختفي. لا أوراق Excel لا أحد يحدثها. نقاط الفحص مع دليل بالصور، مرتبطة بالآلة الصحيحة. مصفوفة المخاطر تفرض الموازنات قبل أن تُهمل.',
+    'mod.4h':'سلسلة بلاغات SAP M1',
+    'mod.4p':'لا يحتاج المشغل إلى معرفة SAP. يقوم بإنشاء بلاغ في Flowmann، النظام يقترح نص M1 مرتبًا لـ SAP، السلسلة إلى مخطط الصيانة تسير. مواقع متعددة، طريقة عمل واحدة.',
+    'mod.5h':'سجل شكاوى الموردين',
+    'mod.5p':'توصيل خاطئ، قطع تالفة، متأخر؟ المشغل يسجله بصورة. المشتريات تحصل عليه على المكتب، يتم بناء تاريخ المورد تلقائيًا. العام القادم ستعرف أي مورد يكلفك — وليس فقط ما يحاسبك عليه.',
+    'mod.6h':'تدقيقات بدون ذعر',
+    'mod.6p':'ISO 9001، تدقيقات العملاء، تدقيق داخلي. الحالة دائمًا مرئية — وليس فقط في يوم التدقيق. يصبح أسبوع التدقيق إجراءً شكليًا بدلًا من أزمة.',
+    'mod.7h':'تحليل الأعطال بالتعرف على الأنماط',
+    'mod.7p':'يفحص الذكاء الاصطناعي الطقس، اليوم، النوبة، الفني، الآلة. يجد أنماطًا لا يراها الناس. "الآلة X تتعطل غالبًا يوم الإثنين بعد توقف يوم الجمعة." تحل السبب، وليس فقط العَرَض.',
+    'mod.8h':'الترجمة مدمجة',
+    'mod.8p':'قوى عاملة متعددة الجنسيات؟ واجهة بخمس لغات. لا حواجز لغوية بين البولندية والرومانية والهولندية في نفس النوبة.',
+    'bewijs.text':'مصنع فولاذ به 80 موظفًا وفريق صيانة من 20 فنيًا يستخدم Flowmann للانتقال من العطل إلى الحل في غضون <em>ثماني دقائق</em>. ما كان عادةً يستغرق أربع ساعات.',
+    'bewijs.tail':'يمكنك تجاهل الذكاء الاصطناعي. لكنه سيلحق بك. تمامًا مثل الإنترنت. تمامًا مثل الهاتف الذكي. الذكي هو جعله يعمل لصالحك.',
+    'int.label':'بجانب — أو بدلًا من',
+    'int.title':'هل يعمل Flowmann بجانب <em>أنظمتك الحالية</em>، أم بدلًا منها؟',
+    'int.p1':'كلاهما ممكن. هل تعمل ببيئة ERP، CMMS، أو نظام صيانة؟ Flowmann يقف بجانبه ويملأ الثغرات. هل النظام لم يعد يعمل؟ إذن Flowmann يحل محله، وتحتفظ بما كان يعمل.',
+    'int.p2':'أنت تختار. لا نحارب بنيتك التحتية الحالية — نعمل معها، أو نتولاها. ما يحقق أكبر قيمة لك.',
+    'cta.title':'هل تريد أن ترى كيف يعمل Flowmann في <em>مصنعك</em>؟',
+    'cta.desc':'اطلب جولة دون التزام. لا مندوب مبيعات بسيناريو — شخص يعرف أرضية الورشة.',
+    'cta.btn':'تواصل معنا',
+    'foot.tag':'© 2026 Flowmann · منصة واحدة. كل قطاع. متصلون أخيرًا.',
+    'foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الرئيسية'
+  }
+};
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  try { localStorage.setItem('flowmann-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Update page title and meta description
+  if (translations[lang]) {
+    if (translations[lang]['page.title']) {
+      document.title = translations[lang]['page.title'];
+    }
+    if (translations[lang]['page.desc']) {
+      const metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['page.desc']);
+    }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Laad opgeslagen taalkeuze bij paginalading
+try {
+  const savedLang = localStorage.getItem('flowmann-lang');
+  if (savedLang && ['nl','en','de','fr','ar'].includes(savedLang)) {
+    setLang(savedLang);
+  }
+} catch (e) {}
+</script>
 
 </body>
 </html>
