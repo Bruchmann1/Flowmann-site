@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0d12">
+
+<title>Sportverenigingen — Flowmann</title>
+<meta name="description" id="meta-description" content="Voor de amateurvereniging die op vrijwilligers draait én de prestatieclub waar trainer, arts, fysio en analist rond één sporter werken. Flowmann verbindt accommodatie, veiligheid, vrijwilligers en het hele team rond de sporter — in vijf talen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://flowmann.com/sectoren/sportverenigingen">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://flowmann.com/sectoren/sportverenigingen">
+<meta property="og:title" content="Sportverenigingen — Flowmann">
+<meta property="og:description" content="Van de vrijwilliger die de kantine draaiend houdt tot het performance-team rond de topsporter. Flowmann verbindt iedereen rond de sport in één platform — en geeft de sporter een doodsimpel overzicht.">
+<meta property="og:image" content="https://flowmann.com/og-image.png">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0d12;
+    --bg-soft: #11151c;
+    --cream: #f5f1e8;
+    --cream-dark: #1a1d23;
+    --text: #f5f7fa;
+    --text-muted: #a4afbd;
+    --text-dim: #6b7684;
+    --amber: #f59e0b;
+    --amber-br: #fbbf24;
+    --amber-glow: rgba(245, 158, 11, 0.2);
+    --border: rgba(255, 255, 255, 0.1);
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    background: rgba(10, 13, 18, 0.75);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--text);
+    flex-shrink: 0;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%, #c47a04 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+  .nav-logo-text {
+    font-family: var(--display);
+    font-weight: 500; font-size: 21px;
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none; align-items: center;
+  }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions {
+    display: flex; gap: 10px; align-items: center;
+    flex-shrink: 0;
+  }
+  .lang-switcher {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: none; border: none; color: var(--text-dim);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 9px; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0.06em; transition: all 0.2s;
+  }
+  .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--text-muted); }
+  .nav-back { padding: 9px 16px; font-size: 13px; }
+  .nav-login { padding: 9px 18px; font-size: 13px; line-height: 1; }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, var(--amber-br) 0%, var(--amber) 100%);
+    color: #0a0d12;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--amber-glow);
+    filter: brightness(1.08);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: inherit;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    vertical-align: baseline;
+  }
+  .cream-section em {
+    background: linear-gradient(135deg, #c47a04 0%, #8b5a00 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  blockquote em {
+    background: none;
+    -webkit-text-fill-color: var(--amber-br);
+    color: var(--amber-br);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 90vh;
+    padding: 160px 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  .hero-bg-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.32;
+    transform: scale(1.05);
+    animation: slow-zoom 22s ease-in-out infinite alternate;
+  }
+  @keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+  .hero-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,13,18,0.55) 0%, rgba(10,13,18,0.85) 60%, rgba(10,13,18,1) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 920px; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--amber-br);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 7px 14px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(38px, 6.2vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    max-width: 680px;
+    font-weight: 400;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 120px 0; position: relative; }
+  .section-label {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--amber-br);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+    padding: 8px 18px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245,158,11,0.35);
+    border-radius: 100px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+
+  /* ===== PROBLEM (CREAM) ===== */
+  .cream-section {
+    background: var(--cream);
+    color: var(--cream-dark);
+    padding: 140px 0;
+  }
+  .cream-section .section-label {
+    color: #8b5a00;
+    background: rgba(139, 90, 0, 0.08);
+    border-color: rgba(139, 90, 0, 0.2);
+  }
+  .cream-section .section-desc { color: #555552; }
+  .problem-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid rgba(26,29,35,0.12);
+  }
+  .problem-list li {
+    padding: 36px 32px 36px 0;
+    border-bottom: 1px solid rgba(26,29,35,0.12);
+    display: flex;
+    gap: 22px;
+    align-items: start;
+  }
+  .problem-list li:nth-child(2n) { padding-right: 0; padding-left: 32px; border-left: 1px solid rgba(26,29,35,0.12); }
+  .problem-num {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--amber);
+    min-width: 44px;
+    font-style: italic;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .problem-list h4 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+  .problem-list p {
+    font-size: 15px;
+    color: #555552;
+    line-height: 1.55;
+  }
+
+  /* ===== MODULES ===== */
+  .modules-section { padding: 120px 0; }
+  .modules-head { max-width: 760px; margin-bottom: 56px; }
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .module-card {
+    padding: 32px;
+    background: linear-gradient(145deg, rgba(36,42,54,0.45) 0%, rgba(15,20,28,0.45) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(42,48,60,0.5) 0%, rgba(20,25,33,0.5) 100%);
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--amber-br), var(--amber));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .module-card:hover::before { opacity: 1; }
+  .module-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--amber-br);
+    border: 1px solid rgba(245,158,11,0.25);
+  }
+  .module-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .module-icon svg {
+    width: 22px; height: 22px;
+    stroke: var(--amber-br);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .module-card h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .module-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== QUOTE / BEWIJS ===== */
+  .quote-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg) 0%, #14181f 50%, var(--bg) 100%);
+  }
+  .quote-bg { position: absolute; inset: 0; z-index: 0; }
+  .quote-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.08;
+    filter: blur(2px);
+  }
+  .quote-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20,24,31,0.5) 0%, rgba(10,13,18,0.95) 80%);
+  }
+  .quote-wrap {
+    position: relative; z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 64px 40px;
+    background: rgba(20, 24, 31, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 100px;
+    line-height: 0.5;
+    color: var(--amber);
+    opacity: 0.5;
+    margin-bottom: 20px;
+    display: block;
+    font-style: italic;
+  }
+  .quote-wrap blockquote {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+  .quote-tail {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--amber-br);
+    line-height: 1.5;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ===== INTEGRATION ===== */
+  .integration-section { padding: 100px 0; }
+  .integration-wrap { max-width: 820px; margin: 0 auto; text-align: center; }
+  .integration-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(28px, 3.8vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .integration-wrap p {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .cta-wrap { max-width: 720px; margin: 0 auto; }
+  .cta-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .cta-wrap p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 60px 0 40px; border-top: 1px solid var(--border); }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-legal { font-size: 12px; color: var(--text-dim); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-actions { gap: 6px; }
+    .container { padding: 0 20px; }
+    .hero { padding: 130px 0 60px; min-height: auto; }
+    section { padding: 80px 0; }
+    .cream-section { padding: 80px 0; }
+    .problem-list { grid-template-columns: 1fr; border-top: none; }
+    .problem-list li { padding: 24px 0 !important; border-left: none !important; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .module-card { padding: 26px; }
+    .quote-wrap { padding: 40px 24px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .lang-btn { font-size: 10px; padding: 4px 6px; letter-spacing: 0.04em; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+    .nav-back { padding: 8px 11px; font-size: 11px; }
+    .nav-back svg { display: none; }
+    .nav-login { padding: 8px 12px; font-size: 12px; }
+  }
+  @media (max-width: 520px) {
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn { justify-content: center; }
+    .lang-btn { font-size: 9px; padding: 3px 5px; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-mark">
+        <svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="nav-logo-text">Flowmann</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#sectors" data-i18n="nav.sectors">Sectoren</a></li>
+      <li><a href="/#ai" data-i18n="nav.ai">AI</a></li>
+      <li><a href="/#how" data-i18n="nav.how">Aanpak</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prijzen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+      <a href="/" class="btn btn-ghost nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1m0 0l5-5m-5 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="nav.home">Home</span>
+      </a>
+      <a href="https://app.flowmann.com" class="btn btn-primary nav-login">
+        <span data-i18n="nav.login">Login</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-bg-image">
+    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1920&q=80" alt="Sportomgeving" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span data-i18n="hero.eyebrow">Sector · Sportverenigingen</span>
+      </span>
+      <h1 data-i18n="hero.title">Van de <em>vrijwilliger</em> tot het <em>performance-team</em>. Eén platform.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Voor de amateurvereniging die draait op vrijwilligers, accommodatie en passie — én voor de prestatieclub waar trainer, arts, fysio, analist en diëtist rond één sporter werken. Flowmann verbindt iedereen rondom de sport, en geeft de sporter een doodsimpel overzicht: wat moet ik doen, hoe sta ik ervoor, waar werk ik naartoe.
+      </p>
+      <div class="hero-ctas">
+        <a href="/#contact" class="btn btn-primary">
+          <span data-i18n="hero.cta1">Vraag een rondleiding aan</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/#sectors" class="btn btn-ghost" data-i18n="hero.cta2">Andere sectoren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEM ============== -->
+<section class="cream-section">
+  <div class="container">
+    <span class="section-label" data-i18n="prob.label">U herkent het waarschijnlijk</span>
+    <h2 class="section-title" data-i18n="prob.title">De sport gaat vanzelf. <em>Alles eromheen</em> niet.</h2>
+    <p class="section-desc" data-i18n="prob.desc">Of het nu een vereniging op vrijwilligers is of een club met een professionele staf — vier patronen komen overal terug. En ze kosten precies de tijd en energie die naar de sport zou moeten gaan.</p>
+    <ul class="problem-list">
+      <li>
+        <span class="problem-num">01</span>
+        <div>
+          <h4 data-i18n="prob.1h">Alles zit in de hoofden van een paar mensen</h4>
+          <p data-i18n="prob.1p">Wie regelt de sleutel, wie weet hoe de ketel werkt, wie heeft het rooster? Bij de vereniging zit het in een handvol vrijwilligers. Bij de club in losse mensen per discipline. Stopt er één, dan verdwijnt de kennis — en begint het zoeken opnieuw.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">02</span>
+        <div>
+          <h4 data-i18n="prob.2h">De groepsapp is het archief geworden</h4>
+          <p data-i18n="prob.2p">Een kapotte verlichting, een gat in het veld, een trainingsschema, een blessure-update. Alles gaat via WhatsApp-groepen waar het na een dag onvindbaar is. Wat iedereen zou moeten weten, weet alleen wie net op dat moment keek.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">03</span>
+        <div>
+          <h4 data-i18n="prob.3h">Veiligheid en verplichtingen, lastig aantoonbaar</h4>
+          <p data-i18n="prob.3p">AED-keuring, BHV'ers, VOG voor jeugdtrainers, gedragscodes. Verplicht, maar versnipperd over mappen en mailboxen. Als de bond of een ouder ernaar vraagt, begint het zoeken — terwijl het bewijs centraal en actueel zou moeten zijn.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">04</span>
+        <div>
+          <h4 data-i18n="prob.4h">De sporter weet niet altijd wat er van hem verwacht wordt</h4>
+          <p data-i18n="prob.4p">Bij de prestatieclub werken trainer, fysio, analist en diëtist rond dezelfde sporter — maar de sporter krijgt het versnipperd binnen. Wat moet ik vandaag doen? Wat zegt mijn data? Waar werk ik naartoe? Zonder één helder overzicht raakt zelfs de toegewijde sporter het spoor bijster.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== MODULES ============== -->
+<section class="modules-section">
+  <div class="container">
+    <div class="modules-head">
+      <span class="section-label" data-i18n="mod.label">Wat Flowmann concreet doet</span>
+      <h2 class="section-title" data-i18n="mod.title">Geen <em>los systeem per probleem</em>. Eén platform voor de club én de sporter.</h2>
+    </div>
+    <div class="modules-grid">
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.both">Vereniging & club</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 data-i18n="mod.1h">Snelle Melding accommodatie & materiaal</h3>
+        <p data-i18n="mod.1p">Kapotte verlichting, een gat in het veld, een lekkende kleedkamer, een defect toestel. Foto, locatie, één tap — en de melding komt bij wie het kan oplossen. De melder ziet de status. Geen verdwenen appjes, geen "dat wist ik niet".</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.amateur">Vereniging</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 data-i18n="mod.2h">Vrijwilligers & taken</h3>
+        <p data-i18n="mod.2p">Wie draait de kantine, wie fluit zaterdag, wie rijdt naar de uitwedstrijd? Taken, roosters en afspraken op één plek in plaats van in tien appgroepen. Nieuwe vrijwilligers zien meteen wat er te doen is — de last verdeelt zich, in plaats van op dezelfde paar mensen te blijven liggen.</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.both">Vereniging & club</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="mod.3h">Veiligheid & verplichtingen-dossier</h3>
+        <p data-i18n="mod.3p">AED-keuring, BHV, VOG voor jeugdkader, gedragscodes — centraal per persoon, met automatische signalen bij verloop. Als de bond, een ouder of een inspectie ernaar vraagt: één klik naar een actueel, aantoonbaar dossier.</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.both">Vereniging & club</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 11h-6M19 8v6"/></svg>
+        </div>
+        <h3 data-i18n="mod.4h">Onboarding nieuwe vrijwilligers & trainers</h3>
+        <p data-i18n="mod.4p">Nieuwe trainer, nieuwe vrijwilliger, nieuwe kantinemedewerker? Clubregels, veiligheidsinstructies en afspraken op de telefoon, in de eigen taal, vóór de eerste keer. Met handtekening. Inwerken wordt iets dat blijft hangen, niet iets dat je elke keer opnieuw moet vertellen.</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.pro">Prestatieclub</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+        </div>
+        <h3 data-i18n="mod.5h">Het team rond de sporter, verbonden</h3>
+        <p data-i18n="mod.5p">Trainer, arts, fysio, performance-coach, data-analist, diëtist — allemaal in één platform rond dezelfde sporter. Ieder ziet wat bij zijn rol hoort, niets meer. De disciplines werken samen zonder eindeloze mails, en de staf ziet in één oogopslag hoe een sporter ervoor staat: beschikbaar, belast, in opbouw.</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.pro">Prestatieclub</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h3 data-i18n="mod.6h">Doodsimpel sporter-overzicht</h3>
+        <p data-i18n="mod.6p">De sporter opent de app en ziet precies wat nodig is: wat moet ik vandaag doen, hoe presteer ik, waar werk ik naartoe. Geen wirwar van schema's en berichten — één helder beeld. De toewijding gaat naar de training, niet naar uitzoeken wat de bedoeling is.</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.both">Vereniging & club</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3 data-i18n="mod.7h">Vertaling ingebouwd</h3>
+        <p data-i18n="mod.7p">Sport verbindt nationaliteiten. Instructies, afspraken en meldingen automatisch in vijf talen. De nieuwe speler die net in Nederland is leest dezelfde inhoud als de rest — in z'n eigen taal. Niemand mist iets door een taalbarrière.</p>
+      </div>
+
+      <div class="module-card">
+        <span class="module-tag" data-i18n="mod.tag.both">Vereniging & club</span>
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>
+        </div>
+        <h3 data-i18n="mod.8h">Patronen zien</h3>
+        <p data-i18n="mod.8p">AI kijkt over alles heen. Welk materiaal gaat steeds kapot? Welke taken blijven liggen? Bij de prestatieclub: welke belasting-patronen gaan vooraf aan terugval? U stuurt op de oorzaak, in plaats van elke keer hetzelfde brandje te blussen.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== QUOTE / BEWIJS ============== -->
+<section class="quote-section">
+  <div class="quote-bg">
+    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80" alt="Sportomgeving" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <blockquote data-i18n="bewijs.text">
+        Een vereniging verdeelt de last over meer schouders en houdt het verplichtingen-dossier altijd op orde. Een prestatieclub laat trainer, fysio en analist rond dezelfde sporter werken — en geeft die sporter één helder beeld van wat hij moet doen en hoe hij ervoor staat. Beide houden tijd over voor waar het echt om gaat.
+      </blockquote>
+      <div class="quote-tail" data-i18n="bewijs.tail">
+        De sport gaat vanzelf. <em>Flowmann zorgt</em> dat de rest dat ook gaat doen.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTEGRATION ============== -->
+<section class="integration-section">
+  <div class="container">
+    <div class="integration-wrap">
+      <span class="section-label" data-i18n="int.label">Naast uw bestaande systemen</span>
+      <h2 data-i18n="int.title">Flowmann raakt <em>ledenadministratie en medische dossiers</em> niet aan.</h2>
+      <p data-i18n="int.p1">Ledenadministratie en contributie horen in uw bestaande systeem — Sportlink, AllUnited of een ander pakket — en blijven daar. En medische gegevens van een sporter blijven bij de arts of fysio, in hun eigen systeem. Flowmann legt geen diagnoses of behandeldossiers vast.</p>
+      <p data-i18n="int.p2">Wat Flowmann wél doet: het verbindt het hele team rond de sporter, toont ieder precies wat bij zijn rol hoort, en geeft de sporter een simpel overzicht van taken, doelen en prestatie. Rol-gebaseerd, AVG-proof, gehost binnen de EU. Krachtig genoeg om alles te verbinden — voorzichtig genoeg om gevoelige data te respecteren.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-wrap">
+      <h2 data-i18n="cta.title">Wilt u zien hoe Flowmann bij <em>uw</em> club werkt?</h2>
+      <p data-i18n="cta.desc">Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die snapt dat een club draait op mensen, en dat de techniek dus moet helpen in plaats van in de weg zitten.</p>
+      <a href="/#contact" class="btn btn-primary">
+        <span data-i18n="cta.btn">Neem contact op</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo-mark" style="width:30px;height:30px;border-radius:7px;">
+          <svg width="18" height="18" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                  stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </span>
+        <span class="footer-legal" data-i18n="foot.tag">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/#sectors" data-i18n="foot.l1">Sectoren</a></li>
+        <li><a href="/#pricing" data-i18n="foot.l2">Prijzen</a></li>
+        <li><a href="/#contact" data-i18n="foot.l3">Contact</a></li>
+        <li><a href="/" data-i18n="foot.l4">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  nl: {
+    'nav.sectors':'Sectoren','nav.ai':'AI','nav.how':'Aanpak','nav.pricing':'Prijzen','nav.home':'Home','nav.login':'Login',
+    'page.title':'Sportverenigingen — Flowmann',
+    'page.desc':'Voor de amateurvereniging die op vrijwilligers draait én de prestatieclub waar trainer, arts, fysio en analist rond één sporter werken. Flowmann verbindt accommodatie, veiligheid, vrijwilligers en het hele team rond de sporter — in vijf talen.',
+    'hero.eyebrow':'Sector · Sportverenigingen',
+    'hero.title':'Van de <em>vrijwilliger</em> tot het <em>performance-team</em>. Eén platform.',
+    'hero.sub':'Voor de amateurvereniging die draait op vrijwilligers, accommodatie en passie — én voor de prestatieclub waar trainer, arts, fysio, analist en diëtist rond één sporter werken. Flowmann verbindt iedereen rondom de sport, en geeft de sporter een doodsimpel overzicht: wat moet ik doen, hoe sta ik ervoor, waar werk ik naartoe.',
+    'hero.cta1':'Vraag een rondleiding aan','hero.cta2':'Andere sectoren',
+    'prob.label':'U herkent het waarschijnlijk',
+    'prob.title':'De sport gaat vanzelf. <em>Alles eromheen</em> niet.',
+    'prob.desc':'Of het nu een vereniging op vrijwilligers is of een club met een professionele staf — vier patronen komen overal terug. En ze kosten precies de tijd en energie die naar de sport zou moeten gaan.',
+    'prob.1h':'Alles zit in de hoofden van een paar mensen',
+    'prob.1p':'Wie regelt de sleutel, wie weet hoe de ketel werkt, wie heeft het rooster? Bij de vereniging zit het in een handvol vrijwilligers. Bij de club in losse mensen per discipline. Stopt er één, dan verdwijnt de kennis — en begint het zoeken opnieuw.',
+    'prob.2h':'De groepsapp is het archief geworden',
+    'prob.2p':'Een kapotte verlichting, een gat in het veld, een trainingsschema, een blessure-update. Alles gaat via WhatsApp-groepen waar het na een dag onvindbaar is. Wat iedereen zou moeten weten, weet alleen wie net op dat moment keek.',
+    'prob.3h':'Veiligheid en verplichtingen, lastig aantoonbaar',
+    'prob.3p':'AED-keuring, BHV\'ers, VOG voor jeugdtrainers, gedragscodes. Verplicht, maar versnipperd over mappen en mailboxen. Als de bond of een ouder ernaar vraagt, begint het zoeken — terwijl het bewijs centraal en actueel zou moeten zijn.',
+    'prob.4h':'De sporter weet niet altijd wat er van hem verwacht wordt',
+    'prob.4p':'Bij de prestatieclub werken trainer, fysio, analist en diëtist rond dezelfde sporter — maar de sporter krijgt het versnipperd binnen. Wat moet ik vandaag doen? Wat zegt mijn data? Waar werk ik naartoe? Zonder één helder overzicht raakt zelfs de toegewijde sporter het spoor bijster.',
+    'mod.label':'Wat Flowmann concreet doet',
+    'mod.title':'Geen <em>los systeem per probleem</em>. Eén platform voor de club én de sporter.',
+    'mod.tag.both':'Vereniging & club','mod.tag.amateur':'Vereniging','mod.tag.pro':'Prestatieclub',
+    'mod.1h':'Snelle Melding accommodatie & materiaal',
+    'mod.1p':'Kapotte verlichting, een gat in het veld, een lekkende kleedkamer, een defect toestel. Foto, locatie, één tap — en de melding komt bij wie het kan oplossen. De melder ziet de status. Geen verdwenen appjes, geen "dat wist ik niet".',
+    'mod.2h':'Vrijwilligers & taken',
+    'mod.2p':'Wie draait de kantine, wie fluit zaterdag, wie rijdt naar de uitwedstrijd? Taken, roosters en afspraken op één plek in plaats van in tien appgroepen. Nieuwe vrijwilligers zien meteen wat er te doen is — de last verdeelt zich, in plaats van op dezelfde paar mensen te blijven liggen.',
+    'mod.3h':'Veiligheid & verplichtingen-dossier',
+    'mod.3p':'AED-keuring, BHV, VOG voor jeugdkader, gedragscodes — centraal per persoon, met automatische signalen bij verloop. Als de bond, een ouder of een inspectie ernaar vraagt: één klik naar een actueel, aantoonbaar dossier.',
+    'mod.4h':'Onboarding nieuwe vrijwilligers & trainers',
+    'mod.4p':'Nieuwe trainer, nieuwe vrijwilliger, nieuwe kantinemedewerker? Clubregels, veiligheidsinstructies en afspraken op de telefoon, in de eigen taal, vóór de eerste keer. Met handtekening. Inwerken wordt iets dat blijft hangen, niet iets dat je elke keer opnieuw moet vertellen.',
+    'mod.5h':'Het team rond de sporter, verbonden',
+    'mod.5p':'Trainer, arts, fysio, performance-coach, data-analist, diëtist — allemaal in één platform rond dezelfde sporter. Ieder ziet wat bij zijn rol hoort, niets meer. De disciplines werken samen zonder eindeloze mails, en de staf ziet in één oogopslag hoe een sporter ervoor staat: beschikbaar, belast, in opbouw.',
+    'mod.6h':'Doodsimpel sporter-overzicht',
+    'mod.6p':'De sporter opent de app en ziet precies wat nodig is: wat moet ik vandaag doen, hoe presteer ik, waar werk ik naartoe. Geen wirwar van schema\'s en berichten — één helder beeld. De toewijding gaat naar de training, niet naar uitzoeken wat de bedoeling is.',
+    'mod.7h':'Vertaling ingebouwd',
+    'mod.7p':'Sport verbindt nationaliteiten. Instructies, afspraken en meldingen automatisch in vijf talen. De nieuwe speler die net in Nederland is leest dezelfde inhoud als de rest — in z\'n eigen taal. Niemand mist iets door een taalbarrière.',
+    'mod.8h':'Patronen zien',
+    'mod.8p':'AI kijkt over alles heen. Welk materiaal gaat steeds kapot? Welke taken blijven liggen? Bij de prestatieclub: welke belasting-patronen gaan vooraf aan terugval? U stuurt op de oorzaak, in plaats van elke keer hetzelfde brandje te blussen.',
+    'bewijs.text':'Een vereniging verdeelt de last over meer schouders en houdt het verplichtingen-dossier altijd op orde. Een prestatieclub laat trainer, fysio en analist rond dezelfde sporter werken — en geeft die sporter één helder beeld van wat hij moet doen en hoe hij ervoor staat. Beide houden tijd over voor waar het echt om gaat.',
+    'bewijs.tail':'De sport gaat vanzelf. <em>Flowmann zorgt</em> dat de rest dat ook gaat doen.',
+    'int.label':'Naast uw bestaande systemen',
+    'int.title':'Flowmann raakt <em>ledenadministratie en medische dossiers</em> niet aan.',
+    'int.p1':'Ledenadministratie en contributie horen in uw bestaande systeem — Sportlink, AllUnited of een ander pakket — en blijven daar. En medische gegevens van een sporter blijven bij de arts of fysio, in hun eigen systeem. Flowmann legt geen diagnoses of behandeldossiers vast.',
+    'int.p2':'Wat Flowmann wél doet: het verbindt het hele team rond de sporter, toont ieder precies wat bij zijn rol hoort, en geeft de sporter een simpel overzicht van taken, doelen en prestatie. Rol-gebaseerd, AVG-proof, gehost binnen de EU. Krachtig genoeg om alles te verbinden — voorzichtig genoeg om gevoelige data te respecteren.',
+    'cta.title':'Wilt u zien hoe Flowmann bij <em>uw</em> club werkt?',
+    'cta.desc':'Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die snapt dat een club draait op mensen, en dat de techniek dus moet helpen in plaats van in de weg zitten.',
+    'cta.btn':'Neem contact op',
+    'foot.tag':'© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.',
+    'foot.l1':'Sectoren','foot.l2':'Prijzen','foot.l3':'Contact','foot.l4':'Home'
+  },
+  en: {
+    'nav.sectors':'Sectors','nav.ai':'AI','nav.how':'Approach','nav.pricing':'Pricing','nav.home':'Home','nav.login':'Login',
+    'page.title':'Sports Clubs — Flowmann',
+    'page.desc':'For the amateur club that runs on volunteers and the performance club where coach, doctor, physio and analyst work around one athlete. Flowmann connects facilities, safety, volunteers and the whole team around the athlete — in five languages.',
+    'hero.eyebrow':'Sector · Sports Clubs',
+    'hero.title':'From the <em>volunteer</em> to the <em>performance team</em>. One platform.',
+    'hero.sub':'For the amateur club that runs on volunteers, facilities and passion — and for the performance club where coach, doctor, physio, analyst and dietitian work around one athlete. Flowmann connects everyone around the sport, and gives the athlete a dead-simple overview: what do I do, how am I doing, what am I working towards.',
+    'hero.cta1':'Request a walkthrough','hero.cta2':'Other sectors',
+    'prob.label':'You probably recognise this',
+    'prob.title':'The sport takes care of itself. <em>Everything around it</em> does not.',
+    'prob.desc':"Whether it's a volunteer-run club or one with a professional staff — four patterns return everywhere. And they cost exactly the time and energy that should go to the sport.",
+    'prob.1h':'Everything sits in the heads of a few people',
+    'prob.1p':'Who arranges the key, who knows how the boiler works, who has the schedule? At the club it sits with a handful of volunteers. At the professional club with individuals per discipline. If one stops, the knowledge vanishes — and the searching starts again.',
+    'prob.2h':'The group chat has become the archive',
+    'prob.2p':'Broken lighting, a hole in the pitch, a training schedule, an injury update. Everything goes via WhatsApp groups where it is unfindable after a day. What everyone should know, only whoever happened to be looking knows.',
+    'prob.3h':'Safety and obligations, hard to prove',
+    'prob.3p':'AED inspection, first-aiders, background checks for youth coaches, codes of conduct. Mandatory, but scattered across folders and mailboxes. If the federation or a parent asks, the searching begins — while the proof should be central and up to date.',
+    'prob.4h':'The athlete does not always know what is expected',
+    'prob.4p':'At the performance club, coach, physio, analyst and dietitian work around the same athlete — but the athlete receives it fragmented. What do I do today? What does my data say? What am I working towards? Without one clear overview, even the dedicated athlete loses the thread.',
+    'mod.label':'What Flowmann concretely does',
+    'mod.title':'Not <em>a separate system per problem</em>. One platform for the club and the athlete.',
+    'mod.tag.both':'Club & pro','mod.tag.amateur':'Amateur club','mod.tag.pro':'Performance club',
+    'mod.1h':'Quick Report for facilities & equipment',
+    'mod.1p':'Broken lighting, a hole in the pitch, a leaking changing room, faulty equipment. Photo, location, one tap — and the report reaches whoever can fix it. The reporter sees the status. No vanished messages, no "I didn\'t know".',
+    'mod.2h':'Volunteers & tasks',
+    'mod.2p':'Who runs the canteen, who referees Saturday, who drives to the away game? Tasks, rosters and arrangements in one place instead of ten chat groups. New volunteers immediately see what needs doing — the load spreads, instead of staying on the same few people.',
+    'mod.3h':'Safety & obligations file',
+    'mod.3p':'AED inspection, first aid, background checks for youth staff, codes of conduct — central per person, with automatic alerts on expiry. If the federation, a parent or an inspection asks: one click to an up-to-date, provable file.',
+    'mod.4h':'Onboarding new volunteers & coaches',
+    'mod.4p':'New coach, new volunteer, new canteen worker? Club rules, safety instructions and arrangements on their phone, in their own language, before the first time. With signature. Induction becomes something that sticks, not something you have to explain again each time.',
+    'mod.5h':'The team around the athlete, connected',
+    'mod.5p':'Coach, doctor, physio, performance coach, data analyst, dietitian — all in one platform around the same athlete. Each sees what belongs to their role, nothing more. The disciplines work together without endless emails, and the staff sees at a glance how an athlete is doing: available, loaded, building up.',
+    'mod.6h':'Dead-simple athlete overview',
+    'mod.6p':"The athlete opens the app and sees exactly what's needed: what do I do today, how am I performing, what am I working towards. No tangle of schedules and messages — one clear picture. The dedication goes to the training, not to figuring out what's meant.",
+    'mod.7h':'Translation built in',
+    'mod.7p':"Sport connects nationalities. Instructions, arrangements and reports automatically in five languages. The new player who just arrived in the country reads the same content as the rest — in their own language. No one misses anything through a language barrier.",
+    'mod.8h':'See patterns',
+    'mod.8p':'AI looks across everything. Which equipment keeps breaking? Which tasks keep getting left? At the performance club: which load patterns precede a setback? You steer on the cause, instead of putting out the same fire every time.',
+    'bewijs.text':'A club spreads the load across more shoulders and keeps the obligations file always in order. A performance club lets coach, physio and analyst work around the same athlete — and gives that athlete one clear picture of what to do and how they are doing. Both keep time for what really matters.',
+    'bewijs.tail':'The sport takes care of itself. <em>Flowmann makes sure</em> the rest does too.',
+    'int.label':'Alongside your existing systems',
+    'int.title':'Flowmann does <em>not touch membership records or medical files</em>.',
+    'int.p1':'Membership administration and dues belong in your existing system — Sportlink, AllUnited or another package — and stay there. And an athlete\'s medical data stays with the doctor or physio, in their own system. Flowmann records no diagnoses or treatment files.',
+    'int.p2':"What Flowmann does do: it connects the whole team around the athlete, shows each exactly what belongs to their role, and gives the athlete a simple overview of tasks, goals and performance. Role-based, GDPR-proof, hosted within the EU. Powerful enough to connect everything — careful enough to respect sensitive data.",
+    'cta.title':'Want to see how Flowmann works at <em>your</em> club?',
+    'cta.desc':'Request a non-binding walkthrough. No salesperson with a script — someone who understands that a club runs on people, and that the technology should help instead of getting in the way.',
+    'cta.btn':'Get in touch',
+    'foot.tag':'© 2026 Flowmann · One platform. Every sector. Finally connected.',
+    'foot.l1':'Sectors','foot.l2':'Pricing','foot.l3':'Contact','foot.l4':'Home'
+  },
+  de: {
+    'nav.sectors':'Branchen','nav.ai':'KI','nav.how':'Vorgehen','nav.pricing':'Preise','nav.home':'Home','nav.login':'Anmelden',
+    'page.title':'Sportvereine — Flowmann',
+    'page.desc':'Für den Amateurverein, der auf Ehrenamtlichen läuft, und den Leistungsclub, wo Trainer, Arzt, Physio und Analyst um einen Sportler arbeiten. Flowmann verbindet Anlagen, Sicherheit, Ehrenamtliche und das ganze Team rund um den Sportler — in fünf Sprachen.',
+    'hero.eyebrow':'Branche · Sportvereine',
+    'hero.title':'Vom <em>Ehrenamtlichen</em> bis zum <em>Performance-Team</em>. Eine Plattform.',
+    'hero.sub':'Für den Amateurverein, der auf Ehrenamtlichen, Anlagen und Leidenschaft läuft — und für den Leistungsclub, wo Trainer, Arzt, Physio, Analyst und Ernährungsberater um einen Sportler arbeiten. Flowmann verbindet alle rund um den Sport und gibt dem Sportler einen kinderleichten Überblick: Was tue ich, wie stehe ich da, worauf arbeite ich hin.',
+    'hero.cta1':'Vorführung anfragen','hero.cta2':'Andere Branchen',
+    'prob.label':'Sie kennen das wahrscheinlich',
+    'prob.title':'Der Sport läuft von selbst. <em>Alles drumherum</em> nicht.',
+    'prob.desc':'Ob ehrenamtlich geführter Verein oder Club mit professionellem Stab — vier Muster kommen überall wieder. Und sie kosten genau die Zeit und Energie, die in den Sport fließen sollte.',
+    'prob.1h':'Alles steckt in den Köpfen einiger weniger',
+    'prob.1p':'Wer regelt den Schlüssel, wer weiß, wie der Kessel funktioniert, wer hat den Plan? Im Verein steckt es bei einer Handvoll Ehrenamtlicher. Im Club bei einzelnen Personen pro Disziplin. Hört einer auf, verschwindet das Wissen — und das Suchen beginnt von vorn.',
+    'prob.2h':'Die Gruppenchat ist zum Archiv geworden',
+    'prob.2p':'Eine kaputte Beleuchtung, ein Loch im Feld, ein Trainingsplan, ein Verletzungs-Update. Alles läuft über WhatsApp-Gruppen, wo es nach einem Tag unauffindbar ist. Was jeder wissen sollte, weiß nur, wer gerade hingeschaut hat.',
+    'prob.3h':'Sicherheit und Pflichten, schwer nachweisbar',
+    'prob.3p':'AED-Prüfung, Ersthelfer, Führungszeugnis für Jugendtrainer, Verhaltenskodizes. Pflicht, aber verstreut über Ordner und Postfächer. Fragt der Verband oder ein Elternteil danach, beginnt das Suchen — während der Nachweis zentral und aktuell sein sollte.',
+    'prob.4h':'Der Sportler weiß nicht immer, was von ihm erwartet wird',
+    'prob.4p':'Im Leistungsclub arbeiten Trainer, Physio, Analyst und Ernährungsberater um denselben Sportler — aber der Sportler bekommt es zersplittert. Was tue ich heute? Was sagen meine Daten? Worauf arbeite ich hin? Ohne einen klaren Überblick verliert selbst der engagierte Sportler den Faden.',
+    'mod.label':'Was Flowmann konkret leistet',
+    'mod.title':'Kein <em>einzelnes System pro Problem</em>. Eine Plattform für den Club und den Sportler.',
+    'mod.tag.both':'Verein & Club','mod.tag.amateur':'Amateurverein','mod.tag.pro':'Leistungsclub',
+    'mod.1h':'Schnellmeldung für Anlagen & Material',
+    'mod.1p':'Kaputte Beleuchtung, ein Loch im Feld, eine undichte Umkleide, ein defektes Gerät. Foto, Standort, ein Tipp — und die Meldung erreicht den, der es lösen kann. Die meldende Person sieht den Status. Keine verschwundenen Nachrichten, kein "das wusste ich nicht".',
+    'mod.2h':'Ehrenamtliche & Aufgaben',
+    'mod.2p':'Wer macht die Kantine, wer pfeift am Samstag, wer fährt zum Auswärtsspiel? Aufgaben, Pläne und Absprachen an einem Ort statt in zehn Chatgruppen. Neue Ehrenamtliche sehen sofort, was zu tun ist — die Last verteilt sich, statt auf denselben wenigen Menschen liegen zu bleiben.',
+    'mod.3h':'Sicherheits- & Pflichten-Akte',
+    'mod.3p':'AED-Prüfung, Erste Hilfe, Führungszeugnis für Jugendpersonal, Verhaltenskodizes — zentral pro Person, mit automatischen Signalen bei Ablauf. Fragt der Verband, ein Elternteil oder eine Inspektion: ein Klick zu einer aktuellen, nachweisbaren Akte.',
+    'mod.4h':'Onboarding neuer Ehrenamtlicher & Trainer',
+    'mod.4p':'Neuer Trainer, neuer Ehrenamtlicher, neuer Kantinenmitarbeiter? Vereinsregeln, Sicherheitsanweisungen und Absprachen auf dem Handy, in der eigenen Sprache, vor dem ersten Mal. Mit Unterschrift. Die Einarbeitung bleibt hängen, statt jedes Mal aufs Neue erklärt zu werden.',
+    'mod.5h':'Das Team rund um den Sportler, verbunden',
+    'mod.5p':'Trainer, Arzt, Physio, Performance-Coach, Datenanalyst, Ernährungsberater — alle in einer Plattform rund um denselben Sportler. Jeder sieht, was zu seiner Rolle gehört, nicht mehr. Die Disziplinen arbeiten zusammen ohne endlose Mails, und der Stab sieht auf einen Blick, wie ein Sportler dasteht: verfügbar, belastet, im Aufbau.',
+    'mod.6h':'Kinderleichter Sportler-Überblick',
+    'mod.6p':'Der Sportler öffnet die App und sieht genau, was nötig ist: Was tue ich heute, wie ist meine Leistung, worauf arbeite ich hin. Kein Wirrwarr aus Plänen und Nachrichten — ein klares Bild. Das Engagement geht ins Training, nicht ins Herausfinden, was gemeint ist.',
+    'mod.7h':'Übersetzung eingebaut',
+    'mod.7p':'Sport verbindet Nationalitäten. Anweisungen, Absprachen und Meldungen automatisch in fünf Sprachen. Der neue Spieler, der gerade im Land ist, liest denselben Inhalt wie der Rest — in seiner eigenen Sprache. Niemand verpasst etwas durch eine Sprachbarriere.',
+    'mod.8h':'Muster erkennen',
+    'mod.8p':'KI blickt über alles. Welches Material geht ständig kaputt? Welche Aufgaben bleiben liegen? Im Leistungsclub: Welche Belastungsmuster gehen einem Rückschlag voraus? Sie steuern auf die Ursache, statt jedes Mal denselben Brand zu löschen.',
+    'bewijs.text':'Ein Verein verteilt die Last auf mehr Schultern und hält die Pflichten-Akte immer in Ordnung. Ein Leistungsclub lässt Trainer, Physio und Analyst um denselben Sportler arbeiten — und gibt diesem Sportler ein klares Bild, was er tun soll und wie er dasteht. Beide behalten Zeit für das, worauf es wirklich ankommt.',
+    'bewijs.tail':'Der Sport läuft von selbst. <em>Flowmann sorgt dafür</em>, dass der Rest das auch tut.',
+    'int.label':'Neben Ihren bestehenden Systemen',
+    'int.title':'Flowmann fasst <em>Mitgliederverwaltung und medizinische Akten</em> nicht an.',
+    'int.p1':'Mitgliederverwaltung und Beiträge gehören in Ihr bestehendes System — Sportlink, AllUnited oder ein anderes Paket — und bleiben dort. Und die medizinischen Daten eines Sportlers bleiben beim Arzt oder Physio, in deren eigenem System. Flowmann erfasst keine Diagnosen oder Behandlungsakten.',
+    'int.p2':'Was Flowmann tut: Es verbindet das ganze Team rund um den Sportler, zeigt jedem genau, was zu seiner Rolle gehört, und gibt dem Sportler einen einfachen Überblick über Aufgaben, Ziele und Leistung. Rollenbasiert, DSGVO-konform, gehostet in der EU. Stark genug, um alles zu verbinden — vorsichtig genug, um sensible Daten zu respektieren.',
+    'cta.title':'Möchten Sie sehen, wie Flowmann bei <em>Ihrem</em> Club funktioniert?',
+    'cta.desc':'Vereinbaren Sie eine unverbindliche Vorführung. Kein Verkäufer mit Skript — jemand, der versteht, dass ein Club auf Menschen läuft und die Technik daher helfen statt im Weg stehen sollte.',
+    'cta.btn':'Kontakt aufnehmen',
+    'foot.tag':'© 2026 Flowmann · Eine Plattform. Jede Branche. Endlich verbunden.',
+    'foot.l1':'Branchen','foot.l2':'Preise','foot.l3':'Kontakt','foot.l4':'Home'
+  },
+  fr: {
+    'nav.sectors':'Secteurs','nav.ai':'IA','nav.how':'Approche','nav.pricing':'Tarifs','nav.home':'Accueil','nav.login':'Connexion',
+    'page.title':'Clubs sportifs — Flowmann',
+    'page.desc':"Pour le club amateur qui repose sur des bénévoles et le club de performance où entraîneur, médecin, kiné et analyste travaillent autour d'un athlète. Flowmann connecte installations, sécurité, bénévoles et toute l'équipe autour de l'athlète — en cinq langues.",
+    'hero.eyebrow':'Secteur · Clubs sportifs',
+    'hero.title':"Du <em>bénévole</em> à l'<em>équipe de performance</em>. Une seule plateforme.",
+    'hero.sub':"Pour le club amateur qui repose sur les bénévoles, les installations et la passion — et pour le club de performance où entraîneur, médecin, kiné, analyste et diététicien travaillent autour d'un athlète. Flowmann connecte tout le monde autour du sport, et donne à l'athlète une vue ultra-simple : que dois-je faire, où en suis-je, vers quoi je travaille.",
+    'hero.cta1':'Demander une visite','hero.cta2':'Autres secteurs',
+    'prob.label':'Vous reconnaissez probablement cela',
+    'prob.title':"Le sport se fait tout seul. <em>Tout ce qui l'entoure</em>, non.",
+    'prob.desc':"Qu'il s'agisse d'un club tenu par des bénévoles ou d'un club avec un staff professionnel — quatre schémas reviennent partout. Et ils coûtent exactement le temps et l'énergie qui devraient aller au sport.",
+    'prob.1h':'Tout est dans la tête de quelques personnes',
+    'prob.1p':"Qui gère la clé, qui sait comment fonctionne la chaudière, qui a le planning ? Au club, c'est entre les mains d'une poignée de bénévoles. Au club pro, de personnes isolées par discipline. Si l'une s'arrête, la connaissance disparaît — et la recherche recommence.",
+    'prob.2h':"Le groupe de discussion est devenu l'archive",
+    'prob.2p':"Un éclairage cassé, un trou dans le terrain, un programme d'entraînement, une mise à jour de blessure. Tout passe par des groupes WhatsApp où c'est introuvable après un jour. Ce que tout le monde devrait savoir, seul celui qui regardait à ce moment-là le sait.",
+    'prob.3h':'Sécurité et obligations, difficiles à prouver',
+    'prob.3p':"Contrôle DAE, secouristes, vérifications pour les entraîneurs de jeunes, codes de conduite. Obligatoires, mais éparpillés entre dossiers et boîtes mail. Si la fédération ou un parent le demande, la recherche commence — alors que la preuve devrait être centrale et à jour.",
+    'prob.4h':"L'athlète ne sait pas toujours ce qu'on attend de lui",
+    'prob.4p':"Au club de performance, entraîneur, kiné, analyste et diététicien travaillent autour du même athlète — mais l'athlète le reçoit de façon fragmentée. Que dois-je faire aujourd'hui ? Que disent mes données ? Vers quoi je travaille ? Sans une vue claire, même l'athlète dévoué perd le fil.",
+    'mod.label':'Ce que Flowmann fait concrètement',
+    'mod.title':"Pas <em>un système séparé par problème</em>. Une plateforme pour le club et l'athlète.",
+    'mod.tag.both':'Club & pro','mod.tag.amateur':'Club amateur','mod.tag.pro':'Club de performance',
+    'mod.1h':'Signalement Rapide installations & matériel',
+    'mod.1p':"Éclairage cassé, un trou dans le terrain, un vestiaire qui fuit, un équipement défectueux. Photo, lieu, un tap — et le signalement arrive à celui qui peut le résoudre. Le déclarant voit le statut. Plus de messages disparus, plus de « je ne savais pas ».",
+    'mod.2h':'Bénévoles & tâches',
+    'mod.2p':"Qui tient la buvette, qui arbitre samedi, qui conduit au match à l'extérieur ? Tâches, plannings et arrangements au même endroit au lieu de dix groupes de discussion. Les nouveaux bénévoles voient tout de suite ce qu'il y a à faire — la charge se répartit, au lieu de rester sur les mêmes personnes.",
+    'mod.3h':'Dossier sécurité & obligations',
+    'mod.3p':"Contrôle DAE, premiers secours, vérifications pour le personnel jeunesse, codes de conduite — centralisés par personne, avec alertes automatiques à l'expiration. Si la fédération, un parent ou une inspection le demande : un clic vers un dossier à jour et prouvable.",
+    'mod.4h':'Onboarding nouveaux bénévoles & entraîneurs',
+    'mod.4p':"Nouvel entraîneur, nouveau bénévole, nouvel employé de buvette ? Règles du club, consignes de sécurité et arrangements sur le téléphone, dans sa langue, avant la première fois. Avec signature. L'accueil devient quelque chose qui reste, pas qu'il faut réexpliquer chaque fois.",
+    'mod.5h':"L'équipe autour de l'athlète, connectée",
+    'mod.5p':"Entraîneur, médecin, kiné, préparateur physique, analyste de données, diététicien — tous dans une plateforme autour du même athlète. Chacun voit ce qui relève de son rôle, rien de plus. Les disciplines travaillent ensemble sans mails interminables, et le staff voit d'un coup d'œil où en est un athlète : disponible, chargé, en construction.",
+    'mod.6h':"Vue athlète ultra-simple",
+    'mod.6p':"L'athlète ouvre l'application et voit exactement ce qu'il faut : que dois-je faire aujourd'hui, comment je performe, vers quoi je travaille. Pas d'enchevêtrement de programmes et de messages — une image claire. Le dévouement va à l'entraînement, pas à comprendre ce qui est attendu.",
+    'mod.7h':'Traduction intégrée',
+    'mod.7p':"Le sport connecte les nationalités. Consignes, arrangements et signalements automatiquement en cinq langues. Le nouveau joueur qui vient d'arriver dans le pays lit le même contenu que les autres — dans sa langue. Personne ne rate rien à cause d'une barrière linguistique.",
+    'mod.8h':'Voir les schémas',
+    'mod.8p':"L'IA regarde l'ensemble. Quel matériel casse sans cesse ? Quelles tâches restent en suspens ? Au club de performance : quels schémas de charge précèdent un contretemps ? Vous pilotez sur la cause, au lieu d'éteindre le même feu à chaque fois.",
+    'bewijs.text':"Un club répartit la charge sur plus d'épaules et garde le dossier des obligations toujours en ordre. Un club de performance fait travailler entraîneur, kiné et analyste autour du même athlète — et donne à cet athlète une image claire de ce qu'il doit faire et d'où il en est. Les deux gardent du temps pour ce qui compte vraiment.",
+    'bewijs.tail':"Le sport se fait tout seul. <em>Flowmann veille</em> à ce que le reste aussi.",
+    'int.label':'À côté de vos systèmes existants',
+    'int.title':'Flowmann ne touche <em>pas aux fichiers des membres ni aux dossiers médicaux</em>.',
+    'int.p1':"L'administration des membres et les cotisations appartiennent à votre système existant — Sportlink, AllUnited ou un autre progiciel — et y restent. Et les données médicales d'un athlète restent chez le médecin ou le kiné, dans leur propre système. Flowmann n'enregistre aucun diagnostic ni dossier de traitement.",
+    'int.p2':"Ce que Flowmann fait : il connecte toute l'équipe autour de l'athlète, montre à chacun exactement ce qui relève de son rôle, et donne à l'athlète une vue simple des tâches, objectifs et performance. Basé sur les rôles, conforme RGPD, hébergé dans l'UE. Assez puissant pour tout connecter — assez prudent pour respecter les données sensibles.",
+    'cta.title':'Voulez-vous voir comment Flowmann fonctionne dans <em>votre</em> club ?',
+    'cta.desc':"Demandez une visite sans engagement. Pas un commercial avec un script — quelqu'un qui comprend qu'un club repose sur des personnes, et que la technique doit donc aider au lieu de gêner.",
+    'cta.btn':'Nous contacter',
+    'foot.tag':'© 2026 Flowmann · Une plateforme. Chaque secteur. Enfin connectés.',
+    'foot.l1':'Secteurs','foot.l2':'Tarifs','foot.l3':'Contact','foot.l4':'Accueil'
+  },
+  ar: {
+    'nav.sectors':'القطاعات','nav.ai':'الذكاء الاصطناعي','nav.how':'النهج','nav.pricing':'الأسعار','nav.home':'الرئيسية','nav.login':'تسجيل الدخول',
+    'page.title':'الأندية الرياضية — Flowmann',
+    'page.desc':'للنادي الهاوي الذي يعمل بالمتطوعين ونادي الأداء حيث يعمل المدرب والطبيب وأخصائي العلاج الطبيعي والمحلل حول رياضي واحد. Flowmann يربط المرافق والسلامة والمتطوعين والفريق كاملًا حول الرياضي — بخمس لغات.',
+    'hero.eyebrow':'قطاع · الأندية الرياضية',
+    'hero.title':'من <em>المتطوع</em> إلى <em>فريق الأداء</em>. منصة واحدة.',
+    'hero.sub':'للنادي الهاوي الذي يعمل بالمتطوعين والمرافق والشغف — ولنادي الأداء حيث يعمل المدرب والطبيب وأخصائي العلاج الطبيعي والمحلل وأخصائي التغذية حول رياضي واحد. Flowmann يربط الجميع حول الرياضة، ويعطي الرياضي نظرة بسيطة للغاية: ماذا أفعل، كيف حالي، نحو ماذا أعمل.',
+    'hero.cta1':'اطلب جولة','hero.cta2':'قطاعات أخرى',
+    'prob.label':'ربما تتعرف على هذا',
+    'prob.title':'الرياضة تسير تلقائيًا. <em>كل ما حولها</em> لا.',
+    'prob.desc':'سواء كان ناديًا يديره متطوعون أو ناديًا بطاقم محترف — أربعة أنماط تعود في كل مكان. وتكلف بالضبط الوقت والطاقة التي يجب أن تذهب للرياضة.',
+    'prob.1h':'كل شيء في رؤوس عدد قليل من الناس',
+    'prob.1p':'من يرتب المفتاح، من يعرف كيف يعمل المرجل، من لديه الجدول؟ في النادي يقع على عاتق حفنة من المتطوعين. في النادي المحترف على أفراد لكل تخصص. إذا توقف أحدهم، تختفي المعرفة — ويبدأ البحث من جديد.',
+    'prob.2h':'مجموعة الدردشة أصبحت الأرشيف',
+    'prob.2p':'إضاءة معطلة، حفرة في الملعب، جدول تدريب، تحديث إصابة. كل شيء يمر عبر مجموعات WhatsApp حيث يصبح غير قابل للعثور بعد يوم. ما يجب أن يعرفه الجميع، يعرفه فقط من كان ينظر في تلك اللحظة.',
+    'prob.3h':'السلامة والالتزامات، صعبة الإثبات',
+    'prob.3p':'فحص جهاز إنعاش القلب، المسعفون، فحوصات خلفية لمدربي الشباب، قواعد السلوك. إلزامية، لكنها مبعثرة عبر المجلدات وصناديق البريد. إذا سأل الاتحاد أو أحد الوالدين، يبدأ البحث — بينما يجب أن يكون الإثبات مركزيًا ومحدثًا.',
+    'prob.4h':'الرياضي لا يعرف دائمًا ما هو متوقع منه',
+    'prob.4p':'في نادي الأداء، يعمل المدرب وأخصائي العلاج الطبيعي والمحلل وأخصائي التغذية حول نفس الرياضي — لكن الرياضي يتلقاه مجزأً. ماذا أفعل اليوم؟ ماذا تقول بياناتي؟ نحو ماذا أعمل؟ بدون نظرة واحدة واضحة، حتى الرياضي المتفاني يفقد الخيط.',
+    'mod.label':'ما تفعله Flowmann فعليًا',
+    'mod.title':'ليس <em>نظامًا منفصلًا لكل مشكلة</em>. منصة واحدة للنادي والرياضي.',
+    'mod.tag.both':'النادي والمحترف','mod.tag.amateur':'النادي الهاوي','mod.tag.pro':'نادي الأداء',
+    'mod.1h':'الإبلاغ السريع للمرافق والمعدات',
+    'mod.1p':'إضاءة معطلة، حفرة في الملعب، غرفة ملابس تسرّب، معدات معطلة. صورة، موقع، ضغطة واحدة — والبلاغ يصل لمن يمكنه حله. المبلّغ يرى الحالة. لا رسائل مختفية، لا "لم أكن أعلم".',
+    'mod.2h':'المتطوعون والمهام',
+    'mod.2p':'من يدير المقصف، من يحكّم السبت، من يقود لمباراة الخارج؟ المهام والجداول والترتيبات في مكان واحد بدلًا من عشر مجموعات دردشة. المتطوعون الجدد يرون فورًا ما يجب فعله — العبء يتوزع، بدلًا من البقاء على نفس الأشخاص القلائل.',
+    'mod.3h':'ملف السلامة والالتزامات',
+    'mod.3p':'فحص جهاز الإنعاش، الإسعافات الأولية، فحوصات خلفية لطاقم الشباب، قواعد السلوك — مركزية لكل شخص، مع تنبيهات تلقائية عند الانتهاء. إذا سأل الاتحاد أو أحد الوالدين أو تفتيش: نقرة واحدة لملف محدّث وقابل للإثبات.',
+    'mod.4h':'تأهيل المتطوعين والمدربين الجدد',
+    'mod.4p':'مدرب جديد، متطوع جديد، عامل مقصف جديد؟ قواعد النادي وتعليمات السلامة والترتيبات على الهاتف، بلغته الخاصة، قبل المرة الأولى. مع توقيع. التعريف يصبح شيئًا يرسخ، وليس شيئًا تشرحه كل مرة من جديد.',
+    'mod.5h':'الفريق حول الرياضي، متصل',
+    'mod.5p':'المدرب والطبيب وأخصائي العلاج الطبيعي ومدرب الأداء ومحلل البيانات وأخصائي التغذية — جميعهم في منصة واحدة حول نفس الرياضي. كل يرى ما يخص دوره، لا أكثر. التخصصات تعمل معًا دون رسائل لا تنتهي، والطاقم يرى بنظرة واحدة كيف حال الرياضي: متاح، محمّل، في طور البناء.',
+    'mod.6h':'نظرة الرياضي البسيطة للغاية',
+    'mod.6p':'الرياضي يفتح التطبيق ويرى بالضبط ما يلزم: ماذا أفعل اليوم، كيف أؤدي، نحو ماذا أعمل. لا تشابك جداول ورسائل — صورة واضحة واحدة. التفاني يذهب للتدريب، وليس لمعرفة ما هو المقصود.',
+    'mod.7h':'الترجمة مدمجة',
+    'mod.7p':'الرياضة تربط الجنسيات. التعليمات والترتيبات والبلاغات تلقائيًا بخمس لغات. اللاعب الجديد الذي وصل للتو يقرأ نفس المحتوى كالبقية — بلغته. لا أحد يفوته شيء بسبب حاجز لغوي.',
+    'mod.8h':'رؤية الأنماط',
+    'mod.8p':'الذكاء الاصطناعي ينظر عبر كل شيء. أي معدات تتعطل باستمرار؟ أي مهام تبقى معلقة؟ في نادي الأداء: أي أنماط حِمل تسبق الانتكاسة؟ توجّه نحو السبب، بدلًا من إطفاء نفس الحريق كل مرة.',
+    'bewijs.text':'نادٍ يوزع العبء على أكتاف أكثر ويبقي ملف الالتزامات منظمًا دائمًا. نادي أداء يجعل المدرب وأخصائي العلاج الطبيعي والمحلل يعملون حول نفس الرياضي — ويعطي ذلك الرياضي صورة واضحة لما يجب فعله وكيف حاله. كلاهما يحتفظ بوقت لما يهم حقًا.',
+    'bewijs.tail':'الرياضة تسير تلقائيًا. <em>Flowmann يضمن</em> أن يفعل الباقي ذلك أيضًا.',
+    'int.label':'بجانب أنظمتك الحالية',
+    'int.title':'Flowmann لا يلمس <em>سجلات الأعضاء أو الملفات الطبية</em>.',
+    'int.p1':'إدارة الأعضاء والاشتراكات تنتمي لنظامك الحالي — Sportlink أو AllUnited أو حزمة أخرى — وتبقى هناك. والبيانات الطبية للرياضي تبقى عند الطبيب أو أخصائي العلاج الطبيعي، في نظامهم الخاص. Flowmann لا يسجل أي تشخيصات أو ملفات علاج.',
+    'int.p2':'ما يفعله Flowmann: يربط الفريق كاملًا حول الرياضي، يُظهر لكل واحد بالضبط ما يخص دوره، ويعطي الرياضي نظرة بسيطة للمهام والأهداف والأداء. قائم على الأدوار، متوافق مع GDPR، مستضاف داخل الاتحاد الأوروبي. قوي بما يكفي لربط كل شيء — حذر بما يكفي لاحترام البيانات الحساسة.',
+    'cta.title':'هل تريد أن ترى كيف يعمل Flowmann في <em>ناديك</em>؟',
+    'cta.desc':'اطلب جولة دون التزام. لا مندوب مبيعات بسيناريو — شخص يفهم أن النادي يعمل بالناس، وأن التقنية يجب أن تساعد بدلًا من أن تعيق.',
+    'cta.btn':'تواصل معنا',
+    'foot.tag':'© 2026 Flowmann · منصة واحدة. كل قطاع. متصلون أخيرًا.',
+    'foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الرئيسية'
+  }
+};
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  try { localStorage.setItem('flowmann-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Update page title and meta description
+  if (translations[lang]) {
+    if (translations[lang]['page.title']) {
+      document.title = translations[lang]['page.title'];
+    }
+    if (translations[lang]['page.desc']) {
+      const metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['page.desc']);
+    }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Laad opgeslagen taalkeuze bij paginalading
+try {
+  const savedLang = localStorage.getItem('flowmann-lang');
+  if (savedLang && ['nl','en','de','fr','ar'].includes(savedLang)) {
+    setLang(savedLang);
+  }
+} catch (e) {}
+</script>
+
+</body>
+</html>
