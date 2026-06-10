@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0d12">
+
+<title>Overheid — Flowmann</title>
+<meta name="description" id="meta-description" content="Voor de gemeente, het waterschap en de provincie die buitendienst, vastgoed, areaalbeheer, burgermeldingen en verantwoording wil beheersen. Flowmann brengt meldingen, inspecties, certificaten en audits samen in één app — in vijf talen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://flowmann.com/sectoren/overheid">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://flowmann.com/sectoren/overheid">
+<meta property="og:title" content="Overheid — Flowmann">
+<meta property="og:description" content="Buitendienst, vastgoed, areaal en burgermeldingen — versnipperd over portofoon, Excel en losse systemen. Flowmann brengt de uitvoering terug naar één plek, audit-klaar en in vijf talen.">
+<meta property="og:image" content="https://flowmann.com/og-image.png">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,0,600;9..144,1,300;9..144,1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0d12;
+    --bg-soft: #11151c;
+    --cream: #f5f1e8;
+    --cream-dark: #1a1d23;
+    --text: #f5f7fa;
+    --text-muted: #a4afbd;
+    --text-dim: #6b7684;
+    --amber: #f59e0b;
+    --amber-br: #fbbf24;
+    --amber-glow: rgba(245, 158, 11, 0.2);
+    --border: rgba(255, 255, 255, 0.1);
+    --display: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    background: rgba(10, 13, 18, 0.75);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--text);
+    flex-shrink: 0;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%, #c47a04 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+  .nav-logo-text {
+    font-family: var(--display);
+    font-weight: 500; font-size: 21px;
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none; align-items: center;
+  }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions {
+    display: flex; gap: 10px; align-items: center;
+    flex-shrink: 0;
+  }
+  .lang-switcher {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 3px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    background: none; border: none; color: var(--text-dim);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 9px; border-radius: 5px; cursor: pointer;
+    letter-spacing: 0.06em; transition: all 0.2s;
+  }
+  .lang-btn.active { background: rgba(255,255,255,0.1); color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--text-muted); }
+  .nav-back { padding: 9px 16px; font-size: 13px; }
+  .nav-login { padding: 9px 18px; font-size: 13px; line-height: 1; }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, var(--amber-br) 0%, var(--amber) 100%);
+    color: #0a0d12;
+    box-shadow: 0 4px 14px var(--amber-glow), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--amber-glow);
+    filter: brightness(1.08);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: inherit;
+    background: linear-gradient(135deg, var(--amber-br) 0%, var(--amber) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    vertical-align: baseline;
+  }
+  .cream-section em {
+    background: linear-gradient(135deg, #c47a04 0%, #8b5a00 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  blockquote em {
+    background: none;
+    -webkit-text-fill-color: var(--amber-br);
+    color: var(--amber-br);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 90vh;
+    padding: 160px 0 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+  .hero-bg-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.32;
+    transform: scale(1.05);
+    animation: slow-zoom 22s ease-in-out infinite alternate;
+  }
+  @keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+  .hero-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,13,18,0.55) 0%, rgba(10,13,18,0.85) 60%, rgba(10,13,18,1) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 920px; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--amber-br);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding: 7px 14px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(38px, 6.2vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    max-width: 680px;
+    font-weight: 400;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 120px 0; position: relative; }
+  .section-label {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--amber-br);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+    padding: 8px 18px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245,158,11,0.35);
+    border-radius: 100px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .section-desc {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 720px;
+  }
+
+  /* ===== PROBLEM (CREAM) ===== */
+  .cream-section {
+    background: var(--cream);
+    color: var(--cream-dark);
+    padding: 140px 0;
+  }
+  .cream-section .section-label {
+    color: #8b5a00;
+    background: rgba(139, 90, 0, 0.08);
+    border-color: rgba(139, 90, 0, 0.2);
+  }
+  .cream-section .section-desc { color: #555552; }
+  .problem-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid rgba(26,29,35,0.12);
+  }
+  .problem-list li {
+    padding: 36px 32px 36px 0;
+    border-bottom: 1px solid rgba(26,29,35,0.12);
+    display: flex;
+    gap: 22px;
+    align-items: start;
+  }
+  .problem-list li:nth-child(2n) { padding-right: 0; padding-left: 32px; border-left: 1px solid rgba(26,29,35,0.12); }
+  .problem-num {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--amber);
+    min-width: 44px;
+    font-style: italic;
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .problem-list h4 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+  }
+  .problem-list p {
+    font-size: 15px;
+    color: #555552;
+    line-height: 1.55;
+  }
+
+  /* ===== MODULES ===== */
+  .modules-section { padding: 120px 0; }
+  .modules-head { max-width: 760px; margin-bottom: 56px; }
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .module-card {
+    padding: 32px;
+    background: linear-gradient(145deg, rgba(36,42,54,0.45) 0%, rgba(15,20,28,0.45) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(42,48,60,0.5) 0%, rgba(20,25,33,0.5) 100%);
+  }
+  .module-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--amber-br), var(--amber));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .module-card:hover::before { opacity: 1; }
+  .module-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .module-icon svg {
+    width: 22px; height: 22px;
+    stroke: var(--amber-br);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .module-card h3 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .module-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== QUOTE / BEWIJS ===== */
+  .quote-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg) 0%, #14181f 50%, var(--bg) 100%);
+  }
+  .quote-bg { position: absolute; inset: 0; z-index: 0; }
+  .quote-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.08;
+    filter: blur(2px);
+  }
+  .quote-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20,24,31,0.5) 0%, rgba(10,13,18,0.95) 80%);
+  }
+  .quote-wrap {
+    position: relative; z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 64px 40px;
+    background: rgba(20, 24, 31, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 100px;
+    line-height: 0.5;
+    color: var(--amber);
+    opacity: 0.5;
+    margin-bottom: 20px;
+    display: block;
+    font-style: italic;
+  }
+  .quote-wrap blockquote {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+  .quote-tail {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--amber-br);
+    line-height: 1.5;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* ===== INTEGRATION ===== */
+  .integration-section { padding: 100px 0; }
+  .integration-wrap { max-width: 820px; margin: 0 auto; text-align: center; }
+  .integration-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(28px, 3.8vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .integration-wrap p {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 120px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .cta-wrap { max-width: 720px; margin: 0 auto; }
+  .cta-wrap h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  .cta-wrap p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 60px 0 40px; border-top: 1px solid var(--border); }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-legal { font-size: 12px; color: var(--text-dim); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 960px) {
+    .nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-actions { gap: 6px; }
+    .container { padding: 0 20px; }
+    .hero { padding: 130px 0 60px; min-height: auto; }
+    section { padding: 80px 0; }
+    .cream-section { padding: 80px 0; }
+    .problem-list { grid-template-columns: 1fr; border-top: none; }
+    .problem-list li { padding: 24px 0 !important; border-left: none !important; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .module-card { padding: 26px; }
+    .quote-wrap { padding: 40px 24px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .lang-btn { font-size: 10px; padding: 4px 6px; letter-spacing: 0.04em; }
+    .lang-switcher { padding: 2px; gap: 1px; }
+    .nav-back { padding: 8px 11px; font-size: 11px; }
+    .nav-back svg { display: none; }
+    .nav-login { padding: 8px 12px; font-size: 12px; }
+  }
+  @media (max-width: 520px) {
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn { justify-content: center; }
+    .lang-btn { font-size: 9px; padding: 3px 5px; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-mark">
+        <svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="nav-logo-text">Flowmann</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#sectors" data-i18n="nav.sectors">Sectoren</a></li>
+      <li><a href="/#ai" data-i18n="nav.ai">AI</a></li>
+      <li><a href="/#how" data-i18n="nav.how">Aanpak</a></li>
+      <li><a href="/#pricing" data-i18n="nav.pricing">Prijzen</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+      <a href="/" class="btn btn-ghost nav-back">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1m0 0l5-5m-5 5l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="nav.home">Home</span>
+      </a>
+      <a href="https://app.flowmann.com" class="btn btn-primary nav-login">
+        <span data-i18n="nav.login">Login</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-bg-image">
+    <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1920&q=80" alt="Overheidsgebouw" loading="eager">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span data-i18n="hero.eyebrow">Sector · Overheid</span>
+      </span>
+      <h1 data-i18n="hero.title">Buitendienst, vastgoed, areaal. <em>Eén plek</em> in plaats van tien.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        Voor de gemeente, het waterschap en de provincie waar de buitendienst via portofoon en WhatsApp meldt, areaal en vastgoed in losse systemen leven, en het dossier pas onder druk wordt samengeraapt voor de accountant of inspectie. Flowmann brengt meldingen, inspecties, certificaten en verantwoording samen — van de straat tot het college.
+      </p>
+      <div class="hero-ctas">
+        <a href="/#contact" class="btn btn-primary">
+          <span data-i18n="hero.cta1">Vraag een rondleiding aan</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/#sectors" class="btn btn-ghost" data-i18n="hero.cta2">Andere sectoren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROBLEM ============== -->
+<section class="cream-section">
+  <div class="container">
+    <span class="section-label" data-i18n="prob.label">U herkent het waarschijnlijk</span>
+    <h2 class="section-title" data-i18n="prob.title">De taak is publiek. De <em>uitvoering</em> is versnipperd.</h2>
+    <p class="section-desc" data-i18n="prob.desc">Het probleem zit niet in de mensen op straat. Het zit in vier patronen die elke gemeente, elk waterschap en elke provincie herkent — en die blijven bestaan omdat de waan van de dag altijd voorgaat.</p>
+    <ul class="problem-list">
+      <li>
+        <span class="problem-num">01</span>
+        <div>
+          <h4 data-i18n="prob.1h">De buitendienst meldt, maar nergens centraal</h4>
+          <p data-i18n="prob.1p">Een omgevallen boom, een kapotte lantaarnpaal, een verstopt putje. De medewerker meldt het via de portofoon, een appje of helemaal niet. De ene melding belandt bij de juiste afdeling, de andere verdwijnt. Niemand ziet het totaalbeeld van wat er buiten speelt.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">02</span>
+        <div>
+          <h4 data-i18n="prob.2h">Vastgoed en areaal in losse systemen</h4>
+          <p data-i18n="prob.2p">Gemeentelijk vastgoed in het ene pakket, groen in het andere, wegen in een Excel, speeltoestellen op papier. Inspecties verlopen, keuringen worden gemist, achterstallig onderhoud groeit ongezien. Tot er iets misgaat — en dan blijkt de verantwoording niet rond.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">03</span>
+        <div>
+          <h4 data-i18n="prob.3h">Inhuur op straat, zonder zicht op certificaten</h4>
+          <p data-i18n="prob.3p">Aannemers en ingehuurde krachten doen het groenonderhoud, de wegwerkzaamheden, het rioolwerk. Wie heeft welke VCA? Wie is geïnstrueerd op de ARBO-regels? Bij een incident of audit moet u het bewijs bij elkaar zoeken — terwijl het nergens centraal staat.</p>
+        </div>
+      </li>
+      <li>
+        <span class="problem-num">04</span>
+        <div>
+          <h4 data-i18n="prob.4h">Verantwoording wordt achteraf samengeraapt</h4>
+          <p data-i18n="prob.4p">Rechtmatigheid, ARBO, interne controle, een WOO-verzoek. De vraag komt, en dan begint het zoeken: in mailboxen, mappen, hoofden. Het werk ís gedaan, maar het dossier dat het aantoont moet elke keer opnieuw bij elkaar worden gesprokkeld.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== MODULES ============== -->
+<section class="modules-section">
+  <div class="container">
+    <div class="modules-head">
+      <span class="section-label" data-i18n="mod.label">Wat Flowmann concreet doet</span>
+      <h2 class="section-title" data-i18n="mod.title">Geen <em>nieuw zaaksysteem</em>. Functies die uw buitendienst maandag al gebruikt.</h2>
+    </div>
+    <div class="modules-grid">
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 data-i18n="mod.1h">Snelle Melding voor de buitendienst</h3>
+        <p data-i18n="mod.1p">Medewerker ziet iets buiten. Foto, GPS-locatie, drie velden, één tap. De melding komt direct bij de juiste afdeling — groen, wegen, riool, vastgoed. De melder ziet de status. Geen portofoon-ruis meer, geen appjes die verdampen.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/><path d="M19 8v6M22 11h-6"/></svg>
+        </div>
+        <h3 data-i18n="mod.2h">Burgermeldingen-intake met AI-triage</h3>
+        <p data-i18n="mod.2p">Een melding van een inwoner komt binnen — losse stoeptegel, zwerfafval, kapot speeltoestel. AI herkent onderwerp en urgentie en stuurt 'm direct naar de juiste afdeling. Geen handmatige doorverwijzing, geen melding die tussen wal en schip valt. De inwoner kan worden teruggekoppeld.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2zM12 17a4 4 0 100-8 4 4 0 000 8z"/></svg>
+        </div>
+        <h3 data-i18n="mod.3h">Digitale inspecties areaal & vastgoed</h3>
+        <p data-i18n="mod.3p">Speeltoestellen, bruggen, gemeentelijk vastgoed, groen. Inspectiepunten met foto-bewijs, gekoppeld aan het juiste object. Risico-matrix dwingt afwegingen af. Verlopen keuring? Het systeem signaleert het vooraf, niet als er iets is gebeurd.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M9 13l2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="mod.4h">VCA & certificaten van inhuur</h3>
+        <p data-i18n="mod.4p">Aannemers en ingehuurde krachten: VCA, instructies, machinecertificaten centraal per persoon. Automatische signalen bij verloop. Bij een incident of audit één klik naar het dossier — voorbereid zijn voordat de vraag komt.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <h3 data-i18n="mod.5h">Audits & rechtmatigheid</h3>
+        <p data-i18n="mod.5p">Rechtmatigheidscontrole, ARBO-audits, interne controle. Alle meldingen, inspecties en opvolgacties met audit trail op één plek. De accountant vraagt, u klikt. De verantwoording is een export in plaats van een speurtocht.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+        </div>
+        <h3 data-i18n="mod.6h">Materiaal- & leveranciersklachten</h3>
+        <p data-i18n="mod.6p">Verkeerde levering, ondeugdelijk materiaal, een aannemer die structureel te laat is? Vastgelegd met foto, leveranciersgeschiedenis bouwt automatisch op. Bij de volgende aanbesteding weet u welke partij u kost — niet alleen wat hij rekent.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3 data-i18n="mod.7h">Vertaling ingebouwd</h3>
+        <p data-i18n="mod.7p">Internationale ploegen in groen, reiniging en wegwerk? Instructies, meldingen en veiligheidsregels automatisch in vijf talen. Iedereen leest dezelfde inhoud in de eigen taal — begrip wordt aantoonbaar, geen kwestie van hopen.</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>
+        </div>
+        <h3 data-i18n="mod.8h">Patronen over wijken & objecten</h3>
+        <p data-i18n="mod.8p">AI kijkt over alle meldingen heen. Welke wijk meldt structureel dezelfde problemen? Welk type object faalt het vaakst? Waar komt dezelfde klacht elk seizoen terug? U lost de oorzaak op, in plaats van elke keer hetzelfde symptoom.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== QUOTE / BEWIJS ============== -->
+<section class="quote-section">
+  <div class="quote-bg">
+    <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1600&q=80" alt="Overheidsgebouw" loading="lazy">
+  </div>
+  <div class="container">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <blockquote data-i18n="bewijs.text">
+        Een gemeente met een buitendienst van zestig medewerkers krijgt elke melding — van eigen mensen én van inwoners — direct bij de juiste afdeling. Inspecties van areaal en vastgoed zijn digitaal en aantoonbaar. De rechtmatigheidscontrole is een export geworden in plaats van weken speuren.
+      </blockquote>
+      <div class="quote-tail" data-i18n="bewijs.tail">
+        De taak is publiek. <em>Flowmann zorgt</em> dat de uitvoering navenant overzichtelijk is.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTEGRATION ============== -->
+<section class="integration-section">
+  <div class="container">
+    <div class="integration-wrap">
+      <span class="section-label" data-i18n="int.label">Naast — of in plaats van</span>
+      <h2 data-i18n="int.title">Past Flowmann naast uw <em>zaaksysteem</em>, of in plaats ervan?</h2>
+      <p data-i18n="int.p1">Naast. Uw zaaksysteem, beheersoftware voor de openbare ruimte en financiële pakketten blijven staan. Flowmann pakt wat daar tussenuit valt: de meldketen van de straat, inspecties met foto-bewijs, certificaten van inhuur en de verantwoording die anders achteraf wordt samengeraapt.</p>
+      <p data-i18n="int.p2">Wat Flowmann vervangt zijn de losse Excel-lijsten, de papieren keuringsmappen, de WhatsApp-groepen en de portofoon-meldingen die nergens worden vastgelegd. AVG-proof, met audit trail, gehost binnen de EU. U kiest wat ernaast staat en wat het overneemt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-wrap">
+      <h2 data-i18n="cta.title">Wilt u zien hoe Flowmann bij <em>uw</em> organisatie werkt?</h2>
+      <p data-i18n="cta.desc">Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de uitvoeringspraktijk kent, van de buitendienst tot de rechtmatigheidscontrole.</p>
+      <a href="/#contact" class="btn btn-primary">
+        <span data-i18n="cta.btn">Neem contact op</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo-mark" style="width:30px;height:30px;border-radius:7px;">
+          <svg width="18" height="18" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 20 H52 C52 20 52 28 44 28 H28 V36 H46 C46 36 46 44 38 44 H28 V52"
+                  stroke="#0a0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </span>
+        <span class="footer-legal" data-i18n="foot.tag">© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/#sectors" data-i18n="foot.l1">Sectoren</a></li>
+        <li><a href="/#pricing" data-i18n="foot.l2">Prijzen</a></li>
+        <li><a href="/#contact" data-i18n="foot.l3">Contact</a></li>
+        <li><a href="/" data-i18n="foot.l4">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== TRANSLATIONS =====
+const translations = {
+  nl: {
+    'nav.sectors':'Sectoren','nav.ai':'AI','nav.how':'Aanpak','nav.pricing':'Prijzen','nav.home':'Home','nav.login':'Login',
+    'page.title':'Overheid — Flowmann',
+    'page.desc':'Voor de gemeente, het waterschap en de provincie die buitendienst, vastgoed, areaalbeheer, burgermeldingen en verantwoording wil beheersen. Flowmann brengt meldingen, inspecties, certificaten en audits samen in één app — in vijf talen.',
+    'hero.eyebrow':'Sector · Overheid',
+    'hero.title':'Buitendienst, vastgoed, areaal. <em>Eén plek</em> in plaats van tien.',
+    'hero.sub':'Voor de gemeente, het waterschap en de provincie waar de buitendienst via portofoon en WhatsApp meldt, areaal en vastgoed in losse systemen leven, en het dossier pas onder druk wordt samengeraapt voor de accountant of inspectie. Flowmann brengt meldingen, inspecties, certificaten en verantwoording samen — van de straat tot het college.',
+    'hero.cta1':'Vraag een rondleiding aan','hero.cta2':'Andere sectoren',
+    'prob.label':'U herkent het waarschijnlijk',
+    'prob.title':'De taak is publiek. De <em>uitvoering</em> is versnipperd.',
+    'prob.desc':'Het probleem zit niet in de mensen op straat. Het zit in vier patronen die elke gemeente, elk waterschap en elke provincie herkent — en die blijven bestaan omdat de waan van de dag altijd voorgaat.',
+    'prob.1h':'De buitendienst meldt, maar nergens centraal',
+    'prob.1p':'Een omgevallen boom, een kapotte lantaarnpaal, een verstopt putje. De medewerker meldt het via de portofoon, een appje of helemaal niet. De ene melding belandt bij de juiste afdeling, de andere verdwijnt. Niemand ziet het totaalbeeld van wat er buiten speelt.',
+    'prob.2h':'Vastgoed en areaal in losse systemen',
+    'prob.2p':'Gemeentelijk vastgoed in het ene pakket, groen in het andere, wegen in een Excel, speeltoestellen op papier. Inspecties verlopen, keuringen worden gemist, achterstallig onderhoud groeit ongezien. Tot er iets misgaat — en dan blijkt de verantwoording niet rond.',
+    'prob.3h':'Inhuur op straat, zonder zicht op certificaten',
+    'prob.3p':'Aannemers en ingehuurde krachten doen het groenonderhoud, de wegwerkzaamheden, het rioolwerk. Wie heeft welke VCA? Wie is geïnstrueerd op de ARBO-regels? Bij een incident of audit moet u het bewijs bij elkaar zoeken — terwijl het nergens centraal staat.',
+    'prob.4h':'Verantwoording wordt achteraf samengeraapt',
+    'prob.4p':'Rechtmatigheid, ARBO, interne controle, een WOO-verzoek. De vraag komt, en dan begint het zoeken: in mailboxen, mappen, hoofden. Het werk ís gedaan, maar het dossier dat het aantoont moet elke keer opnieuw bij elkaar worden gesprokkeld.',
+    'mod.label':'Wat Flowmann concreet doet',
+    'mod.title':'Geen <em>nieuw zaaksysteem</em>. Functies die uw buitendienst maandag al gebruikt.',
+    'mod.1h':'Snelle Melding voor de buitendienst',
+    'mod.1p':'Medewerker ziet iets buiten. Foto, GPS-locatie, drie velden, één tap. De melding komt direct bij de juiste afdeling — groen, wegen, riool, vastgoed. De melder ziet de status. Geen portofoon-ruis meer, geen appjes die verdampen.',
+    'mod.2h':'Burgermeldingen-intake met AI-triage',
+    'mod.2p':"Een melding van een inwoner komt binnen — losse stoeptegel, zwerfafval, kapot speeltoestel. AI herkent onderwerp en urgentie en stuurt 'm direct naar de juiste afdeling. Geen handmatige doorverwijzing, geen melding die tussen wal en schip valt. De inwoner kan worden teruggekoppeld.",
+    'mod.3h':'Digitale inspecties areaal & vastgoed',
+    'mod.3p':'Speeltoestellen, bruggen, gemeentelijk vastgoed, groen. Inspectiepunten met foto-bewijs, gekoppeld aan het juiste object. Risico-matrix dwingt afwegingen af. Verlopen keuring? Het systeem signaleert het vooraf, niet als er iets is gebeurd.',
+    'mod.4h':'VCA & certificaten van inhuur',
+    'mod.4p':'Aannemers en ingehuurde krachten: VCA, instructies, machinecertificaten centraal per persoon. Automatische signalen bij verloop. Bij een incident of audit één klik naar het dossier — voorbereid zijn voordat de vraag komt.',
+    'mod.5h':'Audits & rechtmatigheid',
+    'mod.5p':'Rechtmatigheidscontrole, ARBO-audits, interne controle. Alle meldingen, inspecties en opvolgacties met audit trail op één plek. De accountant vraagt, u klikt. De verantwoording is een export in plaats van een speurtocht.',
+    'mod.6h':'Materiaal- & leveranciersklachten',
+    'mod.6p':'Verkeerde levering, ondeugdelijk materiaal, een aannemer die structureel te laat is? Vastgelegd met foto, leveranciersgeschiedenis bouwt automatisch op. Bij de volgende aanbesteding weet u welke partij u kost — niet alleen wat hij rekent.',
+    'mod.7h':'Vertaling ingebouwd',
+    'mod.7p':'Internationale ploegen in groen, reiniging en wegwerk? Instructies, meldingen en veiligheidsregels automatisch in vijf talen. Iedereen leest dezelfde inhoud in de eigen taal — begrip wordt aantoonbaar, geen kwestie van hopen.',
+    'mod.8h':'Patronen over wijken & objecten',
+    'mod.8p':'AI kijkt over alle meldingen heen. Welke wijk meldt structureel dezelfde problemen? Welk type object faalt het vaakst? Waar komt dezelfde klacht elk seizoen terug? U lost de oorzaak op, in plaats van elke keer hetzelfde symptoom.',
+    'bewijs.text':'Een gemeente met een buitendienst van zestig medewerkers krijgt elke melding — van eigen mensen én van inwoners — direct bij de juiste afdeling. Inspecties van areaal en vastgoed zijn digitaal en aantoonbaar. De rechtmatigheidscontrole is een export geworden in plaats van weken speuren.',
+    'bewijs.tail':'De taak is publiek. <em>Flowmann zorgt</em> dat de uitvoering navenant overzichtelijk is.',
+    'int.label':'Naast — of in plaats van',
+    'int.title':'Past Flowmann naast uw <em>zaaksysteem</em>, of in plaats ervan?',
+    'int.p1':'Naast. Uw zaaksysteem, beheersoftware voor de openbare ruimte en financiële pakketten blijven staan. Flowmann pakt wat daar tussenuit valt: de meldketen van de straat, inspecties met foto-bewijs, certificaten van inhuur en de verantwoording die anders achteraf wordt samengeraapt.',
+    'int.p2':'Wat Flowmann vervangt zijn de losse Excel-lijsten, de papieren keuringsmappen, de WhatsApp-groepen en de portofoon-meldingen die nergens worden vastgelegd. AVG-proof, met audit trail, gehost binnen de EU. U kiest wat ernaast staat en wat het overneemt.',
+    'cta.title':'Wilt u zien hoe Flowmann bij <em>uw</em> organisatie werkt?',
+    'cta.desc':'Vraag een vrijblijvende rondleiding aan. Geen verkoper met een script — iemand die de uitvoeringspraktijk kent, van de buitendienst tot de rechtmatigheidscontrole.',
+    'cta.btn':'Neem contact op',
+    'foot.tag':'© 2026 Flowmann · Eén platform. Elke sector. Eindelijk verbonden.',
+    'foot.l1':'Sectoren','foot.l2':'Prijzen','foot.l3':'Contact','foot.l4':'Home'
+  },
+  en: {
+    'nav.sectors':'Sectors','nav.ai':'AI','nav.how':'Approach','nav.pricing':'Pricing','nav.home':'Home','nav.login':'Login',
+    'page.title':'Government — Flowmann',
+    'page.desc':'For the municipality, water authority and province that wants to control field services, real estate, public space management, citizen reports and accountability. Flowmann brings reports, inspections, certificates and audits together in one app — in five languages.',
+    'hero.eyebrow':'Sector · Government',
+    'hero.title':'Field service, real estate, public space. <em>One place</em> instead of ten.',
+    'hero.sub':'For the municipality, water authority and province where the field service reports via radio and WhatsApp, public space and real estate live in separate systems, and the file is only pulled together under pressure for the auditor or inspection. Flowmann brings reports, inspections, certificates and accountability together — from the street to the council.',
+    'hero.cta1':'Request a walkthrough','hero.cta2':'Other sectors',
+    'prob.label':'You probably recognise this',
+    'prob.title':'The task is public. The <em>execution</em> is fragmented.',
+    'prob.desc':"The problem isn't the people on the street. It's in four patterns every municipality, water authority and province recognises — and which persist because the issue of the day always comes first.",
+    'prob.1h':'The field service reports, but nowhere central',
+    'prob.1p':'A fallen tree, a broken lamppost, a blocked drain. The employee reports it via radio, a text or not at all. One report lands at the right department, another disappears. No one sees the full picture of what is happening outside.',
+    'prob.2h':'Real estate and public space in separate systems',
+    'prob.2p':'Municipal real estate in one package, green spaces in another, roads in an Excel, playground equipment on paper. Inspections expire, checks get missed, deferred maintenance grows unseen. Until something goes wrong — and then the accountability turns out incomplete.',
+    'prob.3h':'Hired hands on the street, no view of certificates',
+    'prob.3p':'Contractors and hired workers do the green maintenance, the road works, the sewer work. Who has which VCA? Who has been instructed on the safety rules? At an incident or audit you have to gather the proof — while it is nowhere central.',
+    'prob.4h':'Accountability is pulled together afterwards',
+    'prob.4p':'Lawfulness, occupational safety, internal control, a freedom-of-information request. The question comes, and then the searching begins: in mailboxes, folders, heads. The work was done, but the file that proves it has to be scraped together each time anew.',
+    'mod.label':'What Flowmann concretely does',
+    'mod.title':'Not <em>a new case system</em>. Functions your field service uses on Monday.',
+    'mod.1h':'Quick Report for the field service',
+    'mod.1p':'Employee spots something outside. Photo, GPS location, three fields, one tap. The report goes straight to the right department — green, roads, sewer, real estate. The reporter sees the status. No more radio noise, no texts that evaporate.',
+    'mod.2h':'Citizen report intake with AI triage',
+    'mod.2p':"A report from a resident comes in — a loose paving stone, litter, broken playground equipment. AI recognises topic and urgency and routes it straight to the right department. No manual forwarding, no report falling through the cracks. The resident can be kept informed.",
+    'mod.3h':'Digital inspections of public space & real estate',
+    'mod.3p':'Playground equipment, bridges, municipal real estate, green spaces. Inspection points with photo evidence, linked to the right object. Risk matrix forces trade-offs. Expired check? The system flags it in advance, not after something has happened.',
+    'mod.4h':'VCA & certificates of hired staff',
+    'mod.4p':'Contractors and hired workers: VCA, instructions, machine certificates central per person. Automatic alerts on expiry. At an incident or audit, one click to the file — prepared before the question comes.',
+    'mod.5h':'Audits & lawfulness',
+    'mod.5p':'Lawfulness checks, safety audits, internal control. All reports, inspections and follow-ups with audit trail in one place. The auditor asks, you click. Accountability is an export instead of a search.',
+    'mod.6h':'Material & supplier complaints',
+    'mod.6p':'Wrong delivery, faulty material, a contractor structurally late? Recorded with a photo, supplier history builds automatically. At the next tender you know which party costs you — not just what they charge.',
+    'mod.7h':'Translation built in',
+    'mod.7p':'International crews in green spaces, cleaning and road works? Instructions, reports and safety rules automatically in five languages. Everyone reads the same content in their own language — understanding becomes provable, not a matter of hoping.',
+    'mod.8h':'Patterns across districts & objects',
+    'mod.8p':'AI looks across all reports. Which district structurally reports the same problems? Which type of object fails most often? Where does the same complaint return every season? You solve the cause, instead of the same symptom every time.',
+    'bewijs.text':'A municipality with a field service of sixty employees gets every report — from its own people and from residents — straight to the right department. Inspections of public space and real estate are digital and provable. The lawfulness check has become an export instead of weeks of searching.',
+    'bewijs.tail':'The task is public. <em>Flowmann makes sure</em> the execution is just as clear.',
+    'int.label':'Alongside — or instead of',
+    'int.title':'Does Flowmann fit alongside your <em>case system</em>, or replace it?',
+    'int.p1':'Alongside. Your case system, public space management software and financial packages stay. Flowmann takes what falls between them: the reporting chain from the street, inspections with photo evidence, certificates of hired staff and the accountability that otherwise gets pulled together afterwards.',
+    'int.p2':'What Flowmann replaces are the loose Excel lists, the paper inspection binders, the WhatsApp groups and the radio reports that are never recorded. GDPR-proof, with audit trail, hosted within the EU. You choose what sits alongside and what it takes over.',
+    'cta.title':'Want to see how Flowmann works at <em>your</em> organisation?',
+    'cta.desc':'Request a non-binding walkthrough. No salesperson with a script — someone who knows the execution practice, from the field service to the lawfulness check.',
+    'cta.btn':'Get in touch',
+    'foot.tag':'© 2026 Flowmann · One platform. Every sector. Finally connected.',
+    'foot.l1':'Sectors','foot.l2':'Pricing','foot.l3':'Contact','foot.l4':'Home'
+  },
+  de: {
+    'nav.sectors':'Branchen','nav.ai':'KI','nav.how':'Vorgehen','nav.pricing':'Preise','nav.home':'Home','nav.login':'Anmelden',
+    'page.title':'Öffentlicher Sektor — Flowmann',
+    'page.desc':'Für die Kommune, den Wasserverband und die Provinz, die Außendienst, Immobilien, Raumbewirtschaftung, Bürgermeldungen und Rechenschaft beherrschen will. Flowmann vereint Meldungen, Inspektionen, Zertifikate und Audits in einer App — in fünf Sprachen.',
+    'hero.eyebrow':'Branche · Öffentlicher Sektor',
+    'hero.title':'Außendienst, Immobilien, Anlagen. <em>Ein Ort</em> statt zehn.',
+    'hero.sub':'Für die Kommune, den Wasserverband und die Provinz, wo der Außendienst per Funk und WhatsApp meldet, Anlagen und Immobilien in getrennten Systemen leben und die Akte erst unter Druck für den Prüfer oder die Inspektion zusammengetragen wird. Flowmann vereint Meldungen, Inspektionen, Zertifikate und Rechenschaft — von der Straße bis zum Rat.',
+    'hero.cta1':'Vorführung anfragen','hero.cta2':'Andere Branchen',
+    'prob.label':'Sie kennen das wahrscheinlich',
+    'prob.title':'Die Aufgabe ist öffentlich. Die <em>Ausführung</em> ist zersplittert.',
+    'prob.desc':'Das Problem liegt nicht bei den Menschen auf der Straße. Es liegt in vier Mustern, die jede Kommune, jeder Wasserverband und jede Provinz kennt — und die bestehen bleiben, weil das Tagesgeschäft immer vorgeht.',
+    'prob.1h':'Der Außendienst meldet, aber nirgends zentral',
+    'prob.1p':'Ein umgestürzter Baum, eine kaputte Laterne, ein verstopfter Gully. Der Mitarbeiter meldet es per Funk, eine Nachricht oder gar nicht. Eine Meldung landet bei der richtigen Abteilung, die andere verschwindet. Niemand sieht das Gesamtbild dessen, was draußen passiert.',
+    'prob.2h':'Immobilien und Anlagen in getrennten Systemen',
+    'prob.2p':'Kommunale Immobilien im einen Paket, Grünflächen im anderen, Straßen in einem Excel, Spielgeräte auf Papier. Inspektionen laufen ab, Prüfungen werden verpasst, Instandhaltungsrückstand wächst unbemerkt. Bis etwas schiefgeht — und dann ist die Rechenschaft nicht vollständig.',
+    'prob.3h':'Fremdpersonal auf der Straße, ohne Blick auf Zertifikate',
+    'prob.3p':'Auftragnehmer und Fremdkräfte machen die Grünpflege, die Straßenarbeiten, die Kanalarbeiten. Wer hat welche VCA? Wer wurde zu den Arbeitsschutzregeln eingewiesen? Bei einem Vorfall oder Audit müssen Sie den Nachweis zusammensuchen — während er nirgends zentral steht.',
+    'prob.4h':'Rechenschaft wird nachträglich zusammengetragen',
+    'prob.4p':'Rechtmäßigkeit, Arbeitsschutz, interne Kontrolle, eine Informationsanfrage. Die Frage kommt, und dann beginnt das Suchen: in Postfächern, Ordnern, Köpfen. Die Arbeit wurde getan, aber die Akte, die es belegt, muss jedes Mal aufs Neue zusammengekratzt werden.',
+    'mod.label':'Was Flowmann konkret leistet',
+    'mod.title':'Kein <em>neues Fachverfahren</em>. Funktionen, die Ihr Außendienst am Montag schon nutzt.',
+    'mod.1h':'Schnellmeldung für den Außendienst',
+    'mod.1p':'Mitarbeiter sieht etwas draußen. Foto, GPS-Standort, drei Felder, ein Tipp. Die Meldung geht direkt an die richtige Abteilung — Grün, Straßen, Kanal, Immobilien. Die meldende Person sieht den Status. Kein Funkrauschen mehr, keine Nachrichten, die verdampfen.',
+    'mod.2h':'Bürgermeldungen-Annahme mit KI-Triage',
+    'mod.2p':'Eine Meldung von einem Bürger kommt herein — eine lose Gehwegplatte, Müll, ein kaputtes Spielgerät. KI erkennt Thema und Dringlichkeit und leitet sie direkt an die richtige Abteilung. Keine manuelle Weiterleitung, keine Meldung, die durchrutscht. Der Bürger kann zurückgemeldet werden.',
+    'mod.3h':'Digitale Inspektionen von Anlagen & Immobilien',
+    'mod.3p':'Spielgeräte, Brücken, kommunale Immobilien, Grünflächen. Inspektionspunkte mit Foto-Nachweis, dem richtigen Objekt zugeordnet. Risiko-Matrix erzwingt Abwägungen. Abgelaufene Prüfung? Das System meldet es vorab, nicht erst wenn etwas passiert ist.',
+    'mod.4h':'VCA & Zertifikate des Fremdpersonals',
+    'mod.4p':'Auftragnehmer und Fremdkräfte: VCA, Anweisungen, Maschinenzertifikate zentral pro Person. Automatische Signale bei Ablauf. Bei einem Vorfall oder Audit ein Klick zur Akte — vorbereitet sein, bevor die Frage kommt.',
+    'mod.5h':'Audits & Rechtmäßigkeit',
+    'mod.5p':'Rechtmäßigkeitskontrolle, Arbeitsschutz-Audits, interne Kontrolle. Alle Meldungen, Inspektionen und Folgeaktionen mit Audit-Trail an einem Ort. Der Prüfer fragt, Sie klicken. Die Rechenschaft ist ein Export statt einer Suche.',
+    'mod.6h':'Material- & Lieferantenbeschwerden',
+    'mod.6p':'Falsche Lieferung, mangelhaftes Material, ein Auftragnehmer, der strukturell zu spät ist? Mit Foto festgehalten, Lieferantenhistorie baut sich automatisch auf. Bei der nächsten Ausschreibung wissen Sie, welche Partei Sie kostet — nicht nur, was sie berechnet.',
+    'mod.7h':'Übersetzung eingebaut',
+    'mod.7p':'Internationale Mannschaften in Grünpflege, Reinigung und Straßenbau? Anweisungen, Meldungen und Sicherheitsregeln automatisch in fünf Sprachen. Jeder liest denselben Inhalt in der eigenen Sprache — Verständnis wird nachweisbar, keine Frage des Hoffens.',
+    'mod.8h':'Muster über Stadtteile & Objekte',
+    'mod.8p':'KI blickt über alle Meldungen hinweg. Welcher Stadtteil meldet strukturell dieselben Probleme? Welcher Objekttyp fällt am häufigsten aus? Wo kommt dieselbe Beschwerde jede Saison zurück? Sie lösen die Ursache, statt jedes Mal dasselbe Symptom.',
+    'bewijs.text':'Eine Kommune mit einem Außendienst von sechzig Mitarbeitenden bekommt jede Meldung — von eigenen Leuten und von Bürgern — direkt an die richtige Abteilung. Inspektionen von Anlagen und Immobilien sind digital und nachweisbar. Die Rechtmäßigkeitskontrolle ist ein Export geworden statt wochenlanger Suche.',
+    'bewijs.tail':'Die Aufgabe ist öffentlich. <em>Flowmann sorgt dafür</em>, dass die Ausführung ebenso übersichtlich ist.',
+    'int.label':'Neben — oder anstelle von',
+    'int.title':'Passt Flowmann neben Ihr <em>Fachverfahren</em>, oder ersetzt es?',
+    'int.p1':'Daneben. Ihr Fachverfahren, die Bewirtschaftungssoftware für den öffentlichen Raum und die Finanzpakete bleiben. Flowmann übernimmt, was dazwischen fällt: die Meldekette von der Straße, Inspektionen mit Foto-Nachweis, Zertifikate des Fremdpersonals und die Rechenschaft, die sonst nachträglich zusammengetragen wird.',
+    'int.p2':'Was Flowmann ersetzt, sind die losen Excel-Listen, die Papier-Prüfordner, die WhatsApp-Gruppen und die Funkmeldungen, die nirgends festgehalten werden. DSGVO-konform, mit Audit-Trail, gehostet in der EU. Sie wählen, was daneben steht und was es übernimmt.',
+    'cta.title':'Möchten Sie sehen, wie Flowmann bei <em>Ihrer</em> Organisation funktioniert?',
+    'cta.desc':'Vereinbaren Sie eine unverbindliche Vorführung. Kein Verkäufer mit Skript — jemand, der die Ausführungspraxis kennt, vom Außendienst bis zur Rechtmäßigkeitskontrolle.',
+    'cta.btn':'Kontakt aufnehmen',
+    'foot.tag':'© 2026 Flowmann · Eine Plattform. Jede Branche. Endlich verbunden.',
+    'foot.l1':'Branchen','foot.l2':'Preise','foot.l3':'Kontakt','foot.l4':'Home'
+  },
+  fr: {
+    'nav.sectors':'Secteurs','nav.ai':'IA','nav.how':'Approche','nav.pricing':'Tarifs','nav.home':'Accueil','nav.login':'Connexion',
+    'page.title':'Secteur public — Flowmann',
+    'page.desc':"Pour la commune, l'agence de l'eau et la province qui veut maîtriser les services techniques, le patrimoine, la gestion de l'espace public, les signalements citoyens et la reddition de comptes. Flowmann réunit signalements, inspections, certificats et audits dans une seule application — en cinq langues.",
+    'hero.eyebrow':'Secteur · Secteur public',
+    'hero.title':"Services techniques, patrimoine, espace public. <em>Un seul endroit</em> au lieu de dix.",
+    'hero.sub':"Pour la commune, l'agence de l'eau et la province où les services techniques signalent par radio et WhatsApp, où l'espace public et le patrimoine vivent dans des systèmes séparés, et où le dossier n'est rassemblé que sous pression pour l'auditeur ou l'inspection. Flowmann réunit signalements, inspections, certificats et reddition de comptes — de la rue au conseil.",
+    'hero.cta1':'Demander une visite','hero.cta2':'Autres secteurs',
+    'prob.label':'Vous reconnaissez probablement cela',
+    'prob.title':"La mission est publique. L'<em>exécution</em> est fragmentée.",
+    'prob.desc':"Le problème ne vient pas des gens sur le terrain. Il vient de quatre schémas que chaque commune, agence de l'eau et province reconnaît — et qui persistent parce que l'urgence du jour passe toujours en premier.",
+    'prob.1h':'Les services techniques signalent, mais nulle part de façon centrale',
+    'prob.1p':"Un arbre tombé, un lampadaire cassé, un avaloir bouché. L'agent le signale par radio, un message ou pas du tout. Un signalement arrive au bon service, l'autre disparaît. Personne ne voit l'image globale de ce qui se passe à l'extérieur.",
+    'prob.2h':"Patrimoine et espace public dans des systèmes séparés",
+    'prob.2p':"Patrimoine communal dans un logiciel, espaces verts dans un autre, voirie dans un Excel, aires de jeux sur papier. Les inspections expirent, les contrôles sont manqués, l'entretien différé grandit sans qu'on le voie. Jusqu'à ce que quelque chose tourne mal — et la reddition de comptes se révèle incomplète.",
+    'prob.3h':"Personnel externe sur le terrain, sans vue sur les certificats",
+    'prob.3p':"Les entreprises et le personnel externe font l'entretien des espaces verts, les travaux de voirie, les travaux d'égouts. Qui a quel VCA ? Qui a été instruit sur les règles de sécurité ? Lors d'un incident ou audit, vous devez rassembler la preuve — alors qu'elle n'est centralisée nulle part.",
+    'prob.4h':"La reddition de comptes est rassemblée après coup",
+    'prob.4p':"Légalité, sécurité au travail, contrôle interne, une demande d'accès à l'information. La question arrive, et la recherche commence : dans les boîtes mail, les dossiers, les têtes. Le travail a été fait, mais le dossier qui le prouve doit être reconstitué à chaque fois.",
+    'mod.label':'Ce que Flowmann fait concrètement',
+    'mod.title':"Pas <em>un nouveau système de gestion</em>. Des fonctions que vos services techniques utilisent dès lundi.",
+    'mod.1h':'Signalement Rapide pour les services techniques',
+    'mod.1p':"L'agent voit quelque chose à l'extérieur. Photo, localisation GPS, trois champs, un tap. Le signalement arrive directement au bon service — espaces verts, voirie, égouts, patrimoine. Le déclarant voit le statut. Plus de grésillement radio, plus de messages qui s'évaporent.",
+    'mod.2h':'Réception des signalements citoyens avec triage IA',
+    'mod.2p':"Un signalement d'un habitant arrive — un pavé descellé, des déchets, une aire de jeux cassée. L'IA reconnaît le sujet et l'urgence et le route directement au bon service. Pas de transfert manuel, pas de signalement qui passe entre les mailles. L'habitant peut être tenu informé.",
+    'mod.3h':"Inspections numériques de l'espace public & du patrimoine",
+    'mod.3p':"Aires de jeux, ponts, patrimoine communal, espaces verts. Points d'inspection avec preuve photo, liés au bon objet. La matrice de risque force les arbitrages. Contrôle expiré ? Le système le signale à l'avance, pas après qu'un incident soit survenu.",
+    'mod.4h':'VCA & certificats du personnel externe',
+    'mod.4p':"Entreprises et personnel externe : VCA, instructions, certificats machines centralisés par personne. Alertes automatiques à l'expiration. Lors d'un incident ou audit, un clic vers le dossier — être prêt avant que la question arrive.",
+    'mod.5h':'Audits & légalité',
+    'mod.5p':"Contrôle de légalité, audits de sécurité, contrôle interne. Tous les signalements, inspections et suivis avec piste d'audit au même endroit. L'auditeur demande, vous cliquez. La reddition de comptes est un export au lieu d'une recherche.",
+    'mod.6h':'Réclamations matériel & fournisseurs',
+    'mod.6p':"Livraison incorrecte, matériel défectueux, une entreprise structurellement en retard ? Consigné avec une photo, l'historique fournisseur se construit automatiquement. Au prochain appel d'offres, vous saurez quelle partie vous coûte — pas seulement ce qu'elle facture.",
+    'mod.7h':'Traduction intégrée',
+    'mod.7p':"Équipes internationales dans les espaces verts, le nettoyage et la voirie ? Instructions, signalements et règles de sécurité automatiquement en cinq langues. Chacun lit le même contenu dans sa langue — la compréhension devient prouvable, pas une question d'espoir.",
+    'mod.8h':'Schémas à travers quartiers & objets',
+    'mod.8p':"L'IA regarde l'ensemble des signalements. Quel quartier signale structurellement les mêmes problèmes ? Quel type d'objet tombe en panne le plus souvent ? Où la même plainte revient-elle chaque saison ? Vous résolvez la cause, au lieu du même symptôme à chaque fois.",
+    'bewijs.text':"Une commune avec des services techniques de soixante agents reçoit chaque signalement — de ses propres agents et des habitants — directement au bon service. Les inspections de l'espace public et du patrimoine sont numériques et prouvables. Le contrôle de légalité est devenu un export au lieu de semaines de recherche.",
+    'bewijs.tail':"La mission est publique. <em>Flowmann veille</em> à ce que l'exécution soit tout aussi claire.",
+    'int.label':'À côté — ou à la place',
+    'int.title':'Flowmann fonctionne-t-il à côté de votre <em>système de gestion</em>, ou le remplace-t-il ?',
+    'int.p1':"À côté. Votre système de gestion, le logiciel de gestion de l'espace public et les progiciels financiers restent. Flowmann prend ce qui tombe entre les deux : la chaîne de signalement depuis la rue, les inspections avec preuve photo, les certificats du personnel externe et la reddition de comptes qui sinon est rassemblée après coup.",
+    'int.p2':"Ce que Flowmann remplace, ce sont les listes Excel éparses, les classeurs de contrôle papier, les groupes WhatsApp et les signalements radio jamais enregistrés. Conforme RGPD, avec piste d'audit, hébergé dans l'UE. Vous choisissez ce qui se place à côté et ce qu'il remplace.",
+    'cta.title':'Voulez-vous voir comment Flowmann fonctionne dans <em>votre</em> organisation ?',
+    'cta.desc':"Demandez une visite sans engagement. Pas un commercial avec un script — quelqu'un qui connaît la pratique de l'exécution, des services techniques au contrôle de légalité.",
+    'cta.btn':'Nous contacter',
+    'foot.tag':'© 2026 Flowmann · Une plateforme. Chaque secteur. Enfin connectés.',
+    'foot.l1':'Secteurs','foot.l2':'Tarifs','foot.l3':'Contact','foot.l4':'Accueil'
+  },
+  ar: {
+    'nav.sectors':'القطاعات','nav.ai':'الذكاء الاصطناعي','nav.how':'النهج','nav.pricing':'الأسعار','nav.home':'الرئيسية','nav.login':'تسجيل الدخول',
+    'page.title':'القطاع الحكومي — Flowmann',
+    'page.desc':'للبلدية وهيئة المياه والمقاطعة التي تريد التحكم في الخدمات الميدانية والعقارات وإدارة الفضاء العام وبلاغات المواطنين والمساءلة. Flowmann يجمع البلاغات والفحوصات والشهادات والتدقيقات في تطبيق واحد — بخمس لغات.',
+    'hero.eyebrow':'قطاع · القطاع الحكومي',
+    'hero.title':'الخدمة الميدانية، العقارات، المرافق. <em>مكان واحد</em> بدلًا من عشرة.',
+    'hero.sub':'للبلدية وهيئة المياه والمقاطعة حيث تبلّغ الخدمة الميدانية عبر اللاسلكي وWhatsApp، وتعيش المرافق والعقارات في أنظمة منفصلة، ولا يُجمع الملف إلا تحت الضغط للمدقق أو التفتيش. Flowmann يجمع البلاغات والفحوصات والشهادات والمساءلة — من الشارع إلى المجلس.',
+    'hero.cta1':'اطلب جولة','hero.cta2':'قطاعات أخرى',
+    'prob.label':'ربما تتعرف على هذا',
+    'prob.title':'المهمة عامة. <em>التنفيذ</em> مجزأ.',
+    'prob.desc':'المشكلة ليست في الناس في الشارع. إنها في أربعة أنماط تعرفها كل بلدية وهيئة مياه ومقاطعة — وتستمر لأن انشغال اليوم يأتي دائمًا أولًا.',
+    'prob.1h':'الخدمة الميدانية تبلّغ، لكن ليس مركزيًا',
+    'prob.1p':'شجرة ساقطة، عمود إنارة معطل، بالوعة مسدودة. الموظف يبلّغ عبر اللاسلكي أو رسالة أو لا يبلّغ أبدًا. بلاغ يصل للقسم الصحيح، والآخر يختفي. لا أحد يرى الصورة الكاملة لما يحدث في الخارج.',
+    'prob.2h':'العقارات والمرافق في أنظمة منفصلة',
+    'prob.2p':'العقارات البلدية في حزمة، المساحات الخضراء في أخرى، الطرق في Excel، معدات الملاعب على الورق. الفحوصات تنتهي صلاحيتها، الفحوصات تُفوّت، الصيانة المؤجلة تنمو دون أن تُرى. حتى يحدث خطأ — فتتبين المساءلة غير مكتملة.',
+    'prob.3h':'عمالة مستأجرة في الشارع، دون رؤية للشهادات',
+    'prob.3p':'المقاولون والعمالة المستأجرة يقومون بصيانة المساحات الخضراء وأعمال الطرق وأعمال الصرف. من لديه أي VCA؟ من تم تعريفه بقواعد السلامة المهنية؟ عند حادث أو تدقيق عليك جمع الإثبات — بينما ليس مركزيًا في أي مكان.',
+    'prob.4h':'المساءلة تُجمع لاحقًا',
+    'prob.4p':'المشروعية، السلامة المهنية، الرقابة الداخلية، طلب معلومات. السؤال يأتي، ثم يبدأ البحث: في صناديق البريد والمجلدات والرؤوس. العمل أُنجز، لكن الملف الذي يثبته يجب جمعه كل مرة من جديد.',
+    'mod.label':'ما تفعله Flowmann فعليًا',
+    'mod.title':'ليس <em>نظام قضايا جديد</em>. وظائف تستخدمها خدمتك الميدانية يوم الإثنين.',
+    'mod.1h':'الإبلاغ السريع للخدمة الميدانية',
+    'mod.1p':'الموظف يرى شيئًا في الخارج. صورة، موقع GPS، ثلاثة حقول، ضغطة واحدة. البلاغ يصل مباشرة للقسم الصحيح — المساحات الخضراء، الطرق، الصرف، العقارات. المبلّغ يرى الحالة. لا ضوضاء لاسلكي، لا رسائل تتبخر.',
+    'mod.2h':'استقبال بلاغات المواطنين بفرز ذكي',
+    'mod.2p':'بلاغ من مواطن يصل — بلاطة رصيف مفكوكة، نفايات، معدات ملعب معطلة. الذكاء الاصطناعي يتعرف على الموضوع والإلحاح ويوجهه مباشرة للقسم الصحيح. لا تحويل يدوي، لا بلاغ يضيع بين الجهات. المواطن يمكن إبلاغه بالنتيجة.',
+    'mod.3h':'فحوصات رقمية للمرافق والعقارات',
+    'mod.3p':'معدات الملاعب، الجسور، العقارات البلدية، المساحات الخضراء. نقاط فحص مع إثبات بالصور، مرتبطة بالكائن الصحيح. مصفوفة المخاطر تفرض الموازنات. فحص منتهي الصلاحية؟ النظام ينبه مسبقًا، ليس بعد وقوع شيء.',
+    'mod.4h':'VCA وشهادات العمالة المستأجرة',
+    'mod.4p':'المقاولون والعمالة المستأجرة: VCA، التعليمات، شهادات الآلات مركزية لكل شخص. تنبيهات تلقائية عند الانتهاء. عند حادث أو تدقيق نقرة واحدة للملف — كن مستعدًا قبل أن يأتي السؤال.',
+    'mod.5h':'التدقيقات والمشروعية',
+    'mod.5p':'رقابة المشروعية، تدقيقات السلامة، الرقابة الداخلية. كل البلاغات والفحوصات وإجراءات المتابعة مع سجل تدقيق في مكان واحد. المدقق يسأل، أنت تنقر. المساءلة تصدير بدلًا من بحث.',
+    'mod.6h':'شكاوى المواد والموردين',
+    'mod.6p':'توصيل خاطئ، مواد معيبة، مقاول متأخر بشكل منهجي؟ مسجل بصورة، تاريخ المورد يُبنى تلقائيًا. في المناقصة التالية ستعرف أي طرف يكلفك — وليس فقط ما يحاسبك عليه.',
+    'mod.7h':'الترجمة مدمجة',
+    'mod.7p':'طواقم دولية في المساحات الخضراء والتنظيف وأعمال الطرق؟ التعليمات والبلاغات وقواعد السلامة تلقائيًا بخمس لغات. الجميع يقرأ نفس المحتوى بلغته — الفهم يصبح قابلًا للإثبات، وليس مسألة أمل.',
+    'mod.8h':'أنماط عبر الأحياء والكائنات',
+    'mod.8p':'الذكاء الاصطناعي ينظر عبر كل البلاغات. أي حي يبلّغ بشكل منهجي عن نفس المشاكل؟ أي نوع كائن يتعطل أكثر؟ أين تعود نفس الشكوى كل موسم؟ تحل السبب، بدلًا من نفس العَرَض كل مرة.',
+    'bewijs.text':'بلدية بخدمة ميدانية من ستين موظفًا تحصل على كل بلاغ — من موظفيها ومن المواطنين — مباشرة للقسم الصحيح. فحوصات المرافق والعقارات رقمية وقابلة للإثبات. رقابة المشروعية أصبحت تصديرًا بدلًا من أسابيع بحث.',
+    'bewijs.tail':'المهمة عامة. <em>Flowmann يضمن</em> أن يكون التنفيذ واضحًا بنفس القدر.',
+    'int.label':'بجانب — أو بدلًا من',
+    'int.title':'هل يعمل Flowmann بجانب <em>نظام القضايا</em> الخاص بك، أم بدلًا منه؟',
+    'int.p1':'بجانب. نظام القضايا وبرمجيات إدارة الفضاء العام والحزم المالية تبقى. Flowmann يتولى ما يقع بينها: سلسلة البلاغات من الشارع، الفحوصات بإثبات بالصور، شهادات العمالة المستأجرة، والمساءلة التي تُجمع لاحقًا عادةً.',
+    'int.p2':'ما يستبدله Flowmann هو قوائم Excel المتناثرة ومجلدات الفحص الورقية ومجموعات WhatsApp وبلاغات اللاسلكي التي لا تُسجل. متوافق مع GDPR، مع سجل تدقيق، مستضاف داخل الاتحاد الأوروبي. أنت تختار ما يقف بجانبه وما يتولاه.',
+    'cta.title':'هل تريد أن ترى كيف يعمل Flowmann في <em>مؤسستك</em>؟',
+    'cta.desc':'اطلب جولة دون التزام. لا مندوب مبيعات بسيناريو — شخص يعرف ممارسة التنفيذ، من الخدمة الميدانية إلى رقابة المشروعية.',
+    'cta.btn':'تواصل معنا',
+    'foot.tag':'© 2026 Flowmann · منصة واحدة. كل قطاع. متصلون أخيرًا.',
+    'foot.l1':'القطاعات','foot.l2':'الأسعار','foot.l3':'اتصل','foot.l4':'الرئيسية'
+  }
+};
+
+// ===== SET LANGUAGE =====
+function setLang(lang) {
+  try { localStorage.setItem('flowmann-lang', lang); } catch (e) {}
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  // Update page title and meta description
+  if (translations[lang]) {
+    if (translations[lang]['page.title']) {
+      document.title = translations[lang]['page.title'];
+    }
+    if (translations[lang]['page.desc']) {
+      const metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', translations[lang]['page.desc']);
+    }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+// Laad opgeslagen taalkeuze bij paginalading
+try {
+  const savedLang = localStorage.getItem('flowmann-lang');
+  if (savedLang && ['nl','en','de','fr','ar'].includes(savedLang)) {
+    setLang(savedLang);
+  }
+} catch (e) {}
+</script>
+
+</body>
+</html>
