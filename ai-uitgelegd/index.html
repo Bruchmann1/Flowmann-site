@@ -172,12 +172,11 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
     display: inline;
     vertical-align: baseline;
-    padding-bottom: 0.22em;
   }
+  /* solid-fill glyphs (e.g. "?") inside gradient text: not clipped by background-clip */
+  em .qm { -webkit-text-fill-color: var(--amber-br); color: var(--amber-br); }
   .cream-section em {
     background: linear-gradient(135deg, #c47a04 0%, #8b5a00 60%);
     -webkit-background-clip: text;
@@ -702,7 +701,7 @@
   <div class="container">
     <div class="hero-content">
       <span class="hero-eyebrow"><span class="hero-dot"></span><span>AI uitgelegd</span></span>
-      <h1>Wat ís AI eigenlijk, <em>en wat heb ik eraan?</em></h1>
+      <h1>Wat ís AI eigenlijk, <em>en wat heb ik eraan<span class="qm">?</span></em></h1>
       <p class="hero-sub">Geen technische uitleg, geen hype. Gewoon in normale taal: wat AI is, wat het voor uw organisatie doet, en wat het u oplevert.</p>
       <div class="hero-ctas">
         <a href="/#contact" class="btn btn-primary"><span>Neem contact op</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -716,7 +715,7 @@
 <section class="ai-uitleg-section">
   <div class="container">
     <div class="ai-explain">
-      <h3>Even gewoon: wat ís AI, <em>en wat heb ik eraan?</em></h3>
+      <h3>Even gewoon: wat ís AI, <em>en wat heb ik eraan<span class="qm">?</span></em></h3>
       <p>In elk bedrijf gebeurt hetzelfde. Er komt veel binnen, zoals meldingen, vragen, formulieren, foto's en mails, en iemand moet dat lezen, sorteren en naar de juiste persoon doorzetten. Dat kost tijd, en er gaat weleens iets verloren.</p>
       <p>AI is software die taal begrijpt en patronen herkent. Heel simpel gezegd is het een hulp die leest, sorteert, onthoudt en meedenkt. Niet om uw werk over te nemen, maar om het saaie, herhalende deel eruit te halen.</p>
       <ul class="ai-bullets">
