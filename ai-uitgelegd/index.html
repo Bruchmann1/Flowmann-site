@@ -172,8 +172,11 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     display: inline;
     vertical-align: baseline;
+    padding-bottom: 0.22em;
   }
   .cream-section em {
     background: linear-gradient(135deg, #c47a04 0%, #8b5a00 60%);
@@ -239,10 +242,9 @@
     font-family: var(--display);
     font-weight: 300;
     font-size: clamp(38px, 6.2vw, 84px);
-    line-height: 1.16;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 28px;
-    padding-bottom: 0.1em;
   }
   .hero-sub {
     font-size: 19px;
